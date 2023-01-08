@@ -4,7 +4,6 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
 import "./layer-panel.styles.scss";
-
 export const LayerPanel = (props) => {
   const { children, value, index, layer, ...other } = props;
 
@@ -12,13 +11,20 @@ export const LayerPanel = (props) => {
     return (
       <div className="grid-left">
         {layer.bindingsArray.map((key, index) => {
-          if (index <= 17) {
-            return (
-              <Button variant="outlined" key={key.index}>
-                {key.label}
-              </Button>
-            );
+          const button = (
+            <Button variant="outlined" key={key.index}>
+              {key.label}
+            </Button>
+          );
+          if (
+            index < 5 ||
+            (index > 9 && index < 15) ||
+            (index > 19 && index < 25) ||
+            (index > 29 && index < 33)
+          ) {
+            return button;
           }
+          return null;
         })}
       </div>
     );
@@ -28,13 +34,20 @@ export const LayerPanel = (props) => {
     return (
       <div className="grid-right">
         {layer.bindingsArray.map((key, index) => {
-          if (index >= 18) {
-            return (
-              <Button variant="outlined" key={key.index}>
-                {key.label}
-              </Button>
-            );
+          const button = (
+            <Button variant="outlined" key={key.index}>
+              {key.label}
+            </Button>
+          );
+          if (
+            (index > 4 && index < 10) ||
+            (index > 14 && index < 20) ||
+            (index > 24 && index < 30) ||
+            index > 32
+          ) {
+            return button;
           }
+          return null;
         })}
       </div>
     );
@@ -51,7 +64,7 @@ export const LayerPanel = (props) => {
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <Typography>{layer.label}</Typography>
+          <Typography variant="h4">{layer.label}</Typography>
           <div className="full-keyboard">
             {gridLeft()}
             {gridRight()}

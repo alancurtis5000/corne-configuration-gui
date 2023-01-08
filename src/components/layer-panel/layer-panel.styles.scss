@@ -11,30 +11,28 @@
 
   .full-keyboard {
     display: flex;
-    background-color: pink;
+    div {
+      padding: 10px;
+      margin: 4px;
+      border: 2px solid darkgray;
+      border-radius: 10px;
+    }
     .grid-left {
       display: grid;
       background-color: lightblue;
       grid-template-columns: repeat(5, 64px);
       grid-template-rows: repeat(4, 64px);
       gap: 6px;
+      button:nth-last-child(3):nth-child(5n + 1) {
+        grid-column-start: 3;
+      }
     }
     .grid-right {
       display: grid;
-      background-color: lightgreen;
+      background-color: rgb(249, 178, 178);
       grid-template-columns: repeat(5, 64px);
       grid-template-rows: repeat(4, 64px);
       gap: 6px;
     }
   }
-  /* Dealing with 2 orphan items 
-
-button:last-child:nth-child(3n - 1) {
-    grid-column-end: -2;
-  }
-  
-  button:nth-last-child(6):nth-child(5n + 1) {
-    grid-column-start: 3;
-  }
-  */
 }
