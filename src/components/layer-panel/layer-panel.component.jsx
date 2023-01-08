@@ -2,8 +2,9 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { Button } from "@mui/material";
 import "./layer-panel.styles.scss";
+import { KeyButton } from "../key-button/key-button.component";
+
 export const LayerPanel = (props) => {
   const { children, value, index, layer, ...other } = props;
 
@@ -11,11 +12,7 @@ export const LayerPanel = (props) => {
     return (
       <div className="grid-left">
         {layer.bindingsArray.map((key, index) => {
-          const button = (
-            <Button variant="outlined" key={key.index}>
-              {key.label}
-            </Button>
-          );
+          const button = <KeyButton key={key.index} keyData={key} />;
           if (
             index < 5 ||
             (index > 9 && index < 15) ||
@@ -34,11 +31,7 @@ export const LayerPanel = (props) => {
     return (
       <div className="grid-right">
         {layer.bindingsArray.map((key, index) => {
-          const button = (
-            <Button variant="outlined" key={key.index}>
-              {key.label}
-            </Button>
-          );
+          const button = <KeyButton key={key.index} keyData={key} />;
           if (
             (index > 4 && index < 10) ||
             (index > 14 && index < 20) ||
