@@ -6,17 +6,7 @@ import propTypes from "prop-types";
 // can I and should I right test for this?
 /* istanbul ignore next */
 export const KeymapContext = createContext({
-  keymap: [
-    {
-      label: "DEF",
-      bindings: `
-   &none   &kp Q &kp W &kp E &kp R &kp T          &kp Y &kp U  &kp I    &kp O   &kp P    &none
-   &none   &kp A &kp S &kp D &hm LCMD F &kp G     &kp H &hm LCMD J  &kp K     &kp L   &kp SEMI     &none
-   &none   &kp Z &kp X &kp C &kp V &kp B          &kp N &kp M  &kp COMMA &kp DOT   &kp FSLH    &none 
-                &kp LSHIFT  &kp SPACE &kp N3      &to ARROWS_L  &kp ENTER  &kp BACKSPACE
-                `,
-    },
-  ],
+  keymap: [],
   // actions
   // increment: () => {},
 });
