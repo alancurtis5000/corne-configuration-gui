@@ -11,7 +11,7 @@
 
   .full-keyboard {
     display: flex;
-    div {
+    > div {
       padding: 10px;
       margin: 4px;
       border: 2px solid darkgray;
