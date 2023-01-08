@@ -5,6 +5,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import Button from "@mui/material/Button";
+import { ModifierList } from "../modifier-list/modifier-list.component";
 
 export const KeyDialogPage2 = (props) => {
   const { selectedValue, setPage } = props;
@@ -37,6 +38,7 @@ export const KeyDialogPage2 = (props) => {
           <div style={currentValue}></div>
 
           <DialogContentText>Add Modifiers</DialogContentText>
+          <ModifierList />
           <DialogContentText>Description</DialogContentText>
         </div>
       </DialogContent>
