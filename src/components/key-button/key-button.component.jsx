@@ -14,9 +14,15 @@ export const KeyButton = (props) => {
     setIsOpen(false);
   };
 
+  const buttonStyles = () => {
+    return {
+      backgroundColor: isOpen ? "red" : "inherit",
+    };
+  };
+
   return (
     <>
-      <Button variant="outlined" onClick={handleOpenDialog}>
+      <Button sx={buttonStyles()} variant="outlined" onClick={handleOpenDialog}>
         {keyData.label}
       </Button>
       <KeyDialog

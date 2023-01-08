@@ -51,5 +51,5 @@ export const KeyDialog = (props) => {
 KeyDialog.propTypes = {
   onClose: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
-  selectedValue: PropTypes.string.isRequired,
+  selectedValue: PropTypes.object.isRequired,
 };
