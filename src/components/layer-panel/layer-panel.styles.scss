@@ -1,13 +1,6 @@
 .layer-panel {
   display: flex;
   justify-content: center;
-  .grid {
-    display: grid;
-    background-color: lightblue;
-    grid-template-columns: repeat(10, 64px);
-    grid-template-rows: repeat(4, 64px);
-    gap: 6px;
-  }
 
   .full-keyboard {
     display: flex;
@@ -20,8 +13,8 @@
     .grid-left {
       display: grid;
       background-color: lightblue;
-      grid-template-columns: repeat(5, 64px);
-      grid-template-rows: repeat(4, 64px);
+      grid-template-columns: repeat(5, 90px);
+      grid-template-rows: repeat(4, 90px);
       gap: 6px;
       button:nth-last-child(3):nth-child(5n + 1) {
         grid-column-start: 3;
@@ -30,8 +23,8 @@
     .grid-right {
       display: grid;
       background-color: rgb(249, 178, 178);
-      grid-template-columns: repeat(5, 64px);
-      grid-template-rows: repeat(4, 64px);
+      grid-template-columns: repeat(5, 90px);
+      grid-template-rows: repeat(4, 90px);
       gap: 6px;
     }
   }

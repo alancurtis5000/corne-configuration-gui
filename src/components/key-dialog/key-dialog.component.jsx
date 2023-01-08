@@ -29,7 +29,7 @@ export const KeyDialog = (props) => {
         >
           <DialogContentText>When</DialogContentText>{" "}
           <Button onClick={handleClose}>Tapped</Button>
-          <DialogContentText>:</DialogContentText> {tapped}
+          <DialogContentText>:</DialogContentText> {tapped.label}
           <Button onClick={handleClose}>Clear</Button>
         </div>
         <div
@@ -40,7 +40,7 @@ export const KeyDialog = (props) => {
         >
           <DialogContentText>When</DialogContentText>{" "}
           <Button onClick={handleClose}>Held</Button>
-          <DialogContentText>:</DialogContentText> {held}
+          <DialogContentText>:</DialogContentText> {held.label}
           <Button onClick={handleClose}>Clear</Button>
         </div>
       </DialogContent>

@@ -27,218 +27,434 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 0,
           label: "q",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 1,
           label: "w",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 2,
           label: "e",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 3,
           label: "r",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 4,
           label: "t",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 5,
           label: "y",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 6,
           label: "u",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 7,
           label: "i",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 8,
           label: "o",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 9,
           label: "p",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 10,
           label: "a",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 11,
           label: "s",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 12,
           label: "d",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 13,
           label: "f",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 14,
           label: "g",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 15,
           label: "h",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 16,
           label: "j",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 17,
           label: "k",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 18,
           label: "l",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 19,
           label: ":",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 20,
           label: "z",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 21,
           label: "x",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 22,
           label: "c",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 23,
           label: "v",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 24,
           label: "b",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 25,
           label: "n",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 26,
           label: "m",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 27,
           label: ",",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 28,
           label: ".",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 29,
           label: "/",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 30,
           label: "1",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 31,
           label: "2",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 32,
           label: "3",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 33,
           label: "4",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 34,
           label: "5",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 35,
           label: "6",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
       ],
     },
@@ -254,218 +470,434 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 0,
           label: "q",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 1,
           label: "w",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 2,
           label: "e",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 3,
           label: "r",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 4,
           label: "t",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 5,
           label: "y",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 6,
           label: "u",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 7,
           label: "i",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 8,
           label: "o",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 9,
           label: "p",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 10,
           label: "a",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 11,
           label: "s",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 12,
           label: "d",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 13,
           label: "f",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 14,
           label: "g",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 15,
           label: "h",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 16,
           label: "j",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 17,
           label: "k",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 18,
           label: "l",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 19,
           label: ":",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 20,
           label: "z",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 21,
           label: "x",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 22,
           label: "c",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 23,
           label: "v",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 24,
           label: "b",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 25,
           label: "n",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 26,
           label: "m",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 27,
           label: ",",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 28,
           label: ".",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 29,
           label: "/",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 30,
           label: "1",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 31,
           label: "2",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 32,
           label: "3",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 33,
           label: "4",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 34,
           label: "5",
-          tapped: "&kp W",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
         {
           index: 35,
           label: "6",
-          tapped: "&kp Q ",
-          held: "",
+          tapped: {
+            code: "&kp Q",
+            label: "Q",
+          },
+          held: {
+            code: "&kp Q",
+            label: "Q",
+          },
         },
       ],
     },

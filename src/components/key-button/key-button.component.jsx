@@ -4,6 +4,7 @@ import { KeyDialog } from "../key-dialog/key-dialog.component";
 
 export const KeyButton = (props) => {
   const { keyData } = props;
+  const { tapped, held, label } = keyData;
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenDialog = () => {
@@ -17,13 +18,23 @@ export const KeyButton = (props) => {
   const buttonStyles = () => {
     return {
       backgroundColor: isOpen ? "red" : "inherit",
+      padding: "5px",
     };
+  };
+
+  const labelStyles = {
+    display: "flex",
+    flexDirection: "column",
   };
 
   return (
     <>
       <Button sx={buttonStyles()} variant="outlined" onClick={handleOpenDialog}>
-        {keyData.label}
+        <div style={labelStyles}>
+          <div>{label}</div>
+          <div>{tapped.label}</div>
+          <div>{held.label}</div>
+        </div>
       </Button>
       <KeyDialog
         onClose={handleCloseDialog}
