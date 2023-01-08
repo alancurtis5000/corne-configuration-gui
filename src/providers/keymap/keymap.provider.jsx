@@ -1203,6 +1203,7 @@ export const KeymapProvider = ({ children }) => {
       value={{
         //increment
         keymap,
+        setKeymap,
       }}
     >
       {children}
