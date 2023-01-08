@@ -21,8 +21,8 @@ export const KeyDialogPage2 = (props) => {
   };
   return (
     <>
-      <DialogTitle>Edit Tapped Key {index + 1}</DialogTitle>
-      <DialogContent>
+      <DialogTitle>Key: {index + 1} (Edit Tapped) </DialogTitle>
+      <DialogContent dividers>
         <div
           style={{
             display: "flex",

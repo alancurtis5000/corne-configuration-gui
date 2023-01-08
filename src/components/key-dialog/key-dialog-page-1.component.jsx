@@ -18,9 +18,10 @@ export const KeyDialogPage1 = (props) => {
   return (
     <>
       <DialogTitle>
-        Key {index + 1} Label {label}
+        <div> Key: {index + 1}</div>
+        <div>Label: {label}</div>
       </DialogTitle>
-      <DialogContent>
+      <DialogContent dividers>
         <div
           style={{
             display: "flex",
