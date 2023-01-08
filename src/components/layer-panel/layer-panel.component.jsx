@@ -8,6 +8,38 @@ import "./layer-panel.styles.scss";
 export const LayerPanel = (props) => {
   const { children, value, index, layer, ...other } = props;
 
+  const gridLeft = () => {
+    return (
+      <div className="grid-left">
+        {layer.bindingsArray.map((key, index) => {
+          if (index <= 17) {
+            return (
+              <Button variant="outlined" key={key.index}>
+                {key.label}
+              </Button>
+            );
+          }
+        })}
+      </div>
+    );
+  };
+
+  const gridRight = () => {
+    return (
+      <div className="grid-right">
+        {layer.bindingsArray.map((key, index) => {
+          if (index >= 18) {
+            return (
+              <Button variant="outlined" key={key.index}>
+                {key.label}
+              </Button>
+            );
+          }
+        })}
+      </div>
+    );
+  };
+
   return (
     <div
       className="layer-panel"
@@ -20,14 +52,9 @@ export const LayerPanel = (props) => {
       {value === index && (
         <Box sx={{ p: 3 }}>
           <Typography>{layer.label}</Typography>
-          <div className="grid">
-            {layer.bindingsArray.map((key) => {
-              return (
-                <Button variant="outlined" key={key.index}>
-                  {key.label}
-                </Button>
-              );
-            })}
+          <div className="full-keyboard">
+            {gridLeft()}
+            {gridRight()}
           </div>
         </Box>
       )}

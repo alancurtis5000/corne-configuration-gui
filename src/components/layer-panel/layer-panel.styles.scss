@@ -1,15 +1,33 @@
 .layer-panel {
+  display: flex;
+  justify-content: center;
+  .grid {
+    display: grid;
+    background-color: lightblue;
+    grid-template-columns: repeat(10, 64px);
+    grid-template-rows: repeat(4, 64px);
+    gap: 6px;
+  }
 
+  .full-keyboard {
     display: flex;
-    justify-content: center;
-    .grid{
-        display: grid;
-        background-color: lightblue;
-        grid-template-columns: repeat(10, 64px);
-        grid-template-rows: repeat(4, 64px);
-        gap: 6px;
+    background-color: pink;
+    .grid-left {
+      display: grid;
+      background-color: lightblue;
+      grid-template-columns: repeat(5, 64px);
+      grid-template-rows: repeat(4, 64px);
+      gap: 6px;
     }
-    /* Dealing with 2 orphan items */
+    .grid-right {
+      display: grid;
+      background-color: lightgreen;
+      grid-template-columns: repeat(5, 64px);
+      grid-template-rows: repeat(4, 64px);
+      gap: 6px;
+    }
+  }
+  /* Dealing with 2 orphan items 
 
 button:last-child:nth-child(3n - 1) {
     grid-column-end: -2;
@@ -18,4 +36,5 @@ button:last-child:nth-child(3n - 1) {
   button:nth-last-child(6):nth-child(5n + 1) {
     grid-column-start: 3;
   }
+  */
 }
