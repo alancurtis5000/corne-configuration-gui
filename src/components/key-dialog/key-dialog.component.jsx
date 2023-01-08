@@ -1,49 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-
-import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import Button from "@mui/material/Button";
+import { KeyDialogPage1 } from "./key-dialog-page-1.component";
+import { KeyDialogPage2 } from "./key-dialog-page-2.component";
 
 export const KeyDialog = (props) => {
   const { onClose, selectedValue, isOpen } = props;
-  const { index, label, tapped, held } = selectedValue;
+  const [page, setPage] = useState(1);
 
   const handleClose = () => {
     onClose(selectedValue);
+    setPage(1);
+  };
+
+  const pageToRender = () => {
+    switch (page) {
+      case 1:
+        return (
+          <KeyDialogPage1
+            setPage={setPage}
+            isOpen={isOpen}
+            onClose={handleClose}
+            selectedValue={selectedValue}
+          />
+        );
+      case 2:
+        return (
+          <KeyDialogPage2 setPage={setPage} selectedValue={selectedValue} />
+        );
+      case 3:
+        return <div>3</div>;
+
+      default:
+        return <div>def</div>;
+    }
   };
 
   return (
-    <Dialog onClose={handleClose} open={isOpen}>
-      <DialogTitle>
-        Key {index + 1} Label {label}
-      </DialogTitle>
-      <DialogContent>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <DialogContentText>When</DialogContentText>{" "}
-          <Button onClick={handleClose}>Tapped</Button>
-          <DialogContentText>:</DialogContentText> {tapped.label}
-          <Button onClick={handleClose}>Clear</Button>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <DialogContentText>When</DialogContentText>{" "}
-          <Button onClick={handleClose}>Held</Button>
-          <DialogContentText>:</DialogContentText> {held.label}
-          <Button onClick={handleClose}>Clear</Button>
-        </div>
-      </DialogContent>
+    <Dialog onClose={handleClose} open={isOpen} fullWidth>
+      {pageToRender()}
     </Dialog>
   );
 };
