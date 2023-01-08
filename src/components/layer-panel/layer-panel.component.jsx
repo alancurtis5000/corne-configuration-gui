@@ -3,12 +3,14 @@ import PropTypes from "prop-types";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
+import "./layer-panel.styles.scss";
 
 export const LayerPanel = (props) => {
   const { children, value, index, layer, ...other } = props;
 
   return (
     <div
+      className="layer-panel"
       role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
@@ -18,17 +20,15 @@ export const LayerPanel = (props) => {
       {value === index && (
         <Box sx={{ p: 3 }}>
           <Typography>{layer.label}</Typography>
-          {layer.bindingsArray.map((key) => {
-            return (
-              <Button
-                variant="outlined"
-                key={key.index}
-                style={{ height: "64px", margin: "4px" }}
-              >
-                {key.label}
-              </Button>
-            );
-          })}
+          <div className="grid">
+            {layer.bindingsArray.map((key) => {
+              return (
+                <Button variant="outlined" key={key.index}>
+                  {key.label}
+                </Button>
+              );
+            })}
+          </div>
         </Box>
       )}
     </div>

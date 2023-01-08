@@ -2,7 +2,7 @@ import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import { LayerPanel } from "../layer-panel/layer-panel";
+import { LayerPanel } from "../layer-panel/layer-panel.component";
 import { useContext } from "react";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
 

@@ -240,12 +240,6 @@ export const KeymapProvider = ({ children }) => {
           press: "&kp Q ",
           held: "",
         },
-        {
-          index: 36,
-          label: "W",
-          press: "&kp W",
-          held: "",
-        },
       ],
     },
     {
@@ -471,12 +465,6 @@ export const KeymapProvider = ({ children }) => {
           index: 35,
           label: "Q",
           press: "&kp Q ",
-          held: "",
-        },
-        {
-          index: 36,
-          label: "W",
-          press: "&kp W",
           held: "",
         },
       ],

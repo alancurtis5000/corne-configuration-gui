@@ -1,0 +1,21 @@
+.layer-panel {
+
+    display: flex;
+    justify-content: center;
+    .grid{
+        display: grid;
+        background-color: lightblue;
+        grid-template-columns: repeat(10, 64px);
+        grid-template-rows: repeat(4, 64px);
+        gap: 6px;
+    }
+    /* Dealing with 2 orphan items */
+
+button:last-child:nth-child(3n - 1) {
+    grid-column-end: -2;
+  }
+  
+  button:nth-last-child(6):nth-child(5n + 1) {
+    grid-column-start: 3;
+  }
+}
