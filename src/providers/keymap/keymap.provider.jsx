@@ -27,6 +27,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 0,
           label: "q",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -39,6 +41,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 1,
           label: "w",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -51,6 +55,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 2,
           label: "e",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -63,6 +69,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 3,
           label: "r",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -75,6 +83,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 4,
           label: "t",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -87,6 +97,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 5,
           label: "y",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -99,6 +111,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 6,
           label: "u",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -111,6 +125,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 7,
           label: "i",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -123,6 +139,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 8,
           label: "o",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -135,6 +153,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 9,
           label: "p",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -147,6 +167,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 10,
           label: "a",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -159,6 +181,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 11,
           label: "s",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -171,6 +195,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 12,
           label: "d",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -183,6 +209,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 13,
           label: "f",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -195,6 +223,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 14,
           label: "g",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -207,6 +237,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 15,
           label: "h",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -219,6 +251,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 16,
           label: "j",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -231,6 +265,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 17,
           label: "k",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -243,6 +279,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 18,
           label: "l",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -255,6 +293,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 19,
           label: ":",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -267,6 +307,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 20,
           label: "z",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -279,6 +321,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 21,
           label: "x",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -291,6 +335,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 22,
           label: "c",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -303,6 +349,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 23,
           label: "v",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -315,6 +363,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 24,
           label: "b",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -327,6 +377,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 25,
           label: "n",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -339,6 +391,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 26,
           label: "m",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -351,6 +405,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 27,
           label: ",",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -363,6 +419,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 28,
           label: ".",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -375,6 +433,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 29,
           label: "/",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -387,6 +447,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 30,
           label: "1",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -399,6 +461,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 31,
           label: "2",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -411,6 +475,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 32,
           label: "3",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -423,6 +489,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 33,
           label: "4",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -435,6 +503,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 34,
           label: "5",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -447,6 +517,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 35,
           label: "6",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -470,6 +542,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 0,
           label: "q",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -482,6 +556,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 1,
           label: "w",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -494,6 +570,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 2,
           label: "e",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -506,6 +584,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 3,
           label: "r",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -518,6 +598,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 4,
           label: "t",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -530,6 +612,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 5,
           label: "y",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -542,6 +626,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 6,
           label: "u",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -554,6 +640,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 7,
           label: "i",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -566,6 +654,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 8,
           label: "o",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -578,6 +668,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 9,
           label: "p",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -590,6 +682,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 10,
           label: "a",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -602,6 +696,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 11,
           label: "s",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -614,6 +710,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 12,
           label: "d",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -626,6 +724,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 13,
           label: "f",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -638,6 +738,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 14,
           label: "g",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -650,6 +752,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 15,
           label: "h",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -662,6 +766,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 16,
           label: "j",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -674,6 +780,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 17,
           label: "k",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -686,6 +794,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 18,
           label: "l",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -698,6 +808,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 19,
           label: ":",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -710,6 +822,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 20,
           label: "z",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -722,6 +836,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 21,
           label: "x",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -734,6 +850,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 22,
           label: "c",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -746,6 +864,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 23,
           label: "v",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -758,6 +878,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 24,
           label: "b",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -770,6 +892,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 25,
           label: "n",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -782,6 +906,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 26,
           label: "m",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -794,6 +920,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 27,
           label: ",",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -806,6 +934,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 28,
           label: ".",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -818,6 +948,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 29,
           label: "/",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -830,6 +962,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 30,
           label: "1",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -842,6 +976,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 31,
           label: "2",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -854,6 +990,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 32,
           label: "3",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -866,6 +1004,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 33,
           label: "4",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -878,6 +1018,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 34,
           label: "5",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -890,6 +1032,8 @@ export const KeymapProvider = ({ children }) => {
         {
           index: 35,
           label: "6",
+          description: "button that does stuff",
+          modifiers: [],
           tapped: {
             code: "&kp Q",
             label: "Q",
