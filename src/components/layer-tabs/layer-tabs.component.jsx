@@ -3,6 +3,8 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import { LayerPanel } from "../layer-panel/layer-panel";
+import { useContext } from "react";
+import { KeymapContext } from "../../providers/keymap/keymap.provider";
 
 function a11yProps(index) {
   return {
@@ -13,6 +15,7 @@ function a11yProps(index) {
 
 export const LayerTabs = () => {
   const [value, setValue] = React.useState(0);
+  const { keymap } = useContext(KeymapContext);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -26,20 +29,23 @@ export const LayerTabs = () => {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          {keymap.map((layer, index) => {
+            return (
+              <Tab label={layer.label} key={index} {...a11yProps(index)} />
+            );
+          })}
         </Tabs>
       </Box>
-      <LayerPanel value={value} index={0}>
-        Item One
-      </LayerPanel>
-      <LayerPanel value={value} index={1}>
-        Item Two
-      </LayerPanel>
-      <LayerPanel value={value} index={2}>
-        Item Three
-      </LayerPanel>
+      {keymap.map((layer, index) => {
+        return (
+          <LayerPanel
+            key={layer.label}
+            value={value}
+            index={index}
+            layer={layer}
+          />
+        );
+      })}
     </Box>
   );
 };
