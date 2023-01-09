@@ -15,7 +15,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 export const LayerPanel = (props) => {
   const { children, value, index, layer, setSelectedTab, ...other } = props;
-  const { changeLayerName, moveLayer, layers } = useContext(KeymapContext);
+  const { changeLayerName, moveLayer, deleteLayer, layers } =
+    useContext(KeymapContext);
   const [isEdit, setIsEdit] = useState(false);
   const [label, setLabel] = useState(layer.label);
 
@@ -98,7 +99,15 @@ export const LayerPanel = (props) => {
   };
 
   const handleDeleteLayer = () => {
-    console.log("delete");
+    console.log("handleDeleteLayer", {
+      index,
+      len: layers.length,
+    });
+    if (index === 0 && layers.length === 1) return;
+    if (index === layers.length - 1) {
+      setSelectedTab(index - 1);
+    }
+    deleteLayer({ index });
   };
 
   return (

@@ -53,3 +53,11 @@ export const moveLayerUtil = ({ direction, index, layers }) => {
     }
     return layers
 }
+
+export const deleteLayerUtil = ({ index, layers }) => {
+    console.log({ index, layers })
+    const updatedLayers = [...layers]
+    updatedLayers.splice(index, 1);
+    updatedLayers.forEach((layer, index) => layer.index = index)
+    return updatedLayers
+}
