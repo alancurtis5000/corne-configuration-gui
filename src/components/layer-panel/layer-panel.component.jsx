@@ -11,12 +11,11 @@ import SaveIcon from "@mui/icons-material/Save";
 import CancelIcon from "@mui/icons-material/Cancel";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
-import DeleteIcon from "@mui/icons-material/Delete";
+import { DeleteLayerButton } from "../delete-layer-button/delete-layer-button.compnent";
 
 export const LayerPanel = (props) => {
   const { children, value, index, layer, setSelectedTab, ...other } = props;
-  const { changeLayerName, moveLayer, deleteLayer, layers } =
-    useContext(KeymapContext);
+  const { changeLayerName, moveLayer, layers } = useContext(KeymapContext);
   const [isEdit, setIsEdit] = useState(false);
   const [label, setLabel] = useState(layer.label);
 
@@ -98,18 +97,6 @@ export const LayerPanel = (props) => {
     }
   };
 
-  const handleDeleteLayer = () => {
-    console.log("handleDeleteLayer", {
-      index,
-      len: layers.length,
-    });
-    if (index === 0 && layers.length === 1) return;
-    if (index === layers.length - 1) {
-      setSelectedTab(index - 1);
-    }
-    deleteLayer({ index });
-  };
-
   return (
     <div
       className="layer-panel"
@@ -172,9 +159,10 @@ export const LayerPanel = (props) => {
               </IconButton>
             </div>
             <div className="delete-button">
-              <IconButton color="default" onClick={handleDeleteLayer}>
-                <DeleteIcon sx={{ pointerEvents: "none" }} />
-              </IconButton>
+              <DeleteLayerButton
+                index={index}
+                setSelectedTab={setSelectedTab}
+              />
             </div>
           </div>
 
