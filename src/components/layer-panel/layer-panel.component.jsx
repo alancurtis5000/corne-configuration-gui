@@ -11,7 +11,7 @@ export const LayerPanel = (props) => {
   const gridLeft = () => {
     return (
       <div className="grid-left">
-        {layer.bindingsArray.map((key, index) => {
+        {layer.bindings.map((key, index) => {
           const button = <KeyButton key={key.index} keyData={key} />;
           if (
             index < 5 ||
@@ -30,7 +30,7 @@ export const LayerPanel = (props) => {
   const gridRight = () => {
     return (
       <div className="grid-right">
-        {layer.bindingsArray.map((key, index) => {
+        {layer.bindings.map((key, index) => {
           const button = <KeyButton key={key.index} keyData={key} />;
           if (
             (index > 4 && index < 10) ||

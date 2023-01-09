@@ -1,29 +1,32 @@
 import React, { createContext, useState } from "react";
 import propTypes from "prop-types";
+import { createLayerUtil } from "./keymap.utils";
 
 // import { incrementCount, decrementCount } from "./keymap.utils";
 
 // can I and should I right test for this?
 /* istanbul ignore next */
 export const KeymapContext = createContext({
-  keymap: [],
+  layers: [],
   // actions
   // increment: () => {},
+  createLayer: () => {},
 });
 
 // can I and should I right test for this?
 /* istanbul ignore next */
 export const KeymapProvider = ({ children }) => {
-  const [keymap, setKeymap] = useState([
+  const [layers, setLayers] = useState([
     {
       label: "DEF",
-      bindings: `
+      /* bindings: `
    &none   &kp Q &kp W &kp E &kp R &kp T          &kp Y &kp U  &kp I    &kp O   &kp P    &none
    &none   &kp A &kp S &kp D &hm LCMD F &kp G     &kp H &hm LCMD J  &kp K     &kp L   &kp SEMI     &none
    &none   &kp Z &kp X &kp C &kp V &kp B          &kp N &kp M  &kp COMMA &kp DOT   &kp FSLH    &none 
                 &kp LSHIFT  &kp SPACE &kp N3      &to ARROWS_L  &kp ENTER  &kp BACKSPACE
                 `,
-      bindingsArray: [
+                */
+      bindings: [
         {
           index: 0,
           label: "q",
@@ -604,13 +607,14 @@ export const KeymapProvider = ({ children }) => {
     },
     {
       label: "NAV",
-      bindings: `
+      /* bindings: `
    &none   &kp Q &kp W &kp E &kp R &kp T          &kp Y &kp U  &kp I    &kp O   &kp P    &none
    &none   &kp A &kp S &kp D &hm LCMD F &kp G     &kp H &hm LCMD J  &kp K     &kp L   &kp SEMI     &none
    &none   &kp Z &kp X &kp C &kp V &kp B          &kp N &kp M  &kp COMMA &kp DOT   &kp FSLH    &none 
                 &kp LSHIFT  &kp SPACE &kp N3      &to ARROWS_L  &kp ENTER  &kp BACKSPACE
                 `,
-      bindingsArray: [
+                  */
+      bindings: [
         {
           index: 0,
           label: "q",
@@ -1192,6 +1196,7 @@ export const KeymapProvider = ({ children }) => {
   ]);
   // actions
   // const increment = () => setCount(incrementCount(count, margin));
+  const createLayer = () => setLayers(createLayerUtil(layers));
 
   // if count changes do something
   // useEffect(() => {
@@ -1202,8 +1207,9 @@ export const KeymapProvider = ({ children }) => {
     <KeymapContext.Provider
       value={{
         //increment
-        keymap,
-        setKeymap,
+        layers,
+        setLayers,
+        createLayer,
       }}
     >
       {children}
