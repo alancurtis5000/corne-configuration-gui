@@ -162,6 +162,7 @@ export const LayerPanel = (props) => {
               <DeleteLayerButton
                 index={index}
                 setSelectedTab={setSelectedTab}
+                layer={layer}
               />
             </div>
           </div>
