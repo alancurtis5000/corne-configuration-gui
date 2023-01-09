@@ -625,7 +625,7 @@ export const KeymapProvider = ({ children }) => {
       bindings: [
         {
           index: 0,
-          label: "q",
+          label: "1",
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -641,7 +641,7 @@ export const KeymapProvider = ({ children }) => {
         },
         {
           index: 1,
-          label: "w",
+          label: "2",
           tapped: {
             code: "&kp Q",
             label: "Q",
@@ -657,7 +657,7 @@ export const KeymapProvider = ({ children }) => {
         },
         {
           index: 2,
-          label: "e",
+          label: "3",
           tapped: {
             code: "&kp Q",
             label: "Q",

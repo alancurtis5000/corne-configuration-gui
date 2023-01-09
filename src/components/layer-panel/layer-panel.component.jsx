@@ -84,14 +84,12 @@ export const LayerPanel = (props) => {
     });
     const direction = e.target.value;
     if (direction === "left") {
-      if (index !== layers.length + 1) {
-        console.log("plus");
+      if (index !== 0) {
         moveLayer({ direction, index });
         setSelectedTab(index - 1);
       }
     } else {
       if (index !== layers.length - 1) {
-        console.log("minius");
         moveLayer({ direction, index });
         setSelectedTab(index + 1);
       }
