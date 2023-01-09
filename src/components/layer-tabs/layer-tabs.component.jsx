@@ -1,11 +1,10 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import { LayerPanel } from "../layer-panel/layer-panel.component";
 import { useContext } from "react";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
-import { Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 
 function a11yProps(index) {
@@ -14,19 +13,17 @@ function a11yProps(index) {
     "aria-controls": `simple-tabpanel-${index}`,
   };
 }
-
 export const LayerTabs = () => {
-  const [value, setValue] = React.useState(0);
+  const [selectedTab, setSelectedTab] = useState(0);
   const { layers, createLayer } = useContext(KeymapContext);
 
-  const handleChange = (event, newValue) => {
-    console.log({ event, newValue, len: layers.length });
-    if (newValue === layers.length) {
-      console.log("pluss");
+  const handleChange = (event, newTab) => {
+    console.log(newTab);
+    if (newTab === layers.length) {
       createLayer();
-      setValue(newValue);
+      setSelectedTab(newTab);
     } else {
-      setValue(newValue);
+      setSelectedTab(newTab);
     }
   };
 
@@ -48,12 +45,12 @@ export const LayerTabs = () => {
     );
     return allTabs;
   };
-  console.log("tabs");
+
   return (
     <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs
-          value={value}
+          value={selectedTab}
           onChange={handleChange}
           aria-label="basic tabs example"
         >
@@ -64,9 +61,10 @@ export const LayerTabs = () => {
         return (
           <LayerPanel
             key={layer.label}
-            value={value}
+            value={selectedTab}
             index={index}
             layer={layer}
+            setSelectedTab={setSelectedTab}
           />
         );
       })}

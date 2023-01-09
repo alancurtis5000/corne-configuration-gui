@@ -1,6 +1,10 @@
 import React, { createContext, useState } from "react";
 import propTypes from "prop-types";
-import { changeLayerNameUtil, createLayerUtil } from "./keymap.utils";
+import {
+  changeLayerNameUtil,
+  createLayerUtil,
+  moveLayerUtil,
+} from "./keymap.utils";
 
 // import { incrementCount, decrementCount } from "./keymap.utils";
 
@@ -12,6 +16,7 @@ export const KeymapContext = createContext({
   // increment: () => {},
   createLayer: () => {},
   changeLayerName: () => {},
+  moveLayer: () => {},
 });
 
 // can I and should I right test for this?
@@ -1199,9 +1204,11 @@ export const KeymapProvider = ({ children }) => {
   ]);
   // actions
   // const increment = () => setCount(incrementCount(count, margin));
-  const createLayer = () => setLayers(createLayerUtil(layers));
+  const createLayer = () => setLayers(createLayerUtil({ layers }));
   const changeLayerName = ({ input, index, selectedLayer }) =>
     setLayers(changeLayerNameUtil({ input, index, selectedLayer, layers }));
+  const moveLayer = ({ direction, index }) =>
+    setLayers(moveLayerUtil({ direction, index, layers }));
 
   // if count changes do something
   // useEffect(() => {
@@ -1216,6 +1223,7 @@ export const KeymapProvider = ({ children }) => {
         setLayers,
         createLayer,
         changeLayerName,
+        moveLayer,
       }}
     >
       {children}

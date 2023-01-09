@@ -8,11 +8,11 @@ export const decrementCount = (count, margin) => {
 };
 
 
-export const createLayerUtil = (currentLayers) => {
-    const label = `Layer ${currentLayers.length}`
-    const index = currentLayers.length
+export const createLayerUtil = ({ layers }) => {
+    const label = `Layer ${layers.length}`
+    const index = layers.length
     const layer = new Layer(label, index)
-    const updatedLayers = [...currentLayers, layer]
+    const updatedLayers = [...layers, layer]
     return updatedLayers
 }
 
@@ -23,4 +23,33 @@ export const changeLayerNameUtil = ({ input, index, selectedLayer, layers }) => 
     updatedSelectedLayer.label = input
     updatedLayers.splice(index, 1, updatedSelectedLayer);
     return updatedLayers
+}
+
+export const moveLayerUtil = ({ direction, index, layers }) => {
+    console.log({ direction, index, layers })
+    const updatedLayers = [...layers]
+    const sourceLayer = updatedLayers.find((layer) => layer.index === index)
+    const targetLayer = updatedLayers.find((layer) => {
+        if (direction === 'left') {
+            return layer.index === index - 1;
+        } else {
+            return layer.index === index + 1;
+        }
+    })
+
+    if (targetLayer && sourceLayer) {
+        if (direction === 'left') {
+            sourceLayer.index = sourceLayer.index - 1;
+            targetLayer.index = targetLayer.index + 1;
+        } else {
+            sourceLayer.index = sourceLayer.index + 1;
+            targetLayer.index = targetLayer.index - 1;
+        }
+
+        updatedLayers.splice(sourceLayer.index, 1, sourceLayer);
+        updatedLayers.splice(targetLayer.index, 1, targetLayer);
+
+        return updatedLayers
+    }
+    return layers
 }

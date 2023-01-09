@@ -3,17 +3,18 @@ import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
 import "./layer-panel.styles.scss";
 import { KeyButton } from "../key-button/key-button.component";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { IconButton, TextField, Typography } from "@mui/material";
 import { useContext } from "react";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
 import EditIcon from "@mui/icons-material/Edit";
 import SaveIcon from "@mui/icons-material/Save";
 import CancelIcon from "@mui/icons-material/Cancel";
+import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 
 export const LayerPanel = (props) => {
-  const { children, value, index, layer, ...other } = props;
-  const { changeLayerName } = useContext(KeymapContext);
+  const { children, value, index, layer, setSelectedTab, ...other } = props;
+  const { changeLayerName, moveLayer, layers } = useContext(KeymapContext);
   const [isEdit, setIsEdit] = useState(false);
   const [label, setLabel] = useState(layer.label);
 
@@ -76,6 +77,27 @@ export const LayerPanel = (props) => {
     changeLayerName({ input, index, selectedLayer });
   };
 
+  const handleMoveLayer = (e) => {
+    console.log("handleMoveLayer", e.target.value, {
+      index,
+      len: layers.length,
+    });
+    const direction = e.target.value;
+    if (direction === "left") {
+      if (index !== layers.length + 1) {
+        console.log("plus");
+        moveLayer({ direction, index });
+        setSelectedTab(index - 1);
+      }
+    } else {
+      if (index !== layers.length - 1) {
+        console.log("minius");
+        moveLayer({ direction, index });
+        setSelectedTab(index + 1);
+      }
+    }
+  };
+
   return (
     <div
       className="layer-panel"
@@ -112,6 +134,13 @@ export const LayerPanel = (props) => {
                 </IconButton>
               </>
             )}
+            <IconButton color="default" onClick={handleMoveLayer} value="left">
+              <ArrowCircleLeftIcon sx={{ pointerEvents: "none" }} />
+            </IconButton>
+            <Typography>Move Layer</Typography>
+            <IconButton color="default" onClick={handleMoveLayer} value="right">
+              <ArrowCircleRightIcon sx={{ pointerEvents: "none" }} />
+            </IconButton>
           </div>
 
           <div className="full-keyboard">
