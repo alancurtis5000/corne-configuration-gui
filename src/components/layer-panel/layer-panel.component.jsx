@@ -11,6 +11,7 @@ import SaveIcon from "@mui/icons-material/Save";
 import CancelIcon from "@mui/icons-material/Cancel";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 export const LayerPanel = (props) => {
   const { children, value, index, layer, setSelectedTab, ...other } = props;
@@ -96,6 +97,10 @@ export const LayerPanel = (props) => {
     }
   };
 
+  const handleDeleteLayer = () => {
+    console.log("delete");
+  };
+
   return (
     <div
       className="layer-panel"
@@ -108,37 +113,60 @@ export const LayerPanel = (props) => {
       {value === index && (
         <Box sx={{ p: 3 }}>
           <div className="layer-actions">
-            {isEdit ? (
-              <>
-                <TextField
-                  id="layer-label"
-                  value={label}
-                  label="Layer Name"
-                  variant="standard"
-                  onChange={handleOnChange}
-                />
-                <IconButton color="primary" onClick={handleSave}>
-                  <SaveIcon />
-                </IconButton>
-                <IconButton color="warning" onClick={handleCancel}>
-                  <CancelIcon />
-                </IconButton>
-              </>
-            ) : (
-              <>
-                <Typography>{layer.label}</Typography>
-                <IconButton color="default" onClick={handleEdit}>
-                  <EditIcon />
-                </IconButton>
-              </>
-            )}
-            <IconButton color="default" onClick={handleMoveLayer} value="left">
-              <ArrowCircleLeftIcon sx={{ pointerEvents: "none" }} />
-            </IconButton>
-            <Typography>Move Layer</Typography>
-            <IconButton color="default" onClick={handleMoveLayer} value="right">
-              <ArrowCircleRightIcon sx={{ pointerEvents: "none" }} />
-            </IconButton>
+            <div className="label">
+              <TextField
+                id="layer-label"
+                value={label}
+                label="Layer Name"
+                variant="standard"
+                onChange={handleOnChange}
+                disabled={!isEdit}
+              />
+              {isEdit ? (
+                <>
+                  <IconButton color="primary" onClick={handleSave}>
+                    <SaveIcon />
+                  </IconButton>
+                  <IconButton color="warning" onClick={handleCancel}>
+                    <CancelIcon />
+                  </IconButton>
+                </>
+              ) : (
+                <>
+                  <IconButton
+                    className="edit-button"
+                    color="default"
+                    onClick={handleEdit}
+                  >
+                    <EditIcon />
+                  </IconButton>
+                </>
+              )}
+            </div>
+            <div className="move-buttons">
+              <IconButton
+                color="default"
+                onClick={handleMoveLayer}
+                value="left"
+                className="move-button"
+              >
+                <ArrowCircleLeftIcon sx={{ pointerEvents: "none" }} />
+              </IconButton>
+              <Typography>Move Layer</Typography>
+              <IconButton
+                color="default"
+                onClick={handleMoveLayer}
+                value="right"
+                className="move-button"
+              >
+                <ArrowCircleRightIcon sx={{ pointerEvents: "none" }} />
+              </IconButton>
+            </div>
+            <div className="delete-button">
+              <IconButton color="default" onClick={handleDeleteLayer}>
+                <DeleteIcon sx={{ pointerEvents: "none" }} />
+              </IconButton>
+            </div>
           </div>
 
           <div className="full-keyboard">

@@ -2,10 +2,41 @@
   display: flex;
   justify-content: center;
   .layer-actions {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
     min-height: 48px;
     padding: 8px;
+    background-color: lightblue;
+    .label,
+    .move-buttons,
+    .delete-button {
+      display: flex;
+      align-items: center;
+    }
+    .delete-button {
+      &:hover {
+        svg {
+          fill: rgb(207, 34, 34);
+        }
+      }
+    }
+    .edit-button {
+      &:hover {
+        svg {
+          fill: rgb(32, 91, 238);
+        }
+      }
+    }
+    .move-buttons {
+      .move-button {
+        &:hover {
+          svg {
+            fill: rgb(32, 91, 238);
+          }
+        }
+      }
+    }
   }
 
   .full-keyboard {
