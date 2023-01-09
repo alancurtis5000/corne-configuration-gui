@@ -9,13 +9,13 @@ export const ModifierList = () => {
   Object.values(modifiers).forEach((modifier) => {
     if (modifier.label.includes("Left")) {
       leftMods.push(
-        <Button variant="outlined">
+        <Button variant="outlined" key={modifier.label}>
           <div>{modifier.label}</div>
         </Button>
       );
     } else {
       rightMods.push(
-        <Button variant="outlined">
+        <Button variant="outlined" key={modifier.label}>
           <div>{modifier.label}</div>
         </Button>
       );
