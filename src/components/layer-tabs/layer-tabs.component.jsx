@@ -59,7 +59,6 @@ export const LayerTabs = () => {
         >
           {addTab()}
         </Tabs>
-        <Button> hello</Button>
       </Box>
       {layers.map((layer, index) => {
         return (

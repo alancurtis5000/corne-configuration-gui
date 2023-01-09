@@ -1,6 +1,12 @@
 .layer-panel {
   display: flex;
   justify-content: center;
+  .layer-actions {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 8px;
+  }
 
   .full-keyboard {
     display: flex;
