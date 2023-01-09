@@ -6,7 +6,7 @@ import "./modifier-list.styles.scss";
 export const ModifierList = () => {
   const leftMods = [];
   const rightMods = [];
-  Object.values(modifiers).map((modifier) => {
+  Object.values(modifiers).forEach((modifier) => {
     if (modifier.label.includes("Left")) {
       leftMods.push(
         <Button variant="outlined">
