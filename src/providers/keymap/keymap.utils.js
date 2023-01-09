@@ -61,3 +61,13 @@ export const deleteLayerUtil = ({ index, layers }) => {
     updatedLayers.forEach((layer, index) => layer.index = index)
     return updatedLayers
 }
+
+export const addModifierToKeyUtil = ({ index, layer, layers }) => {
+    // todo alan left off here addings modifier to key
+    // alan maybe also add update key next
+    console.log({ index, layer, layers })
+    const updatedLayers = [...layers]
+    //  updatedLayers.splice(index, 1);
+    // updatedLayers.forEach((layer, index) => layer.index = index)
+    return updatedLayers
+}

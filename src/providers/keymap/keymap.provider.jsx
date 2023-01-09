@@ -5,6 +5,7 @@ import {
   createLayerUtil,
   moveLayerUtil,
   deleteLayerUtil,
+  addModifierToKeyUtil,
 } from "./keymap.utils";
 
 // import { incrementCount, decrementCount } from "./keymap.utils";
@@ -19,6 +20,7 @@ export const KeymapContext = createContext({
   changeLayerName: () => {},
   moveLayer: () => {},
   deleteLayer: () => {},
+  addModifierToKey: () => {},
 });
 
 // can I and should I right test for this?
@@ -1211,8 +1213,10 @@ export const KeymapProvider = ({ children }) => {
     setLayers(changeLayerNameUtil({ input, index, selectedLayer, layers }));
   const moveLayer = ({ direction, index }) =>
     setLayers(moveLayerUtil({ direction, index, layers }));
-  const deleteLayer = ({ direction, index }) =>
+  const deleteLayer = ({ index }) =>
     setLayers(deleteLayerUtil({ index, layers }));
+  const addModifierToKey = ({ index, layer }) =>
+    setLayers(addModifierToKeyUtil({ index, layer, layers }));
 
   // if count changes do something
   // useEffect(() => {
@@ -1229,6 +1233,7 @@ export const KeymapProvider = ({ children }) => {
         changeLayerName,
         moveLayer,
         deleteLayer,
+        addModifierToKey,
       }}
     >
       {children}
