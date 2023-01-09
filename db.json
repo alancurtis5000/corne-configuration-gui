@@ -1,0 +1,33 @@
+{
+    "collections": [
+      {
+        "name": "Collection 1",
+        "isShared": false,
+        "gifs": [
+          {
+            "id": "tiktok-cat-dIVa0pwco4Mj5rQ7gy",
+            "title": "happy cat GIF by TikTok",
+            "url": "https://media2.giphy.com/media/dIVa0pwco4Mj5rQ7gy/200.gif"
+          },
+          {
+            "title": "Valentines Day Love GIF by BREAD TREE",
+            "url": "https://media4.giphy.com/media/WOwiryOPA0G6jhKqB0/200.gif?cid=e1bb72ffg6hgsrbyvftjg7tuqebs4pn82jnko5dthnf8sqqq&rid=200.gif",
+            "id": "love-breadtree-bread-tree-WOwiryOPA0G6jhKqB0"
+          }
+        ],
+        "id": 1
+      },
+      {
+        "name": "Collection 2",
+        "isShared": true,
+        "gifs": [
+          {
+            "title": "Tom Hanks Hello GIF",
+            "url": "https://media1.giphy.com/media/xT9IgG50Fb7Mi0prBC/200.gif?cid=e1bb72ffg6hgsrbyvftjg7tuqebs4pn82jnko5dthnf8sqqq&rid=200.gif",
+            "id": "hello-hi-wave-xT9IgG50Fb7Mi0prBC"
+          }
+        ],
+        "id": 2
+      }
+    ]
+  }
