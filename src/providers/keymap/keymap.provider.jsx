@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 import propTypes from "prop-types";
-import { createLayerUtil } from "./keymap.utils";
+import { changeLayerNameUtil, createLayerUtil } from "./keymap.utils";
 
 // import { incrementCount, decrementCount } from "./keymap.utils";
 
@@ -11,6 +11,7 @@ export const KeymapContext = createContext({
   // actions
   // increment: () => {},
   createLayer: () => {},
+  changeLayerName: () => {},
 });
 
 // can I and should I right test for this?
@@ -18,6 +19,7 @@ export const KeymapContext = createContext({
 export const KeymapProvider = ({ children }) => {
   const [layers, setLayers] = useState([
     {
+      index: 0,
       label: "DEF",
       /* bindings: `
    &none   &kp Q &kp W &kp E &kp R &kp T          &kp Y &kp U  &kp I    &kp O   &kp P    &none
@@ -606,6 +608,7 @@ export const KeymapProvider = ({ children }) => {
       ],
     },
     {
+      index: 1,
       label: "NAV",
       /* bindings: `
    &none   &kp Q &kp W &kp E &kp R &kp T          &kp Y &kp U  &kp I    &kp O   &kp P    &none
@@ -1197,6 +1200,8 @@ export const KeymapProvider = ({ children }) => {
   // actions
   // const increment = () => setCount(incrementCount(count, margin));
   const createLayer = () => setLayers(createLayerUtil(layers));
+  const changeLayerName = ({ input, index, selectedLayer }) =>
+    setLayers(changeLayerNameUtil({ input, index, selectedLayer, layers }));
 
   // if count changes do something
   // useEffect(() => {
@@ -1210,6 +1215,7 @@ export const KeymapProvider = ({ children }) => {
         layers,
         setLayers,
         createLayer,
+        changeLayerName,
       }}
     >
       {children}

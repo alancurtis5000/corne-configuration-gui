@@ -1,5 +1,6 @@
 export class Layer {
-    constructor(label) {
+    constructor(label, index) {
+        this.index = index;
         this.label = label;
         this.bindings = [
             {

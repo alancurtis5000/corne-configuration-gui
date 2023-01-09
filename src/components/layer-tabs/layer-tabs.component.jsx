@@ -48,7 +48,7 @@ export const LayerTabs = () => {
     );
     return allTabs;
   };
-
+  console.log("tabs");
   return (
     <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>

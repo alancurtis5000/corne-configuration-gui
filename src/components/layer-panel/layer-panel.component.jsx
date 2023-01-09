@@ -1,12 +1,16 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import "./layer-panel.styles.scss";
 import { KeyButton } from "../key-button/key-button.component";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { IconButton, TextField } from "@mui/material";
+import { useContext } from "react";
+import { KeymapContext } from "../../providers/keymap/keymap.provider";
 
 export const LayerPanel = (props) => {
   const { children, value, index, layer, ...other } = props;
+  const { changeLayerName } = useContext(KeymapContext);
 
   const gridLeft = () => {
     return (
@@ -46,6 +50,13 @@ export const LayerPanel = (props) => {
     );
   };
 
+  const handleOnChange = (e) => {
+    console.log("handleOnChange", { e, ta: e.target.value });
+    const input = e.target.value;
+    const selectedLayer = layer;
+    changeLayerName({ input, index, selectedLayer });
+  };
+
   return (
     <div
       className="layer-panel"
@@ -57,7 +68,16 @@ export const LayerPanel = (props) => {
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <Typography variant="h4">{layer.label}</Typography>
+          <TextField
+            id="layer-label"
+            value={layer.label}
+            label="Layer Name"
+            variant="standard"
+            onChange={handleOnChange}
+          />
+          <IconButton color="primary">
+            <ArrowDropDownIcon />
+          </IconButton>
           <div className="full-keyboard">
             {gridLeft()}
             {gridRight()}

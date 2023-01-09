@@ -9,7 +9,18 @@ export const decrementCount = (count, margin) => {
 
 
 export const createLayerUtil = (currentLayers) => {
-    const layer = new Layer(`Layer ${currentLayers.length}`)
+    const label = `Layer ${currentLayers.length}`
+    const index = currentLayers.length
+    const layer = new Layer(label, index)
     const updatedLayers = [...currentLayers, layer]
+    return updatedLayers
+}
+
+export const changeLayerNameUtil = ({ input, index, selectedLayer, layers }) => {
+    console.log({ input, index, selectedLayer, layers })
+    const updatedSelectedLayer = { ...selectedLayer }
+    const updatedLayers = [...layers]
+    updatedSelectedLayer.label = input
+    updatedLayers.splice(index, 1, updatedSelectedLayer);
     return updatedLayers
 }
