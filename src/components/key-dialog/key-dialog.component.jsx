@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Dialog from "@mui/material/Dialog";
 import { KeyDialogPage1 } from "./key-dialog-page-1.component";
 import { KeyDialogPage2 } from "./key-dialog-page-2.component";
+import { KeyDialogPage3 } from "./key-dialog-page-3.component";
 
 export const KeyDialog = (props) => {
   const { onClose, selectedValue, isOpen } = props;
@@ -29,8 +30,9 @@ export const KeyDialog = (props) => {
           <KeyDialogPage2 setPage={setPage} selectedValue={selectedValue} />
         );
       case 3:
-        return <div>3</div>;
-
+        return (
+          <KeyDialogPage3 setPage={setPage} selectedValue={selectedValue} />
+        );
       default:
         return <div>def</div>;
     }

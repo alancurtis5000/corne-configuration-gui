@@ -7,6 +7,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import Button from "@mui/material/Button";
 import { ModifierList } from "../modifier-list/modifier-list.component";
 import "./key-dialog-page-2.styles.scss";
+import { BackButton } from "../back-button/back-button.component";
 
 export const KeyDialogPage2 = (props) => {
   const { selectedValue, setPage } = props;
@@ -16,16 +17,19 @@ export const KeyDialogPage2 = (props) => {
     setPage(1);
   };
 
-  const currentValue = {};
+  const goToChangePage = () => {
+    setPage(3);
+  };
 
+  const currentValue = {};
   return (
     <div className="key-dialog-page-2">
       <DialogTitle>Key: {index + 1} (Edit Tapped) </DialogTitle>
       <DialogContent dividers>
         <div className="content">
           <div>
-            <Button onClick={backToHome}> Change</Button>
-            <Button onClick={backToHome}> Back</Button>
+            <BackButton onClick={backToHome} />
+            <Button onClick={goToChangePage}> Change</Button>
           </div>
           <div className="current-value" style={currentValue}>
             {label}
