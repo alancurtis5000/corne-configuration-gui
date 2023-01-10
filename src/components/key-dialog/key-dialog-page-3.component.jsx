@@ -2,8 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
-import "./key-dialog-page-2.styles.scss";
+import "./key-dialog-page-3.styles.scss";
 import { BackButton } from "../back-button/back-button.component";
+import { keys } from "../../constants/keys";
+import { Button } from "@mui/material";
 
 export const KeyDialogPage3 = (props) => {
   const { selectedValue, setPage } = props;
@@ -11,6 +13,24 @@ export const KeyDialogPage3 = (props) => {
 
   const back = () => {
     setPage(2);
+  };
+
+  const options = () => {
+    const options = [];
+    for (let i = 0; i < 20; i++) {
+      options.push(keys[i]);
+    }
+    return (
+      <>
+        {options.map((option) => {
+          return (
+            <Button variant="outlined" key={option.id}>
+              {option.label}
+            </Button>
+          );
+        })}
+      </>
+    );
   };
 
   return (
@@ -21,6 +41,7 @@ export const KeyDialogPage3 = (props) => {
           <div>
             <BackButton onClick={back} />
           </div>
+          <div className="key-options">{options()}</div>
         </div>
       </DialogContent>
     </div>
