@@ -10,8 +10,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
 
 export const DeleteLayerButton = (props) => {
-  const { index, setSelectedTab, layer } = props;
-  const { deleteLayer, layers } = useContext(KeymapContext);
+  const { deleteLayer, layers, setSelectedLayer, selectedLayer } =
+    useContext(KeymapContext);
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -24,14 +24,14 @@ export const DeleteLayerButton = (props) => {
 
   const handleDeleteLayer = () => {
     console.log("handleDeleteLayer", {
-      index,
+      selectedLayer,
       len: layers.length,
     });
-    if (index === 0 && layers.length === 1) return;
-    if (index === layers.length - 1) {
-      setSelectedTab(index - 1);
+    if (selectedLayer === 0 && layers.length === 1) return;
+    if (selectedLayer === layers.length - 1) {
+      setSelectedLayer(selectedLayer - 1);
     }
-    deleteLayer({ index });
+    deleteLayer({ selectedLayer });
   };
 
   return (
@@ -47,7 +47,7 @@ export const DeleteLayerButton = (props) => {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{`Delete layer ${layer.label}`}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{`Delete layer ${layers[selectedLayer].label}`}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             Are you sure you want to delete this layer ?

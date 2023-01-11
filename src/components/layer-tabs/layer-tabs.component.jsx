@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
@@ -14,24 +14,26 @@ function a11yProps(index) {
   };
 }
 export const LayerTabs = () => {
-  const [selectedTab, setSelectedTab] = useState(0);
-  const { layers, createLayer } = useContext(KeymapContext);
+  const { layers, createLayer, setSelectedLayer, selectedLayer } =
+    useContext(KeymapContext);
 
-  const handleChange = (event, newTab) => {
-    console.log(newTab);
-    if (newTab === layers.length) {
+  const handleChange = (event, layerIndex) => {
+    if (layerIndex === layers.length) {
       createLayer();
-      setSelectedTab(newTab);
     } else {
-      setSelectedTab(newTab);
+      setSelectedLayer(layerIndex);
     }
   };
 
   const addTab = () => {
     const allTabs = [];
-    layers.forEach((layer, index) => {
+    layers.forEach((layer) => {
       allTabs.push(
-        <Tab label={layer.label} key={index} {...a11yProps(index)} />
+        <Tab
+          label={layer.label}
+          key={layer.index}
+          {...a11yProps(layer.index)}
+        />
       );
     });
     allTabs.push(
@@ -50,22 +52,16 @@ export const LayerTabs = () => {
     <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs
-          value={selectedTab}
+          value={selectedLayer}
           onChange={handleChange}
           aria-label="basic tabs example"
         >
           {addTab()}
         </Tabs>
       </Box>
-      {layers.map((layer, index) => {
+      {layers.map((layer) => {
         return (
-          <LayerPanel
-            key={layer.label}
-            value={selectedTab}
-            index={index}
-            layer={layer}
-            setSelectedTab={setSelectedTab}
-          />
+          <LayerPanel key={layer.label} index={layer.index} layer={layer} />
         );
       })}
     </Box>

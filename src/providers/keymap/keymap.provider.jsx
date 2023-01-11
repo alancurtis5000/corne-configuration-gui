@@ -15,6 +15,7 @@ import {
 /* istanbul ignore next */
 export const KeymapContext = createContext({
   layers: [],
+  selectedLayer: 0,
   // actions
   // increment: () => {},
   createLayer: () => {},
@@ -23,6 +24,7 @@ export const KeymapContext = createContext({
   deleteLayer: () => {},
   addModifierToKey: () => {},
   changeKeyTapped: () => {},
+  setSelectedLayer: () => {},
 });
 
 // can I and should I right test for this?
@@ -1208,15 +1210,20 @@ export const KeymapProvider = ({ children }) => {
       ],
     },
   ]);
+  const [selectedLayer, setSelectedLayer] = useState(0);
   // actions
   // const increment = () => setCount(incrementCount(count, margin));
-  const createLayer = () => setLayers(createLayerUtil({ layers }));
+  const createLayer = () => {
+    setLayers(createLayerUtil({ layers }));
+    setSelectedLayer(layers.length);
+  };
+
   const changeLayerName = ({ input, index, selectedLayer }) =>
     setLayers(changeLayerNameUtil({ input, index, selectedLayer, layers }));
   const moveLayer = ({ direction, index }) =>
     setLayers(moveLayerUtil({ direction, index, layers }));
-  const deleteLayer = ({ index }) =>
-    setLayers(deleteLayerUtil({ index, layers }));
+  const deleteLayer = ({ selectedLayer }) =>
+    setLayers(deleteLayerUtil({ selectedLayer, layers }));
   const addModifierToKey = ({ index, layer }) =>
     setLayers(addModifierToKeyUtil({ index, layer, layers }));
   const changeKeyTapped = ({ index, layer }) =>
@@ -1232,6 +1239,7 @@ export const KeymapProvider = ({ children }) => {
       value={{
         //increment
         layers,
+        selectedLayer,
         setLayers,
         createLayer,
         changeLayerName,
@@ -1239,6 +1247,7 @@ export const KeymapProvider = ({ children }) => {
         deleteLayer,
         addModifierToKey,
         changeKeyTapped,
+        setSelectedLayer,
       }}
     >
       {children}

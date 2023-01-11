@@ -14,8 +14,14 @@ import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import { DeleteLayerButton } from "../delete-layer-button/delete-layer-button.compnent";
 
 export const LayerPanel = (props) => {
-  const { children, value, index, layer, setSelectedTab, ...other } = props;
-  const { changeLayerName, moveLayer, layers } = useContext(KeymapContext);
+  const { children, index, layer, ...other } = props;
+  const {
+    changeLayerName,
+    moveLayer,
+    layers,
+    setSelectedLayer,
+    selectedLayer,
+  } = useContext(KeymapContext);
   const [isEdit, setIsEdit] = useState(false);
   const [label, setLabel] = useState(layer.label);
 
@@ -87,12 +93,12 @@ export const LayerPanel = (props) => {
     if (direction === "left") {
       if (index !== 0) {
         moveLayer({ direction, index });
-        setSelectedTab(index - 1);
+        setSelectedLayer(index - 1);
       }
     } else {
       if (index !== layers.length - 1) {
         moveLayer({ direction, index });
-        setSelectedTab(index + 1);
+        setSelectedLayer(index + 1);
       }
     }
   };
@@ -101,12 +107,12 @@ export const LayerPanel = (props) => {
     <div
       className="layer-panel"
       role="tabpanel"
-      hidden={value !== index}
+      hidden={selectedLayer !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
+      {selectedLayer === index && (
         <Box sx={{ p: 3 }}>
           <div className="layer-actions">
             <div className="label">
@@ -159,11 +165,7 @@ export const LayerPanel = (props) => {
               </IconButton>
             </div>
             <div className="delete-button">
-              <DeleteLayerButton
-                index={index}
-                setSelectedTab={setSelectedTab}
-                layer={layer}
-              />
+              <DeleteLayerButton />
             </div>
           </div>
 
@@ -180,5 +182,4 @@ export const LayerPanel = (props) => {
 LayerPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
 };
