@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
@@ -6,10 +6,12 @@ import "./key-dialog-page-3.styles.scss";
 import { BackButton } from "../back-button/back-button.component";
 import { keys } from "../../constants/keys";
 import { Button } from "@mui/material";
+import { KeymapContext } from "../../providers/keymap/keymap.provider";
 
 export const KeyDialogPage3 = (props) => {
   const { selectedValue, setPage } = props;
   const { index } = selectedValue;
+  const { changeKeyTapped } = useContext(KeymapContext);
 
   const back = () => {
     setPage(2);
@@ -24,7 +26,11 @@ export const KeyDialogPage3 = (props) => {
       <>
         {options.map((option) => {
           return (
-            <Button variant="outlined" key={option.id}>
+            <Button
+              variant="outlined"
+              key={option.id}
+              onClick={() => changeKeyTapped({ index })}
+            >
               {option.label}
             </Button>
           );

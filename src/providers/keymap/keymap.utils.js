@@ -71,3 +71,11 @@ export const addModifierToKeyUtil = ({ index, layer, layers }) => {
     // updatedLayers.forEach((layer, index) => layer.index = index)
     return updatedLayers
 }
+
+export const changeKeyTappedUtil = ({ index, layer, newValue, layers }) => {
+    console.log(changeKeyTappedUtil, { index, layer, newValue, layers })
+    const updatedLayers = [...layers]
+    //  updatedLayers.splice(index, 1);
+    // updatedLayers.forEach((layer, index) => layer.index = index)
+    return updatedLayers
+}
