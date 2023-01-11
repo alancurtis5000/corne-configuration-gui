@@ -20,7 +20,7 @@ export const LayerPanel = (props) => {
     moveLayer,
     layers,
     setSelectedLayer,
-    selectedLayer,
+    selectedLayerIndex,
   } = useContext(KeymapContext);
   const [isEdit, setIsEdit] = useState(false);
   const [label, setLabel] = useState(layer.label);
@@ -80,8 +80,7 @@ export const LayerPanel = (props) => {
 
   const handleSave = () => {
     const input = label;
-    const selectedLayer = layer;
-    changeLayerName({ input, index, selectedLayer });
+    changeLayerName({ input });
   };
 
   const handleMoveLayer = (e) => {
@@ -107,12 +106,12 @@ export const LayerPanel = (props) => {
     <div
       className="layer-panel"
       role="tabpanel"
-      hidden={selectedLayer !== index}
+      hidden={selectedLayerIndex !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {selectedLayer === index && (
+      {selectedLayerIndex === index && (
         <Box sx={{ p: 3 }}>
           <div className="layer-actions">
             <div className="label">

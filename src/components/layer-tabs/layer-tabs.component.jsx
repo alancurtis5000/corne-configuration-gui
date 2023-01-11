@@ -14,7 +14,7 @@ function a11yProps(index) {
   };
 }
 export const LayerTabs = () => {
-  const { layers, createLayer, setSelectedLayer, selectedLayer } =
+  const { layers, createLayer, setSelectedLayer, selectedLayerIndex } =
     useContext(KeymapContext);
 
   const handleChange = (event, layerIndex) => {
@@ -52,7 +52,7 @@ export const LayerTabs = () => {
     <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs
-          value={selectedLayer}
+          value={selectedLayerIndex}
           onChange={handleChange}
           aria-label="basic tabs example"
         >

@@ -15,7 +15,7 @@ import {
 /* istanbul ignore next */
 export const KeymapContext = createContext({
   layers: [],
-  selectedLayer: 0,
+  selectedLayerIndex: 0,
   // actions
   // increment: () => {},
   createLayer: () => {},
@@ -1210,7 +1210,7 @@ export const KeymapProvider = ({ children }) => {
       ],
     },
   ]);
-  const [selectedLayer, setSelectedLayer] = useState(0);
+  const [selectedLayerIndex, setSelectedLayer] = useState(0);
   // actions
   // const increment = () => setCount(incrementCount(count, margin));
   const createLayer = () => {
@@ -1218,12 +1218,12 @@ export const KeymapProvider = ({ children }) => {
     setSelectedLayer(layers.length);
   };
 
-  const changeLayerName = ({ input, index, selectedLayer }) =>
-    setLayers(changeLayerNameUtil({ input, index, selectedLayer, layers }));
+  const changeLayerName = ({ input }) =>
+    setLayers(changeLayerNameUtil({ input, selectedLayerIndex, layers }));
   const moveLayer = ({ direction, index }) =>
     setLayers(moveLayerUtil({ direction, index, layers }));
-  const deleteLayer = ({ selectedLayer }) =>
-    setLayers(deleteLayerUtil({ selectedLayer, layers }));
+  const deleteLayer = ({ selectedLayerIndex }) =>
+    setLayers(deleteLayerUtil({ selectedLayerIndex, layers }));
   const addModifierToKey = ({ index, layer }) =>
     setLayers(addModifierToKeyUtil({ index, layer, layers }));
   const changeKeyTapped = ({ index, layer }) =>
@@ -1239,7 +1239,7 @@ export const KeymapProvider = ({ children }) => {
       value={{
         //increment
         layers,
-        selectedLayer,
+        selectedLayerIndex,
         setLayers,
         createLayer,
         changeLayerName,

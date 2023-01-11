@@ -16,12 +16,13 @@ export const createLayerUtil = ({ layers }) => {
     return updatedLayers
 }
 
-export const changeLayerNameUtil = ({ input, index, selectedLayer, layers }) => {
-    console.log({ input, index, selectedLayer, layers })
-    const updatedSelectedLayer = { ...selectedLayer }
+export const changeLayerNameUtil = ({ input, selectedLayerIndex, layers }) => {
+    const updatedLayer = { ...layers[selectedLayerIndex] }
+    updatedLayer.label = input
+
     const updatedLayers = [...layers]
-    updatedSelectedLayer.label = input
-    updatedLayers.splice(index, 1, updatedSelectedLayer);
+
+    updatedLayers.splice(selectedLayerIndex, 1, updatedLayer);
     return updatedLayers
 }
 
@@ -54,10 +55,10 @@ export const moveLayerUtil = ({ direction, index, layers }) => {
     return layers
 }
 
-export const deleteLayerUtil = ({ selectedLayer, layers }) => {
-    console.log({ selectedLayer, layers })
+export const deleteLayerUtil = ({ selectedLayerIndex, layers }) => {
+    console.log({ selectedLayerIndex, layers })
     const updatedLayers = [...layers]
-    updatedLayers.splice(selectedLayer, 1);
+    updatedLayers.splice(selectedLayerIndex, 1);
     updatedLayers.forEach((layer, index) => layer.index = index)
     return updatedLayers
 }
