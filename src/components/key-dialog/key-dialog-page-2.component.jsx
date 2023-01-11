@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 
 import DialogTitle from "@mui/material/DialogTitle";
@@ -8,10 +8,14 @@ import Button from "@mui/material/Button";
 import { ModifierList } from "../modifier-list/modifier-list.component";
 import "./key-dialog-page-2.styles.scss";
 import { BackButton } from "../back-button/back-button.component";
+import { KeymapContext } from "../../providers/keymap/keymap.provider";
 
 export const KeyDialogPage2 = (props) => {
-  const { selectedValue, setPage } = props;
-  const { index, label } = selectedValue;
+  const { setPage } = props;
+  const { selectedBindingIndex, selectedLayerIndex, layers } =
+    useContext(KeymapContext);
+  const { index, label } =
+    layers[selectedLayerIndex].bindings[selectedBindingIndex];
 
   const backToHome = () => {
     setPage(1);
@@ -46,5 +50,4 @@ export const KeyDialogPage2 = (props) => {
 
 KeyDialogPage2.propTypes = {
   setPage: PropTypes.func.isRequired,
-  selectedValue: PropTypes.object.isRequired,
 };

@@ -1,17 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button } from "@mui/material";
 import { KeyDialog } from "../key-dialog/key-dialog.component";
+import { KeymapContext } from "../../providers/keymap/keymap.provider";
 
 export const KeyButton = (props) => {
   const { keyData } = props;
-  const { tapped, held, label } = keyData;
+  const { index, tapped, held, label } = keyData;
   const [isOpen, setIsOpen] = useState(false);
+  const { setSelectedBindingIndex } = useContext(KeymapContext);
 
   const handleOpenDialog = () => {
+    setSelectedBindingIndex(index);
     setIsOpen(true);
   };
 
   const handleCloseDialog = () => {
+    setSelectedBindingIndex(null);
     setIsOpen(false);
   };
 
@@ -36,11 +40,7 @@ export const KeyButton = (props) => {
           <div>{held.label}</div>
         </div>
       </Button>
-      <KeyDialog
-        onClose={handleCloseDialog}
-        selectedValue={keyData}
-        isOpen={isOpen}
-      />
+      <KeyDialog onClose={handleCloseDialog} isOpen={isOpen} />
     </>
   );
 };

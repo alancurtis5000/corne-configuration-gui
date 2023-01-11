@@ -6,11 +6,11 @@ import { KeyDialogPage2 } from "./key-dialog-page-2.component";
 import { KeyDialogPage3 } from "./key-dialog-page-3.component";
 
 export const KeyDialog = (props) => {
-  const { onClose, selectedValue, isOpen } = props;
+  const { onClose, isOpen } = props;
   const [page, setPage] = useState(1);
 
   const handleClose = () => {
-    onClose(selectedValue);
+    onClose();
     setPage(1);
   };
 
@@ -22,17 +22,12 @@ export const KeyDialog = (props) => {
             setPage={setPage}
             isOpen={isOpen}
             onClose={handleClose}
-            selectedValue={selectedValue}
           />
         );
       case 2:
-        return (
-          <KeyDialogPage2 setPage={setPage} selectedValue={selectedValue} />
-        );
+        return <KeyDialogPage2 setPage={setPage} />;
       case 3:
-        return (
-          <KeyDialogPage3 setPage={setPage} selectedValue={selectedValue} />
-        );
+        return <KeyDialogPage3 setPage={setPage} />;
       default:
         return <div>def</div>;
     }
@@ -48,5 +43,4 @@ export const KeyDialog = (props) => {
 KeyDialog.propTypes = {
   onClose: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
-  selectedValue: PropTypes.object.isRequired,
 };

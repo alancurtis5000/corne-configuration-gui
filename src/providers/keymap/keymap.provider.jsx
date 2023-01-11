@@ -16,6 +16,7 @@ import {
 export const KeymapContext = createContext({
   layers: [],
   selectedLayerIndex: 0,
+  selectedBindingIndex: null,
   // actions
   // increment: () => {},
   createLayer: () => {},
@@ -25,6 +26,7 @@ export const KeymapContext = createContext({
   addModifierToKey: () => {},
   changeKeyTapped: () => {},
   setSelectedLayerIndex: () => {},
+  setSelectedBindingIndex: () => {},
 });
 
 // can I and should I right test for this?
@@ -1211,6 +1213,7 @@ export const KeymapProvider = ({ children }) => {
     },
   ]);
   const [selectedLayerIndex, setSelectedLayerIndex] = useState(0);
+  const [selectedBindingIndex, setSelectedBindingIndex] = useState(null);
   // actions
   // const increment = () => setCount(incrementCount(count, margin));
   const createLayer = () => {
@@ -1240,6 +1243,7 @@ export const KeymapProvider = ({ children }) => {
         //increment
         layers,
         selectedLayerIndex,
+        selectedBindingIndex,
         setLayers,
         createLayer,
         changeLayerName,
@@ -1248,6 +1252,7 @@ export const KeymapProvider = ({ children }) => {
         addModifierToKey,
         changeKeyTapped,
         setSelectedLayerIndex,
+        setSelectedBindingIndex,
       }}
     >
       {children}

@@ -9,9 +9,10 @@ import { Button } from "@mui/material";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
 
 export const KeyDialogPage3 = (props) => {
-  const { selectedValue, setPage } = props;
-  const { index } = selectedValue;
-  const { changeKeyTapped } = useContext(KeymapContext);
+  const { setPage } = props;
+  const { selectedBindingIndex, selectedLayerIndex, layers, changeKeyTapped } =
+    useContext(KeymapContext);
+  const { index } = layers[selectedLayerIndex].bindings[selectedBindingIndex];
 
   const back = () => {
     setPage(2);
@@ -56,5 +57,4 @@ export const KeyDialogPage3 = (props) => {
 
 KeyDialogPage3.propTypes = {
   setPage: PropTypes.func.isRequired,
-  selectedValue: PropTypes.object.isRequired,
 };

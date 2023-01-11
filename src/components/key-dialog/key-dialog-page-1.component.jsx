@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import Button from "@mui/material/Button";
+import { KeymapContext } from "../../providers/keymap/keymap.provider";
 
 export const KeyDialogPage1 = (props) => {
-  const { onClose, selectedValue, setPage } = props;
-  const { index, label, tapped, held } = selectedValue;
+  const { onClose, setPage } = props;
+  const { selectedBindingIndex, selectedLayerIndex, layers } =
+    useContext(KeymapContext);
+  if (!layers[selectedLayerIndex].bindings[selectedBindingIndex]) return;
+  const { index, label, tapped, held } =
+    layers[selectedLayerIndex].bindings[selectedBindingIndex];
 
   const handleClose = () => {
-    onClose(selectedValue);
+    onClose();
     setPage(1);
   };
 
@@ -52,5 +57,4 @@ export const KeyDialogPage1 = (props) => {
 KeyDialogPage1.propTypes = {
   onClose: PropTypes.func.isRequired,
   setPage: PropTypes.func.isRequired,
-  selectedValue: PropTypes.object.isRequired,
 };
