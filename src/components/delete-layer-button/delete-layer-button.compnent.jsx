@@ -10,7 +10,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
 
 export const DeleteLayerButton = (props) => {
-  const { deleteLayer, layers, setSelectedLayer, selectedLayerIndex } =
+  const { deleteLayer, layers, setSelectedLayerIndex, selectedLayerIndex } =
     useContext(KeymapContext);
   const [open, setOpen] = useState(false);
 
@@ -29,7 +29,7 @@ export const DeleteLayerButton = (props) => {
     });
     if (selectedLayerIndex === 0 && layers.length === 1) return;
     if (selectedLayerIndex === layers.length - 1) {
-      setSelectedLayer(selectedLayerIndex - 1);
+      setSelectedLayerIndex(selectedLayerIndex - 1);
     }
     deleteLayer({ selectedLayerIndex });
   };

@@ -14,14 +14,14 @@ function a11yProps(index) {
   };
 }
 export const LayerTabs = () => {
-  const { layers, createLayer, setSelectedLayer, selectedLayerIndex } =
+  const { layers, createLayer, setSelectedLayerIndex, selectedLayerIndex } =
     useContext(KeymapContext);
 
   const handleChange = (event, layerIndex) => {
     if (layerIndex === layers.length) {
       createLayer();
     } else {
-      setSelectedLayer(layerIndex);
+      setSelectedLayerIndex(layerIndex);
     }
   };
 

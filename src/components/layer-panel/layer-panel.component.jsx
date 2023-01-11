@@ -19,7 +19,7 @@ export const LayerPanel = (props) => {
     changeLayerName,
     moveLayer,
     layers,
-    setSelectedLayer,
+    setSelectedLayerIndex,
     selectedLayerIndex,
   } = useContext(KeymapContext);
   const [isEdit, setIsEdit] = useState(false);
@@ -92,12 +92,12 @@ export const LayerPanel = (props) => {
     if (direction === "left") {
       if (index !== 0) {
         moveLayer({ direction, index });
-        setSelectedLayer(index - 1);
+        setSelectedLayerIndex(index - 1);
       }
     } else {
       if (index !== layers.length - 1) {
         moveLayer({ direction, index });
-        setSelectedLayer(index + 1);
+        setSelectedLayerIndex(index + 1);
       }
     }
   };
