@@ -73,10 +73,17 @@ export const addModifierToKeyUtil = ({ index, layer, layers }) => {
     return updatedLayers
 }
 
-export const changeKeyTappedUtil = ({ index, layer, newValue, layers }) => {
-    console.log(changeKeyTappedUtil, { index, layer, newValue, layers })
+export const changeBindingTappedUtil = ({ newBindingTappedValue,
+    layers,
+    selectedLayerIndex,
+    selectedBindingIndex, }) => {
+
+    const updateLayer = { ...layers[selectedLayerIndex] }
+    updateLayer.bindings[selectedBindingIndex].tapped = newBindingTappedValue
+
     const updatedLayers = [...layers]
-    //  updatedLayers.splice(index, 1);
-    // updatedLayers.forEach((layer, index) => layer.index = index)
+    updatedLayers.splice(selectedLayerIndex, 1, updateLayer);
+
+
     return updatedLayers
 }

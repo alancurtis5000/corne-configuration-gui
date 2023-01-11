@@ -10,8 +10,12 @@ import { KeymapContext } from "../../providers/keymap/keymap.provider";
 
 export const KeyDialogPage3 = (props) => {
   const { setPage } = props;
-  const { selectedBindingIndex, selectedLayerIndex, layers, changeKeyTapped } =
-    useContext(KeymapContext);
+  const {
+    selectedBindingIndex,
+    selectedLayerIndex,
+    layers,
+    changeBindingTapped,
+  } = useContext(KeymapContext);
   const { index } = layers[selectedLayerIndex].bindings[selectedBindingIndex];
 
   const back = () => {
@@ -30,7 +34,9 @@ export const KeyDialogPage3 = (props) => {
             <Button
               variant="outlined"
               key={option.id}
-              onClick={() => changeKeyTapped({ index })}
+              onClick={() =>
+                changeBindingTapped({ newBindingTappedValue: option })
+              }
             >
               {option.label}
             </Button>

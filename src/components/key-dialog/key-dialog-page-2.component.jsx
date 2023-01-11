@@ -14,7 +14,7 @@ export const KeyDialogPage2 = (props) => {
   const { setPage } = props;
   const { selectedBindingIndex, selectedLayerIndex, layers } =
     useContext(KeymapContext);
-  const { index, label } =
+  const { index, tapped } =
     layers[selectedLayerIndex].bindings[selectedBindingIndex];
 
   const backToHome = () => {
@@ -36,7 +36,7 @@ export const KeyDialogPage2 = (props) => {
             <Button onClick={goToChangePage}> Change</Button>
           </div>
           <div className="current-value" style={currentValue}>
-            {label}
+            {tapped.label}
           </div>
 
           <DialogContentText>Add Modifiers</DialogContentText>
