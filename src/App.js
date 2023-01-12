@@ -1,8 +1,10 @@
 import './App.scss';
+import axios from 'axios'
 import { MainPage } from './components/main-page/main-page.component';
 import { LayerTabs } from './components/layer-tabs/layer-tabs.component';
 import { KeymapProvider } from './providers/keymap/keymap.provider';
-import axios from 'axios'
+import { BottomActions } from './components/bottom-actions/bottom-actions.componet';
+
 
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
       <KeymapProvider>
         <MainPage>
           <LayerTabs />
+          <BottomActions />
         </MainPage>
       </KeymapProvider>
     </div>
