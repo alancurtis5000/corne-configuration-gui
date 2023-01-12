@@ -5,16 +5,25 @@ import "./modifier-list.styles.scss";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
 
 export const ModifierList = () => {
-  const { addModifierToTappedBinding } = useContext(KeymapContext);
+  const {
+    addModifierToTappedBinding,
+    layers,
+    selectedLayerIndex,
+    selectedBindingIndex,
+  } = useContext(KeymapContext);
 
   const leftMods = [];
   const rightMods = [];
 
+  // todo only can select left or right not both
   Object.values(modifiers).forEach((modifier) => {
+    const isSelected = layers[selectedLayerIndex].bindings[
+      selectedBindingIndex
+    ].tapped.modifiers.find((mod) => mod.label === modifier.label);
     if (modifier.label.includes("Left")) {
       leftMods.push(
         <Button
-          variant="outlined"
+          variant={isSelected ? "contained" : "outlined"}
           key={modifier.label}
           value={modifier.label}
           onClick={() => addModifierToTappedBinding({ modifier })}
@@ -25,7 +34,7 @@ export const ModifierList = () => {
     } else {
       rightMods.push(
         <Button
-          variant="outlined"
+          variant={isSelected ? "contained" : "outlined"}
           key={modifier.label}
           value={modifier.label}
           onClick={() => addModifierToTappedBinding({ modifier })}

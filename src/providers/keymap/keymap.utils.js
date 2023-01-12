@@ -67,8 +67,7 @@ export const addModifierToTappedBindingUtil = ({ modifier,
     layers,
     selectedLayerIndex,
     selectedBindingIndex, }) => {
-    // todo alan left off here addings modifier to key
-    // alan maybe also add update key next
+
     console.log({
         modifier,
         layers,
@@ -77,7 +76,15 @@ export const addModifierToTappedBindingUtil = ({ modifier,
     })
     const updateLayer = { ...layers[selectedLayerIndex] }
     const modifiers = updateLayer.bindings[selectedBindingIndex].tapped.modifiers
-    updateLayer.bindings[selectedBindingIndex].tapped.modifiers = [...modifiers, modifier]
+
+    const doesModifierExist = modifiers.findIndex((mod) => mod.label === modifier.label)
+    if (doesModifierExist === -1) {
+        updateLayer.bindings[selectedBindingIndex].tapped.modifiers = [...modifiers, modifier]
+
+    } else {
+        modifiers.splice(doesModifierExist, 1);
+        updateLayer.bindings[selectedBindingIndex].tapped.modifiers = [...modifiers]
+    }
 
     const updatedLayers = [...layers]
     updatedLayers.splice(selectedLayerIndex, 1, updateLayer);
