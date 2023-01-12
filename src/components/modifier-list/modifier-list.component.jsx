@@ -4,17 +4,11 @@ import { modifiers } from "../../constants/modifiers";
 import "./modifier-list.styles.scss";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
 
-export const ModifierList = (props) => {
-  const { index, layer } = props;
-  const { addModifierToKey, layers } = useContext(KeymapContext);
+export const ModifierList = () => {
+  const { addModifierToTappedBinding } = useContext(KeymapContext);
 
   const leftMods = [];
   const rightMods = [];
-
-  const handleSelectModifier = (e) => {
-    console.log("handleSelectModifier", e.target.value);
-    // addModifierToKey({ index, layer });
-  };
 
   Object.values(modifiers).forEach((modifier) => {
     if (modifier.label.includes("Left")) {
@@ -23,7 +17,7 @@ export const ModifierList = (props) => {
           variant="outlined"
           key={modifier.label}
           value={modifier.label}
-          onClick={handleSelectModifier}
+          onClick={() => addModifierToTappedBinding({ modifier })}
         >
           {modifier.label}
         </Button>
@@ -34,7 +28,7 @@ export const ModifierList = (props) => {
           variant="outlined"
           key={modifier.label}
           value={modifier.label}
-          onClick={handleSelectModifier}
+          onClick={() => addModifierToTappedBinding({ modifier })}
         >
           {modifier.label}
         </Button>

@@ -63,13 +63,24 @@ export const deleteLayerUtil = ({ selectedLayerIndex, layers }) => {
     return updatedLayers
 }
 
-export const addModifierToKeyUtil = ({ index, layer, layers }) => {
+export const addModifierToTappedBindingUtil = ({ modifier,
+    layers,
+    selectedLayerIndex,
+    selectedBindingIndex, }) => {
     // todo alan left off here addings modifier to key
     // alan maybe also add update key next
-    console.log({ index, layer, layers })
+    console.log({
+        modifier,
+        layers,
+        selectedLayerIndex,
+        selectedBindingIndex,
+    })
+    const updateLayer = { ...layers[selectedLayerIndex] }
+    const modifiers = updateLayer.bindings[selectedBindingIndex].tapped.modifiers
+    updateLayer.bindings[selectedBindingIndex].tapped.modifiers = [...modifiers, modifier]
+
     const updatedLayers = [...layers]
-    //  updatedLayers.splice(index, 1);
-    // updatedLayers.forEach((layer, index) => layer.index = index)
+    updatedLayers.splice(selectedLayerIndex, 1, updateLayer);
     return updatedLayers
 }
 

@@ -24,9 +24,11 @@ export const KeyDialogPage3 = (props) => {
 
   const options = () => {
     const options = [];
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 26; i++) {
       options.push(keys[i]);
     }
+    options.sort((a, b) => a.label.localeCompare(b.label));
+
     return (
       <>
         {options.map((option) => {
