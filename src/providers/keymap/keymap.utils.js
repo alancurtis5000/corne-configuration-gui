@@ -111,6 +111,12 @@ export const changeBindingTappedUtil = ({
   selectedLayerIndex,
   selectedBindingIndex,
 }) => {
+  if (newBindingTappedValue.key_category_id === 65) {
+    const index = 0;
+    const label = layers[0].label;
+    newBindingTappedValue.layer = { index, label };
+  }
+
   const updateLayer = { ...layers[selectedLayerIndex] };
   updateLayer.bindings[selectedBindingIndex].tapped = {
     ...newBindingTappedValue,

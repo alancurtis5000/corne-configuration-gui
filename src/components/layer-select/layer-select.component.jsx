@@ -24,7 +24,9 @@ export const LayerSelect = () => {
   };
 
   const menuItems = layers.map((layer) => (
-    <MenuItem value={layer.index}>{layer.label}</MenuItem>
+    <MenuItem key={layer.index} value={layer.index}>
+      {layer.label}
+    </MenuItem>
   ));
 
   return (
