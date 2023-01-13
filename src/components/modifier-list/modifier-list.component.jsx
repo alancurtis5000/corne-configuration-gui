@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Button } from "@mui/material";
-import { modifiers } from "../../constants/modifiers";
 import "./modifier-list.styles.scss";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
+import { keys } from "../../constants/keys";
 
 export const ModifierList = () => {
   const {
@@ -11,32 +11,32 @@ export const ModifierList = () => {
     selectedLayerIndex,
     selectedBindingIndex,
   } = useContext(KeymapContext);
+  const modifiers = keys.filter((key) => key.key_category_id === 63);
 
+  console.log({ modifiers });
   const leftMods = [];
   const rightMods = [];
 
   // todo only can select left or right not both
-  Object.values(modifiers).forEach((modifier) => {
+  modifiers.forEach((modifier) => {
     const isSelected = layers[selectedLayerIndex].bindings[
       selectedBindingIndex
-    ].tapped.modifiers.find((mod) => mod.label === modifier.label);
-    if (modifier.label.includes("Left")) {
+    ].tapped.modifiers.find((mod) => mod.code === modifier.code);
+    if (modifier.code && modifier.code.includes("LEFT")) {
       leftMods.push(
         <Button
           variant={isSelected ? "contained" : "outlined"}
-          key={modifier.label}
-          value={modifier.label}
+          key={modifier.code}
           onClick={() => addModifierToTappedBinding({ modifier })}
         >
           {modifier.label}
         </Button>
       );
-    } else {
+    } else if (modifier.code && modifier.code.includes("RIGHT")) {
       rightMods.push(
         <Button
           variant={isSelected ? "contained" : "outlined"}
-          key={modifier.label}
-          value={modifier.label}
+          key={modifier.code}
           onClick={() => addModifierToTappedBinding({ modifier })}
         >
           {modifier.label}

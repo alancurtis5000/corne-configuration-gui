@@ -27,7 +27,6 @@ export const changeLayerNameUtil = ({ input, selectedLayerIndex, layers }) => {
 }
 
 export const moveLayerUtil = ({ direction, index, layers }) => {
-    console.log({ direction, index, layers })
     const updatedLayers = [...layers]
     const sourceLayer = updatedLayers.find((layer) => layer.index === index)
     const targetLayer = updatedLayers.find((layer) => {
@@ -56,7 +55,6 @@ export const moveLayerUtil = ({ direction, index, layers }) => {
 }
 
 export const deleteLayerUtil = ({ selectedLayerIndex, layers }) => {
-    console.log({ selectedLayerIndex, layers })
     const updatedLayers = [...layers]
     updatedLayers.splice(selectedLayerIndex, 1);
     updatedLayers.forEach((layer, index) => layer.index = index)
@@ -68,22 +66,26 @@ export const addModifierToTappedBindingUtil = ({ modifier,
     selectedLayerIndex,
     selectedBindingIndex, }) => {
 
-    console.log({
-        modifier,
-        layers,
-        selectedLayerIndex,
-        selectedBindingIndex,
-    })
     const updateLayer = { ...layers[selectedLayerIndex] }
     const modifiers = updateLayer.bindings[selectedBindingIndex].tapped.modifiers
 
-    const doesModifierExist = modifiers.findIndex((mod) => mod.label === modifier.label)
-    if (doesModifierExist === -1) {
-        updateLayer.bindings[selectedBindingIndex].tapped.modifiers = [...modifiers, modifier]
+    const doesAlternateExist = modifiers.findIndex((mod) => {
+        const currentModSplit = mod.code.split('_')
+        const modifierSplit = modifier.code.split('_')
+        return (currentModSplit[0] !== modifierSplit[0] && currentModSplit[1] === modifierSplit[1])
+    })
+    if (doesAlternateExist === -1) {
+        const doesModifierExist = modifiers.findIndex((mod) => mod.code === modifier.code)
+        if (doesModifierExist === -1) {
+            updateLayer.bindings[selectedBindingIndex].tapped.modifiers = [...modifiers, modifier]
 
+        } else {
+            modifiers.splice(doesModifierExist, 1);
+            updateLayer.bindings[selectedBindingIndex].tapped.modifiers = [...modifiers]
+        }
     } else {
-        modifiers.splice(doesModifierExist, 1);
-        updateLayer.bindings[selectedBindingIndex].tapped.modifiers = [...modifiers]
+        modifiers.splice(doesAlternateExist, 1);
+        updateLayer.bindings[selectedBindingIndex].tapped.modifiers = [...modifiers, modifier]
     }
 
     const updatedLayers = [...layers]
