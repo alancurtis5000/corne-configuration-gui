@@ -6,6 +6,24 @@ import { saveAs } from "file-saver";
 
 export const DownloadButton = (props) => {
   const { layers } = useContext(KeymapContext);
+  const generateTappedBindingCode = (tappedBinding) => {
+    let code = "";
+
+    if (tappedBinding.modifiers.length === 0) {
+      code = `&kp ${tappedBinding.code}`;
+      return code;
+    }
+
+    code = `${tappedBinding.code}`;
+    tappedBinding.modifiers.forEach((modifier, index) => {
+      if (index === tappedBinding.modifiers.length - 1) {
+        code = `&kp ${modifier.code}(${code})`;
+      } else {
+        code = `${modifier.code}(${code})`;
+      }
+    });
+    return code;
+  };
 
   const generateConfigFile = () => {
     const defineLayers = [];
@@ -15,18 +33,19 @@ export const DownloadButton = (props) => {
       const bindingsConfig = [];
       defineLayers.push(`#define ${layer.label} ${layer.index} `);
       layer.bindings.forEach((binding) => {
+        const tappedBindingCode = generateTappedBindingCode(binding.tapped);
         if (binding.index === 0) {
-          bindingsConfig.push(`     &none      ${binding.tapped.code}`);
+          bindingsConfig.push(`     &none       ${tappedBindingCode}`);
         } else if (binding.index === 9 || binding.index === 19) {
           bindingsConfig.push(
-            `${binding.tapped.code}     &none \n          &none `
+            ` ${tappedBindingCode}     &none \n          &none `
           );
         } else if (binding.index === 29) {
           bindingsConfig.push(
-            `${binding.tapped.code}     &none \n                                    `
+            ` ${tappedBindingCode}     &none \n                                    `
           );
         } else {
-          bindingsConfig.push(`${binding.tapped.code}`);
+          bindingsConfig.push(` ${tappedBindingCode}`);
         }
       });
       layerConfigs.push(`${layer.label}_layer {
