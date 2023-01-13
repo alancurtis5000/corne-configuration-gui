@@ -19,22 +19,22 @@ export const ModifierList = () => {
   modifiers.forEach((modifier) => {
     const isSelected = layers[selectedLayerIndex].bindings[
       selectedBindingIndex
-    ].tapped.modifiers.find((mod) => mod.code === modifier.code);
-    if (modifier.code && modifier.code.includes("LEFT")) {
+    ].tapped.modifiers.find((mod) => mod.label === modifier.label);
+    if (modifier.label && modifier.label.includes("Left")) {
       leftMods.push(
         <Button
           variant={isSelected ? "contained" : "outlined"}
-          key={modifier.code}
+          key={modifier.label}
           onClick={() => addModifierToTappedBinding({ modifier })}
         >
           {modifier.label}
         </Button>
       );
-    } else if (modifier.code && modifier.code.includes("RIGHT")) {
+    } else if (modifier.label && modifier.label.includes("Right")) {
       rightMods.push(
         <Button
           variant={isSelected ? "contained" : "outlined"}
-          key={modifier.code}
+          key={modifier.label}
           onClick={() => addModifierToTappedBinding({ modifier })}
         >
           {modifier.label}
