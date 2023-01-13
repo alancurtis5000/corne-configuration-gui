@@ -828,7 +828,7 @@ export const keys = [
     label: "Right Gui",
   },
   {
-    id: 5581,
+    id: 5589,
     key_category_id: 81,
     code: "SPACE",
     label: "Space",
@@ -858,7 +858,7 @@ export const keys = [
     label: "Tab",
   },
   {
-    id: 5580,
+    id: 5582,
     key_category_id: 81,
     code: "DEL",
     label: "Delete",
