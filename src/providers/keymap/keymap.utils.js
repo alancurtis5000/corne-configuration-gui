@@ -122,3 +122,19 @@ export const changeBindingTappedUtil = ({
 
   return updatedLayers;
 };
+
+export const setSelectedBindingLayerUtil = ({
+  index,
+  label,
+  layers,
+  selectedLayerIndex,
+  selectedBindingIndex,
+}) => {
+  const updateLayer = { ...layers[selectedLayerIndex] };
+  updateLayer.bindings[selectedBindingIndex].tapped.layer = { index, label };
+
+  const updatedLayers = [...layers];
+  updatedLayers.splice(selectedLayerIndex, 1, updateLayer);
+
+  return updatedLayers;
+};

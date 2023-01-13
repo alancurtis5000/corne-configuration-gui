@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -7,12 +7,20 @@ import Select from "@mui/material/Select";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
 
 export const LayerSelect = () => {
-  const [age, setAge] = useState("");
-  const { selectedBindingIndex, selectedLayerIndex, layers } =
-    useContext(KeymapContext);
+  const {
+    setSelectedBindingLayer,
+    selectedLayerIndex,
+    selectedBindingIndex,
+    layers,
+  } = useContext(KeymapContext);
+
+  const selectedBinding =
+    layers[selectedLayerIndex].bindings[selectedBindingIndex];
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    const layerIndex = event.target.value;
+    const { label, index } = layers[layerIndex];
+    setSelectedBindingLayer({ label, index });
   };
 
   const menuItems = layers.map((layer) => (
@@ -26,7 +34,7 @@ export const LayerSelect = () => {
         <Select
           labelId="layer-select-label"
           id="layer-select"
-          value={age}
+          value={selectedBinding.tapped.layer.index}
           label="Layer"
           onChange={handleChange}
         >

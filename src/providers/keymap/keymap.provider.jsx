@@ -7,6 +7,7 @@ import {
   deleteLayerUtil,
   addModifierToTappedBindingUtil,
   changeBindingTappedUtil,
+  setSelectedBindingLayerUtil,
 } from "./keymap.utils";
 import { layersInitialState } from "./layersInitialState";
 
@@ -28,6 +29,7 @@ export const KeymapContext = createContext({
   changeBindingTapped: () => {},
   setSelectedLayerIndex: () => {},
   setSelectedBindingIndex: () => {},
+  setSelectedBindingLayer: () => {},
 });
 
 // can I and should I right test for this?
@@ -68,6 +70,17 @@ export const KeymapProvider = ({ children }) => {
       })
     );
 
+  const setSelectedBindingLayer = ({ index, label }) =>
+    setLayers(
+      setSelectedBindingLayerUtil({
+        index,
+        label,
+        layers,
+        selectedLayerIndex,
+        selectedBindingIndex,
+      })
+    );
+
   // if count changes do something
   // useEffect(() => {
   //   console.log({ count });
@@ -89,6 +102,7 @@ export const KeymapProvider = ({ children }) => {
         changeBindingTapped,
         setSelectedLayerIndex,
         setSelectedBindingIndex,
+        setSelectedBindingLayer,
       }}
     >
       {children}
