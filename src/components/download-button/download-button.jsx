@@ -17,9 +17,9 @@ export const DownloadButton = (props) => {
     code = `${tappedBinding.code}`;
     tappedBinding.modifiers.forEach((modifier, index) => {
       if (index === tappedBinding.modifiers.length - 1) {
-        code = `&kp ${modifier.code}(${code})`;
+        code = `&kp ${modifier.modCode}(${code})`;
       } else {
-        code = `${modifier.code}(${code})`;
+        code = `${modifier.modCode}(${code})`;
       }
     });
     return code;
