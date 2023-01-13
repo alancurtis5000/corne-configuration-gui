@@ -40,7 +40,6 @@ export const DownloadButton = (props) => {
 
     const layerConfigsToString = layerConfigs.join("\n");
     const defineLayersToString = defineLayers.join("\n");
-    console.log({ layerConfigsToString });
 
     return { defineLayersToString, layerConfigsToString };
   };

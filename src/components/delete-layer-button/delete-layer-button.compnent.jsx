@@ -23,10 +23,6 @@ export const DeleteLayerButton = (props) => {
   };
 
   const handleDeleteLayer = () => {
-    console.log("handleDeleteLayer", {
-      selectedLayerIndex,
-      len: layers.length,
-    });
     if (selectedLayerIndex === 0 && layers.length === 1) return;
     if (selectedLayerIndex === layers.length - 1) {
       setSelectedLayerIndex(selectedLayerIndex - 1);

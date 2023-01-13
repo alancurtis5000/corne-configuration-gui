@@ -64,7 +64,6 @@ export const LayerPanel = (props) => {
   };
 
   const handleOnChange = (e) => {
-    console.log("handleOnChange", { e, ta: e.target.value });
     const input = e.target.value;
     setLabel(input);
   };
