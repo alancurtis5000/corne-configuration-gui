@@ -6,6 +6,14 @@ import { saveAs } from "file-saver";
 
 export const DownloadButton = (props) => {
   const { layers } = useContext(KeymapContext);
+
+  const generateLayerSwitchCode = (tappedBinding) => {
+    // lt needs tap and hold
+    let code = `&${tappedBinding.code} ${tappedBinding.layer.label}`;
+    console.log({ tappedBinding });
+    return code;
+  };
+
   const generateTappedBindingCode = (tappedBinding) => {
     let code = "";
 
@@ -33,7 +41,14 @@ export const DownloadButton = (props) => {
       const bindingsConfig = [];
       defineLayers.push(`#define ${layer.label} ${layer.index} `);
       layer.bindings.forEach((binding) => {
-        const tappedBindingCode = generateTappedBindingCode(binding.tapped);
+        console.log({ binding });
+        let tappedBindingCode = undefined;
+        if (binding.tapped.key_category_id === 65) {
+          tappedBindingCode = generateLayerSwitchCode(binding.tapped);
+        } else {
+          tappedBindingCode = generateTappedBindingCode(binding.tapped);
+        }
+
         if (binding.index === 0) {
           bindingsConfig.push(`     &none       ${tappedBindingCode}`);
         } else if (binding.index === 9 || binding.index === 19) {
