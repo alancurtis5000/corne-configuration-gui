@@ -3,7 +3,6 @@ import { IconButton } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
 import { saveAs } from "file-saver";
-import { configTemplate } from "./config-template";
 
 export const DownloadButton = (props) => {
   const { layers } = useContext(KeymapContext);
@@ -16,12 +15,16 @@ export const DownloadButton = (props) => {
       const bindingsConfig = [];
       defineLayers.push(`#define ${layer.label} ${layer.index} `);
       layer.bindings.forEach((binding) => {
-        if (
-          binding.index === 9 ||
-          binding.index === 19 ||
-          binding.index === 29
-        ) {
-          bindingsConfig.push(`${binding.tapped.code} \n`);
+        if (binding.index === 0) {
+          bindingsConfig.push(`     &none      ${binding.tapped.code}`);
+        } else if (binding.index === 9 || binding.index === 19) {
+          bindingsConfig.push(
+            `${binding.tapped.code}     &none \n          &none `
+          );
+        } else if (binding.index === 29) {
+          bindingsConfig.push(
+            `${binding.tapped.code}     &none \n                                    `
+          );
         } else {
           bindingsConfig.push(`${binding.tapped.code}`);
         }
@@ -41,16 +44,6 @@ export const DownloadButton = (props) => {
 
     return { defineLayersToString, layerConfigsToString };
   };
-
-  //   default_layer {
-  //     label = "DEF";
-  //                 bindings = <
-  // &none   &kp Q &kp W &kp E &kp R &kp T          &kp Y &kp U  &kp I    &kp O   &kp P    &none
-  // &none   &kp A &kp S &kp D &hm LCMD F &kp G     &kp H &hm LCMD J  &kp K     &kp L   &kp SEMI     &none
-  // &none   &kp Z &kp X &kp C &kp V &kp B          &kp N &kp M  &kp COMMA &kp DOT   &kp FSLH    &none
-  //         &kp LSHIFT  &kp SPACE &kp N3      &to ARROWS_L  &kp ENTER  &kp BACKSPACE
-  //                 >;
-  //         };
 
   const defaultConfigTop = `
   /*

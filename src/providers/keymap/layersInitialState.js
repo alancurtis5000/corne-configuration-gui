@@ -30,7 +30,7 @@ export const layersInitialState = [
                 index: 1,
                 label: "w",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp W",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -46,7 +46,7 @@ export const layersInitialState = [
                 index: 2,
                 label: "e",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp E",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -62,7 +62,7 @@ export const layersInitialState = [
                 index: 3,
                 label: "r",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp R",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -78,7 +78,7 @@ export const layersInitialState = [
                 index: 4,
                 label: "t",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp T",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -94,7 +94,7 @@ export const layersInitialState = [
                 index: 5,
                 label: "y",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp Y",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -110,7 +110,7 @@ export const layersInitialState = [
                 index: 6,
                 label: "u",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp U",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -126,7 +126,7 @@ export const layersInitialState = [
                 index: 7,
                 label: "i",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp I",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -142,7 +142,7 @@ export const layersInitialState = [
                 index: 8,
                 label: "o",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp O",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -158,7 +158,7 @@ export const layersInitialState = [
                 index: 9,
                 label: "p",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp P",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -174,7 +174,7 @@ export const layersInitialState = [
                 index: 10,
                 label: "a",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp A",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -190,7 +190,7 @@ export const layersInitialState = [
                 index: 11,
                 label: "s",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp S",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -206,7 +206,7 @@ export const layersInitialState = [
                 index: 12,
                 label: "d",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp D",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -222,7 +222,7 @@ export const layersInitialState = [
                 index: 13,
                 label: "f",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp F",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -238,7 +238,7 @@ export const layersInitialState = [
                 index: 14,
                 label: "g",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp G",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -254,7 +254,7 @@ export const layersInitialState = [
                 index: 15,
                 label: "h",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp H",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -270,7 +270,7 @@ export const layersInitialState = [
                 index: 16,
                 label: "j",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp J",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -286,7 +286,7 @@ export const layersInitialState = [
                 index: 17,
                 label: "k",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp K",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -302,7 +302,7 @@ export const layersInitialState = [
                 index: 18,
                 label: "l",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp L",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -334,7 +334,7 @@ export const layersInitialState = [
                 index: 20,
                 label: "z",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp Z",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -350,7 +350,7 @@ export const layersInitialState = [
                 index: 21,
                 label: "x",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp X",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -366,7 +366,7 @@ export const layersInitialState = [
                 index: 22,
                 label: "c",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp C",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -382,7 +382,7 @@ export const layersInitialState = [
                 index: 23,
                 label: "v",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp V",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -398,7 +398,7 @@ export const layersInitialState = [
                 index: 24,
                 label: "b",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp B",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -414,7 +414,7 @@ export const layersInitialState = [
                 index: 25,
                 label: "n",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp N",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
@@ -430,7 +430,7 @@ export const layersInitialState = [
                 index: 26,
                 label: "m",
                 tapped: {
-                    code: "&kp Q",
+                    code: "&kp M",
                     label: "Q",
                     description: "button that does stuff tapped",
                     modifiers: [],
