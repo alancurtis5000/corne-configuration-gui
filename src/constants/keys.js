@@ -785,6 +785,7 @@ export const keys = [
     code: "LSHIFT",
     modCode: "LS",
     label: "Left Shift",
+    modifiable: false,
   },
   {
     id: 6002,
@@ -792,6 +793,7 @@ export const keys = [
     code: "RSHIFT",
     modCode: "RS",
     label: "Right Shift",
+    modifiable: false,
   },
   {
     id: 6003,
@@ -799,6 +801,7 @@ export const keys = [
     code: "LCTRL",
     modCode: "LC",
     label: "Left Ctrl",
+    modifiable: false,
   },
   {
     id: 6004,
@@ -806,6 +809,7 @@ export const keys = [
     code: "RCTRL",
     modCode: "RC",
     label: "Right Ctrl",
+    modifiable: false,
   },
   {
     id: 6005,
@@ -813,6 +817,7 @@ export const keys = [
     code: "LALT",
     modCode: "LA",
     label: "Left Alt",
+    modifiable: false,
   },
   {
     id: 6006,
@@ -820,6 +825,7 @@ export const keys = [
     code: "RALT",
     modCode: "RA",
     label: "Right Alt",
+    modifiable: false,
   },
   {
     id: 6007,
@@ -827,6 +833,7 @@ export const keys = [
     code: "LGUI",
     modCode: "LG",
     label: "Left Gui",
+    modifiable: false,
   },
   {
     id: 6008,
@@ -834,48 +841,56 @@ export const keys = [
     code: "RGUI",
     modCode: "RG",
     label: "Right Gui",
+    modifiable: false,
   },
   {
     id: 5589,
     key_category_id: 81,
     code: "SPACE",
     label: "Space",
+    modifiable: false,
   },
   {
     id: 5577,
     key_category_id: 81,
     code: "ENTER",
     label: "Enter",
+    modifiable: false,
   },
   {
     id: 5580,
     key_category_id: 81,
     code: "BACKSPACE",
     label: "Backspace",
+    modifiable: false,
   },
   {
     id: 5578,
     key_category_id: 81,
     code: "ESC",
     label: "Esc",
+    modifiable: false,
   },
   {
     id: 5579,
     key_category_id: 81,
     code: "TAB",
     label: "Tab",
+    modifiable: false,
   },
   {
     id: 5582,
     key_category_id: 81,
     code: "DEL",
     label: "Delete",
+    modifiable: false,
   },
   {
     id: 5581,
     key_category_id: 81,
     code: "INSERT",
     label: "Insert",
+    modifiable: false,
   },
   {
     id: 6255,
