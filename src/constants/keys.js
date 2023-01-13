@@ -900,6 +900,7 @@ export const keys = [
     description:
       "The 'momentary layer' behavior enables a layer while a certain key is pressed. Immediately upon activation of the key, the layer is enabled, and immediately upon release of the key, the layer is disabled again.",
     modifiable: false,
+    layer: null,
   },
   {
     id: 6257,
@@ -909,6 +910,7 @@ export const keys = [
     description:
       "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tapped for a short time.",
     modifiable: false,
+    layer: null,
   },
   {
     id: 6254,
@@ -918,6 +920,7 @@ export const keys = [
     description:
       "The 'to layer' behavior enables a layer and disables all other layers except the default layer.",
     modifiable: false,
+    layer: null,
   },
   {
     id: 6260,
@@ -927,5 +930,6 @@ export const keys = [
     description:
       "&tog The 'toggle layer' behavior enables a layer until the layer is manually disabled",
     modifiable: false,
+    layer: null,
   },
 ];

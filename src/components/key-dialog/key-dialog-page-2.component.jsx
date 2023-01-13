@@ -9,6 +9,7 @@ import { ModifierList } from "../modifier-list/modifier-list.component";
 import "./key-dialog-page-2.styles.scss";
 import { BackButton } from "../back-button/back-button.component";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
+import { LayerSelect } from "../layer-select/layer-select.component";
 
 export const KeyDialogPage2 = (props) => {
   const { setPage } = props;
@@ -43,8 +44,9 @@ export const KeyDialogPage2 = (props) => {
           )}
           {tapped.key_category_id === 65 && (
             <>
+              {/* alan here next make layer select drop down */}
               <DialogContentText>Layer Select</DialogContentText>
-              <div>layer select</div>
+              <LayerSelect />
             </>
           )}
           <DialogContentText>Description</DialogContentText>
