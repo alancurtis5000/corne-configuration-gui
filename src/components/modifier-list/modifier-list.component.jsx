@@ -17,7 +17,6 @@ export const ModifierList = () => {
   const leftMods = [];
   const rightMods = [];
 
-  // todo only can select left or right not both
   modifiers.forEach((modifier) => {
     const isSelected = layers[selectedLayerIndex].bindings[
       selectedBindingIndex
