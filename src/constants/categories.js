@@ -32,4 +32,15 @@ export const categories = [
     priority: 39,
     deleted: false,
   },
+  {
+    id: 65,
+    code: "layer",
+    name: "Layer switch",
+    created_at: "2021-10-26T01:56:10.598Z",
+    updated_at: "2021-12-27T00:35:45.841Z",
+    url: null,
+    description: null,
+    priority: 44,
+    deleted: false,
+  },
 ];

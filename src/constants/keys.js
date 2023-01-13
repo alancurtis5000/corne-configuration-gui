@@ -877,4 +877,40 @@ export const keys = [
     code: "INSERT",
     label: "Insert",
   },
+  {
+    id: 6255,
+    key_category_id: 65,
+    code: "mo",
+    label: "MO",
+    description:
+      "The 'momentary layer' behavior enables a layer while a certain key is pressed. Immediately upon activation of the key, the layer is enabled, and immediately upon release of the key, the layer is disabled again.",
+    modifiable: false,
+  },
+  {
+    id: 6257,
+    key_category_id: 65,
+    code: "lt",
+    label: "LT",
+    description:
+      "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tapped for a short time.",
+    modifiable: false,
+  },
+  {
+    id: 6254,
+    key_category_id: 65,
+    code: "to",
+    label: "TO",
+    description:
+      "The 'to layer' behavior enables a layer and disables all other layers except the default layer.",
+    modifiable: false,
+  },
+  {
+    id: 6260,
+    key_category_id: 65,
+    code: "tog",
+    label: "TOG",
+    description:
+      "&tog The 'toggle layer' behavior enables a layer until the layer is manually disabled",
+    modifiable: false,
+  },
 ];
