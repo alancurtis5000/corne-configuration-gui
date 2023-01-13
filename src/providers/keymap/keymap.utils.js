@@ -99,7 +99,7 @@ export const changeBindingTappedUtil = ({ newBindingTappedValue,
     selectedBindingIndex, }) => {
 
     const updateLayer = { ...layers[selectedLayerIndex] }
-    updateLayer.bindings[selectedBindingIndex].tapped = newBindingTappedValue
+    updateLayer.bindings[selectedBindingIndex].tapped = { ...newBindingTappedValue, modifiers: [] }
 
     const updatedLayers = [...layers]
     updatedLayers.splice(selectedLayerIndex, 1, updateLayer);

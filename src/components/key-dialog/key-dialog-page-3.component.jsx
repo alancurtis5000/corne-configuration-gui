@@ -22,6 +22,11 @@ export const KeyDialogPage3 = (props) => {
     setPage(2);
   };
 
+  const handleOnClick = ({ newBindingTappedValue }) => {
+    changeBindingTapped({ newBindingTappedValue });
+    setPage(2);
+  };
+
   const options = () => {
     const options = [];
     for (let i = 0; i < 26; i++) {
@@ -36,9 +41,7 @@ export const KeyDialogPage3 = (props) => {
             <Button
               variant="outlined"
               key={option.id}
-              onClick={() =>
-                changeBindingTapped({ newBindingTappedValue: option })
-              }
+              onClick={() => handleOnClick({ newBindingTappedValue: option })}
             >
               {option.label}
             </Button>
