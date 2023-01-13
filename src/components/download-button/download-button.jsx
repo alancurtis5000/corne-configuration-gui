@@ -55,7 +55,6 @@ export const DownloadButton = (props) => {
   #include <dt-bindings/zmk/bt.h> \n`;
 
   const handleDownload = () => {
-    console.log("handleDownload");
     const { defineLayersToString, layerConfigsToString } = generateConfigFile();
     var blob = new Blob(
       [

@@ -13,7 +13,6 @@ export const ModifierList = () => {
   } = useContext(KeymapContext);
   const modifiers = keys.filter((key) => key.key_category_id === 63);
 
-  console.log({ modifiers });
   const leftMods = [];
   const rightMods = [];
 

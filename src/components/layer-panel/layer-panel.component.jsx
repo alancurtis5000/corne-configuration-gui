@@ -83,10 +83,6 @@ export const LayerPanel = (props) => {
   };
 
   const handleMoveLayer = (e) => {
-    console.log("handleMoveLayer", e.target.value, {
-      index,
-      len: layers.length,
-    });
     const direction = e.target.value;
     if (direction === "left") {
       if (index !== 0) {
