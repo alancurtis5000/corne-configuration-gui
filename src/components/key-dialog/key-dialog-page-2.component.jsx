@@ -25,7 +25,6 @@ export const KeyDialogPage2 = (props) => {
     setPage(3);
   };
 
-  const currentValue = {};
   return (
     <div className="key-dialog-page-2">
       <DialogTitle>Key: {index + 1} (Edit Tapped) </DialogTitle>
@@ -35,12 +34,19 @@ export const KeyDialogPage2 = (props) => {
             <BackButton onClick={backToHome} />
             <Button onClick={goToChangePage}> Change</Button>
           </div>
-          <div className="current-value" style={currentValue}>
-            {tapped.label}
-          </div>
-
-          <DialogContentText>Add Modifiers</DialogContentText>
-          <ModifierList />
+          <div className="current-value">{tapped.label}</div>
+          {tapped.modifiable && (
+            <>
+              <DialogContentText>Add Modifiers</DialogContentText>
+              <ModifierList />
+            </>
+          )}
+          {tapped.key_category_id === 65 && (
+            <>
+              <DialogContentText>Layer Select</DialogContentText>
+              <div>layer select</div>
+            </>
+          )}
           <DialogContentText>Description</DialogContentText>
         </div>
       </DialogContent>
