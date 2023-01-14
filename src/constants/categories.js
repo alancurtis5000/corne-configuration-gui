@@ -43,4 +43,15 @@ export const categories = [
     priority: 44,
     deleted: false,
   },
+  {
+    id: 77,
+    code: "numpad",
+    label: "Numpad",
+    created_at: "2021-10-26T01:56:10.683Z",
+    updated_at: "2022-12-16T02:24:53.734Z",
+    url: null,
+    description: null,
+    priority: 53,
+    deleted: false,
+  },
 ];
