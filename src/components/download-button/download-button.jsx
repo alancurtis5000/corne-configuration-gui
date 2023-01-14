@@ -10,7 +10,6 @@ export const DownloadButton = (props) => {
   const generateLayerSwitchCode = (tappedBinding) => {
     // lt needs tap and hold
     let code = `&${tappedBinding.code} ${tappedBinding.layer.label}`;
-    console.log({ tappedBinding });
     return code;
   };
 
@@ -41,7 +40,6 @@ export const DownloadButton = (props) => {
       const bindingsConfig = [];
       defineLayers.push(`#define ${layer.label} ${layer.index} `);
       layer.bindings.forEach((binding) => {
-        console.log({ binding });
         let tappedBindingCode = undefined;
         if (binding.tapped.key_category_id === 65) {
           tappedBindingCode = generateLayerSwitchCode(binding.tapped);
