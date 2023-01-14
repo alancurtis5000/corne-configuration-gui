@@ -54,4 +54,15 @@ export const categories = [
     priority: 53,
     deleted: false,
   },
+  {
+    id: 62,
+    code: "digit",
+    name: "Digits",
+    created_at: "2021-10-26T01:56:10.577Z",
+    updated_at: "2021-12-27T00:35:45.813Z",
+    url: null,
+    description: null,
+    priority: 38,
+    deleted: false,
+  },
 ];
