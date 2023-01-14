@@ -57,7 +57,7 @@ export const categories = [
   {
     id: 62,
     code: "digit",
-    name: "Digits",
+    label: "Digits",
     created_at: "2021-10-26T01:56:10.577Z",
     updated_at: "2021-12-27T00:35:45.813Z",
     url: null,
