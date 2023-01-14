@@ -935,7 +935,7 @@ export const keys = [
   {
     id: 6870,
     key_category_id: 77,
-    code: "KC_KP_ASTERISK",
+    code: "KP_ASTERISK",
     label: "*",
     description: null,
     created_at: "2021-12-28T09:53:15.667Z",
@@ -965,7 +965,7 @@ export const keys = [
   {
     id: 6869,
     key_category_id: 77,
-    code: "KC_KP_PLUS",
+    code: "KP_PLUS",
     label: "+",
     description: null,
     created_at: "2021-12-28T09:53:15.659Z",
@@ -995,7 +995,7 @@ export const keys = [
   {
     id: 6859,
     key_category_id: 77,
-    code: "KC_KP_COMMA",
+    code: "KP_COMMA",
     label: ",",
     description: null,
     created_at: "2021-12-28T09:53:15.573Z",
@@ -1025,7 +1025,7 @@ export const keys = [
   {
     id: 6853,
     key_category_id: 77,
-    code: "KC_KP_MINUS",
+    code: "KP_MINUS",
     label: "-",
     description: null,
     created_at: "2021-12-28T09:53:15.526Z",
@@ -1055,7 +1055,7 @@ export const keys = [
   {
     id: 6861,
     key_category_id: 77,
-    code: "KC_KP_DOT",
+    code: "KP_DOT",
     label: ".",
     description: null,
     created_at: "2021-12-28T09:53:15.591Z",
@@ -1085,7 +1085,7 @@ export const keys = [
   {
     id: 6864,
     key_category_id: 77,
-    code: "KC_KP_SLASH",
+    code: "KP_SLASH",
     label: "/",
     description: null,
     created_at: "2021-12-28T09:53:15.616Z",
@@ -1115,7 +1115,7 @@ export const keys = [
   {
     id: 6854,
     key_category_id: 77,
-    code: "KC_KP_0",
+    code: "KP_N0",
     label: "0",
     description: null,
     created_at: "2021-12-28T09:53:15.534Z",
@@ -1145,7 +1145,7 @@ export const keys = [
   {
     id: 6862,
     key_category_id: 77,
-    code: "KC_KP_1",
+    code: "KP_N1",
     label: "1",
     description: null,
     created_at: "2021-12-28T09:53:15.600Z",
@@ -1175,7 +1175,7 @@ export const keys = [
   {
     id: 6865,
     key_category_id: 77,
-    code: "KC_KP_2",
+    code: "KP_N2",
     label: "2",
     description: null,
     created_at: "2021-12-28T09:53:15.624Z",
@@ -1205,7 +1205,7 @@ export const keys = [
   {
     id: 6871,
     key_category_id: 77,
-    code: "KC_KP_3",
+    code: "KP_N3",
     label: "3",
     description: null,
     created_at: "2021-12-28T09:53:15.676Z",
@@ -1235,7 +1235,7 @@ export const keys = [
   {
     id: 6863,
     key_category_id: 77,
-    code: "KC_KP_4",
+    code: "KP_N4",
     label: "4",
     description: null,
     created_at: "2021-12-28T09:53:15.608Z",
@@ -1265,7 +1265,7 @@ export const keys = [
   {
     id: 6855,
     key_category_id: 77,
-    code: "KC_KP_5",
+    code: "KP_N5",
     label: "5",
     description: null,
     created_at: "2021-12-28T09:53:15.542Z",
@@ -1295,7 +1295,7 @@ export const keys = [
   {
     id: 6868,
     key_category_id: 77,
-    code: "KC_KP_6",
+    code: "KP_N6",
     label: "6",
     description: null,
     created_at: "2021-12-28T09:53:15.651Z",
@@ -1325,7 +1325,7 @@ export const keys = [
   {
     id: 6858,
     key_category_id: 77,
-    code: "KC_KP_7",
+    code: "KP_N7",
     label: "7",
     description: null,
     created_at: "2021-12-28T09:53:15.565Z",
@@ -1355,7 +1355,7 @@ export const keys = [
   {
     id: 6857,
     key_category_id: 77,
-    code: "KC_KP_8",
+    code: "KP_N8",
     label: "8",
     description: null,
     created_at: "2021-12-28T09:53:15.557Z",
@@ -1385,7 +1385,7 @@ export const keys = [
   {
     id: 6860,
     key_category_id: 77,
-    code: "KC_KP_9",
+    code: "KP_N9",
     label: "9",
     description: null,
     created_at: "2021-12-28T09:53:15.582Z",
@@ -1415,7 +1415,7 @@ export const keys = [
   {
     id: 6867,
     key_category_id: 77,
-    code: "KC_KP_ENTER",
+    code: "KP_ENTER",
     label: "Enter",
     description: null,
     created_at: "2021-12-28T09:53:15.643Z",
@@ -1445,7 +1445,7 @@ export const keys = [
   {
     id: 6856,
     key_category_id: 77,
-    code: "KC_NUMLOCK",
+    code: "KP_NUMLOCK",
     label: "Numlock",
     description: null,
     created_at: "2021-12-28T09:53:15.549Z",
