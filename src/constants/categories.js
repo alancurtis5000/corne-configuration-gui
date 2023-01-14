@@ -65,4 +65,15 @@ export const categories = [
     priority: 38,
     deleted: false,
   },
+  {
+    id: 67,
+    code: "shiftedPunct",
+    label: "Shifted punctuation",
+    created_at: "2021-10-26T01:56:10.612Z",
+    updated_at: "2021-12-27T00:35:45.831Z",
+    url: null,
+    description: null,
+    priority: 42,
+    deleted: false,
+  },
 ];
