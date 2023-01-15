@@ -98,4 +98,15 @@ export const categories = [
     priority: 56,
     deleted: false,
   },
+  {
+    id: 1256,
+    code: "extras",
+    label: "Bluetooth",
+    created_at: "2021-10-26T01:56:44.272Z",
+    updated_at: "2022-12-16T02:24:53.758Z",
+    url: null,
+    description: null,
+    priority: 56,
+    deleted: false,
+  },
 ];
