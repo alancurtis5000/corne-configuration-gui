@@ -26,6 +26,8 @@ export const KeyDialogPage2 = (props) => {
     setPage(3);
   };
 
+  // alan todo!!! do something with button mode to display certain option on held vs tapped
+
   return (
     <div className="key-dialog-page-2">
       <DialogTitle>Key: {index + 1} (Edit Tapped) </DialogTitle>

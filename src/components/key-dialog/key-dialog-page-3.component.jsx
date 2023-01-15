@@ -13,6 +13,8 @@ import { keys } from "../../constants/keys";
 import { Button } from "@mui/material";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
 import { categories } from "../../constants/categories";
+import { HELD, TAPPED } from "../../constants/button-modes";
+import { isEmpty } from "../../utilities/data-parsing";
 
 export const KeyDialogPage3 = (props) => {
   const { setPage } = props;
@@ -20,12 +22,26 @@ export const KeyDialogPage3 = (props) => {
     selectedBindingIndex,
     selectedLayerIndex,
     layers,
+    buttonMode,
     changeBindingTapped,
   } = useContext(KeymapContext);
-  const { index } = layers[selectedLayerIndex].bindings[selectedBindingIndex];
+  const { index, tapped, held } =
+    layers[selectedLayerIndex].bindings[selectedBindingIndex];
 
   const back = () => {
-    setPage(2);
+    if (buttonMode === TAPPED) {
+      if (isEmpty(tapped)) {
+        setPage(1);
+      } else {
+        setPage(2);
+      }
+    } else if (buttonMode === HELD) {
+      if (isEmpty(held)) {
+        setPage(1);
+      } else {
+        setPage(2);
+      }
+    }
   };
 
   const handleOnClick = ({ newBindingTappedValue }) => {

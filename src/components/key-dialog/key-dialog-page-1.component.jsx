@@ -7,6 +7,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import Button from "@mui/material/Button";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
 import { HELD, TAPPED } from "../../constants/button-modes";
+import { isEmpty } from "../../utilities/data-parsing";
 
 export const KeyDialogPage1 = (props) => {
   const { onClose, setPage } = props;
@@ -24,11 +25,19 @@ export const KeyDialogPage1 = (props) => {
 
   const handleTapped = () => {
     setButtonMode(TAPPED);
-    setPage(2);
+    if (isEmpty(tapped)) {
+      setPage(3);
+    } else {
+      setPage(2);
+    }
   };
   const handleHold = () => {
     setButtonMode(HELD);
-    setPage(2);
+    if (isEmpty(held)) {
+      setPage(3);
+    } else {
+      setPage(2);
+    }
   };
 
   return (

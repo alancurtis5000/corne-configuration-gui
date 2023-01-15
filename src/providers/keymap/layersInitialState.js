@@ -37,12 +37,7 @@ export const layersInitialState = [
           comboTrigger: true,
           modifiers: [],
         },
-        held: {
-          code: "Q",
-          label: "Q",
-          description: "button that does stuff held",
-          modifiers: [],
-        },
+        held: {},
       },
       {
         index: 1,
