@@ -76,4 +76,15 @@ export const categories = [
     priority: 42,
     deleted: false,
   },
+  {
+    id: 66,
+    code: "punct",
+    label: "Unshifted punctuation",
+    created_at: "2021-10-26T01:56:10.605Z",
+    updated_at: "2021-12-27T00:35:45.827Z",
+    url: null,
+    description: null,
+    priority: 41,
+    deleted: false,
+  },
 ];
