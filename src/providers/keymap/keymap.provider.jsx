@@ -19,8 +19,10 @@ export const KeymapContext = createContext({
   layers: [],
   selectedLayerIndex: 0,
   selectedBindingIndex: null,
+  buttonMode: null,
   // actions
   // increment: () => {},
+  setButtonMode: () => {},
   createLayer: () => {},
   changeLayerName: () => {},
   moveLayer: () => {},
@@ -38,6 +40,8 @@ export const KeymapProvider = ({ children }) => {
   const [layers, setLayers] = useState([...layersInitialState]);
   const [selectedLayerIndex, setSelectedLayerIndex] = useState(0);
   const [selectedBindingIndex, setSelectedBindingIndex] = useState(null);
+  const [buttonMode, setButtonMode] = useState(null);
+
   // actions
   // const increment = () => setCount(incrementCount(count, margin));
   const createLayer = () => {
@@ -93,6 +97,8 @@ export const KeymapProvider = ({ children }) => {
         layers,
         selectedLayerIndex,
         selectedBindingIndex,
+        buttonMode,
+        setButtonMode,
         setLayers,
         createLayer,
         changeLayerName,

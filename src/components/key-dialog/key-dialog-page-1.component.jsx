@@ -6,10 +6,11 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import Button from "@mui/material/Button";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
+import { HELD, TAPPED } from "../../constants/button-modes";
 
 export const KeyDialogPage1 = (props) => {
   const { onClose, setPage } = props;
-  const { selectedBindingIndex, selectedLayerIndex, layers } =
+  const { selectedBindingIndex, selectedLayerIndex, layers, setButtonMode } =
     useContext(KeymapContext);
   if (!layers[selectedLayerIndex].bindings[selectedBindingIndex]) return;
   const { index, label, tapped, held } =
@@ -18,6 +19,16 @@ export const KeyDialogPage1 = (props) => {
   const handleClose = () => {
     onClose();
     setPage(1);
+    setButtonMode(null);
+  };
+
+  const handleTapped = () => {
+    setButtonMode(TAPPED);
+    setPage(2);
+  };
+  const handleHold = () => {
+    setButtonMode(HELD);
+    setPage(2);
   };
 
   return (
@@ -34,7 +45,7 @@ export const KeyDialogPage1 = (props) => {
           }}
         >
           <DialogContentText>When</DialogContentText>{" "}
-          <Button onClick={() => setPage(2)}>Tapped</Button>
+          <Button onClick={handleTapped}>Tapped</Button>
           <DialogContentText>:</DialogContentText> {tapped.label}
           <Button onClick={handleClose}>Clear</Button>
         </div>
@@ -45,7 +56,7 @@ export const KeyDialogPage1 = (props) => {
           }}
         >
           <DialogContentText>When</DialogContentText>{" "}
-          <Button onClick={() => setPage(3)}>Held</Button>
+          <Button onClick={handleHold}>Held</Button>
           <DialogContentText>:</DialogContentText> {held.label}
           <Button onClick={handleClose}>Clear</Button>
         </div>
