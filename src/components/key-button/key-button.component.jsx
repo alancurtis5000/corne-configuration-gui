@@ -45,6 +45,21 @@ export const KeyButton = (props) => {
     display: "flex",
     flexDirection: "column",
   };
+
+  const labelWithMods = {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  };
+
+  const modStyles = {
+    ...small,
+    backgroundColor: "rgb(219, 183, 106)",
+    borderRadius: "8px",
+    padding: "0px 2px",
+    marginLeft: "3px",
+  };
   return (
     <>
       <Button sx={buttonStyles()} variant="outlined" onClick={handleOpenDialog}>
@@ -56,7 +71,12 @@ export const KeyButton = (props) => {
               <div style={buttonModes}>
                 <div style={small}>Tap:</div>
                 <div style={bold}>
-                  {tapped.label}
+                  <div style={labelWithMods}>
+                    {tapped.label}
+                    {tapped?.modifiers.length > 0 && (
+                      <div style={modStyles}>{"mods"}</div>
+                    )}
+                  </div>
                   {tapped?.layer?.label && (
                     <div style={small}>{tapped.layer.label}</div>
                   )}
@@ -66,7 +86,12 @@ export const KeyButton = (props) => {
                 <div style={buttonModes}>
                   <div style={small}>Hold:</div>
                   <div style={bold}>
-                    {held.label}
+                    <div style={labelWithMods}>
+                      {held.label}
+                      {held?.modifiers.length > 0 && (
+                        <div style={modStyles}>{"mods"}</div>
+                      )}
+                    </div>
                     {held?.layer?.label && (
                       <div style={small}>{held.layer.label}</div>
                     )}
