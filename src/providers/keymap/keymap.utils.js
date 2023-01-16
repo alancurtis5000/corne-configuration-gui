@@ -225,6 +225,7 @@ export const changeBindingHeldUtil = ({
 };
 
 export const setSelectedBindingLayerUtil = ({
+  buttonMode,
   index,
   label,
   layers,
@@ -232,7 +233,10 @@ export const setSelectedBindingLayerUtil = ({
   selectedBindingIndex,
 }) => {
   const updateLayer = { ...layers[selectedLayerIndex] };
-  updateLayer.bindings[selectedBindingIndex].tapped.layer = { index, label };
+  updateLayer.bindings[selectedBindingIndex][buttonMode].layer = {
+    index,
+    label,
+  };
 
   const updatedLayers = [...layers];
   updatedLayers.splice(selectedLayerIndex, 1, updateLayer);

@@ -12,6 +12,7 @@ export const LayerSelect = () => {
     selectedLayerIndex,
     selectedBindingIndex,
     layers,
+    buttonMode,
   } = useContext(KeymapContext);
 
   const selectedBinding =
@@ -36,7 +37,7 @@ export const LayerSelect = () => {
         <Select
           labelId="layer-select-label"
           id="layer-select"
-          value={selectedBinding.tapped.layer.index}
+          value={selectedBinding[buttonMode].layer.index}
           label="Layer"
           onChange={handleChange}
         >

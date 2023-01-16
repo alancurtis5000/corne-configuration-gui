@@ -110,6 +110,7 @@ export const KeymapProvider = ({ children }) => {
   const setSelectedBindingLayer = ({ index, label }) =>
     setLayers(
       setSelectedBindingLayerUtil({
+        buttonMode,
         index,
         label,
         layers,

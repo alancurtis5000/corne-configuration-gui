@@ -27,41 +27,63 @@ export const KeyDialogPage2 = (props) => {
     setPage(3);
   };
 
-  const label = () => {
-    if (buttonMode === TAPPED) {
-      return tapped.label;
-    } else if (buttonMode === HELD) {
-      return held.label;
-    }
-  };
-
-  return (
-    <div className="key-dialog-page-2">
-      <DialogTitle>Key: {index + 1} (Edit Tapped) </DialogTitle>
-      <DialogContent dividers>
-        <div className="content">
-          <div>
-            <BackButton onClick={backToHome} />
-            <Button onClick={goToChangePage}> Change</Button>
+  if (buttonMode === TAPPED) {
+    return (
+      <div className="key-dialog-page-2">
+        <DialogTitle>Key: {index + 1} (Edit Tapped) </DialogTitle>
+        <DialogContent dividers>
+          <div className="content">
+            <div>
+              <BackButton onClick={backToHome} />
+              <Button onClick={goToChangePage}> Change</Button>
+            </div>
+            <div className="current-value">{tapped.label}</div>
+            {tapped.modifiable && (
+              <>
+                <DialogContentText>Add Modifiers</DialogContentText>
+                <ModifierList />
+              </>
+            )}
+            {tapped.key_category_id === 65 && (
+              <>
+                <DialogContentText>Layer Select</DialogContentText>
+                <LayerSelect />
+              </>
+            )}
+            <DialogContentText>Description</DialogContentText>
           </div>
-          <div className="current-value">{label()}</div>
-          {tapped.modifiable && (
-            <>
-              <DialogContentText>Add Modifiers</DialogContentText>
-              <ModifierList />
-            </>
-          )}
-          {tapped.key_category_id === 65 && (
-            <>
-              <DialogContentText>Layer Select</DialogContentText>
-              <LayerSelect />
-            </>
-          )}
-          <DialogContentText>Description</DialogContentText>
-        </div>
-      </DialogContent>
-    </div>
-  );
+        </DialogContent>
+      </div>
+    );
+  } else if (buttonMode === HELD) {
+    return (
+      <div className="key-dialog-page-2">
+        <DialogTitle>Key: {index + 1} (Edit Tapped) </DialogTitle>
+        <DialogContent dividers>
+          <div className="content">
+            <div>
+              <BackButton onClick={backToHome} />
+              <Button onClick={goToChangePage}> Change</Button>
+            </div>
+            <div className="current-value">{held.label}</div>
+            {held.modifiable && (
+              <>
+                <DialogContentText>Add Modifiers</DialogContentText>
+                <ModifierList />
+              </>
+            )}
+            {held.key_category_id === 65 && (
+              <>
+                <DialogContentText>Layer Select</DialogContentText>
+                <LayerSelect />
+              </>
+            )}
+            <DialogContentText>Description</DialogContentText>
+          </div>
+        </DialogContent>
+      </div>
+    );
+  }
 };
 
 KeyDialogPage2.propTypes = {
