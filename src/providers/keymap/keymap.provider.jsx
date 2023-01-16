@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react";
 import propTypes from "prop-types";
 import {
   changeLayerNameUtil,
+  changeBindingLabelUtil,
   createLayerUtil,
   moveLayerUtil,
   deleteLayerUtil,
@@ -27,6 +28,7 @@ export const KeymapContext = createContext({
   setButtonMode: () => {},
   createLayer: () => {},
   changeLayerName: () => {},
+  changeBindingLabel: () => {},
   moveLayer: () => {},
   deleteLayer: () => {},
   addModifierToTappedBinding: () => {},
@@ -55,6 +57,15 @@ export const KeymapProvider = ({ children }) => {
 
   const changeLayerName = ({ input }) =>
     setLayers(changeLayerNameUtil({ input, selectedLayerIndex, layers }));
+  const changeBindingLabel = ({ input }) =>
+    setLayers(
+      changeBindingLabelUtil({
+        input,
+        selectedLayerIndex,
+        layers,
+        selectedBindingIndex,
+      })
+    );
   const moveLayer = ({ direction, index }) =>
     setLayers(moveLayerUtil({ direction, index, layers }));
   const deleteLayer = ({ selectedLayerIndex }) =>
@@ -124,6 +135,7 @@ export const KeymapProvider = ({ children }) => {
         setLayers,
         createLayer,
         changeLayerName,
+        changeBindingLabel,
         moveLayer,
         deleteLayer,
         addModifierToTappedBinding,

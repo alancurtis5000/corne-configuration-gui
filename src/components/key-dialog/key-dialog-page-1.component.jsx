@@ -1,27 +1,41 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 
-import DialogTitle from "@mui/material/DialogTitle";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import Button from "@mui/material/Button";
+import {
+  Button,
+  TextField,
+  DialogContentText,
+  DialogContent,
+  DialogTitle,
+  IconButton,
+} from "@mui/material/";
+import EditIcon from "@mui/icons-material/Edit";
+import SaveIcon from "@mui/icons-material/Save";
+import CancelIcon from "@mui/icons-material/Cancel";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
 import { HELD, TAPPED } from "../../constants/button-modes";
 import { isEmpty } from "../../utilities/data-parsing";
 
 export const KeyDialogPage1 = (props) => {
   const { onClose, setPage } = props;
+  const [isEdit, setIsEdit] = useState(false);
+
   const {
     selectedBindingIndex,
     selectedLayerIndex,
     layers,
+    changeBindingLabel,
     setButtonMode,
     changeBindingTapped,
     changeBindingHeld,
   } = useContext(KeymapContext);
+  const [localLabel, setLocalLabel] = useState(
+    layers[selectedLayerIndex]?.bindings[selectedBindingIndex]?.label || null
+  );
   if (!layers[selectedLayerIndex].bindings[selectedBindingIndex]) return;
-  const { index, label, tapped, held } =
-    layers[selectedLayerIndex].bindings[selectedBindingIndex];
+
+  const { index, tapped, held } =
+    layers[selectedLayerIndex]?.bindings[selectedBindingIndex];
 
   const handleClose = () => {
     onClose();
@@ -53,11 +67,58 @@ export const KeyDialogPage1 = (props) => {
     changeBindingHeld({ newBindingTappedValue: {} });
   };
 
+  const handleEdit = () => {
+    setIsEdit(true);
+  };
+
+  const handleCancel = () => {
+    setIsEdit(false);
+    setLocalLabel(localLabel);
+  };
+
+  const handleSave = () => {
+    const input = localLabel;
+    setIsEdit(false);
+    changeBindingLabel({ input });
+  };
+
+  const handleOnChange = (e) => {
+    const input = e.target.value;
+    setLocalLabel(input);
+  };
+
   return (
     <>
       <DialogTitle>
         <div> Key: {index + 1}</div>
-        <div>Label: {label}</div>
+        <TextField
+          id="layer-label"
+          value={localLabel}
+          label="Layer Name"
+          variant="standard"
+          onChange={handleOnChange}
+          disabled={!isEdit}
+        />
+        {isEdit ? (
+          <>
+            <IconButton color="primary" onClick={handleSave}>
+              <SaveIcon />
+            </IconButton>
+            <IconButton color="warning" onClick={handleCancel}>
+              <CancelIcon />
+            </IconButton>
+          </>
+        ) : (
+          <>
+            <IconButton
+              className="edit-button"
+              color="default"
+              onClick={handleEdit}
+            >
+              <EditIcon />
+            </IconButton>
+          </>
+        )}
       </DialogTitle>
       <DialogContent dividers>
         <div

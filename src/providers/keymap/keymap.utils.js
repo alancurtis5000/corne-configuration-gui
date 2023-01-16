@@ -27,6 +27,24 @@ export const changeLayerNameUtil = ({ input, selectedLayerIndex, layers }) => {
   return updatedLayers;
 };
 
+export const changeBindingLabelUtil = ({
+  input,
+  selectedLayerIndex,
+  layers,
+  selectedBindingIndex,
+}) => {
+  const updateLayer = { ...layers[selectedLayerIndex] };
+  updateLayer.bindings[selectedBindingIndex] = {
+    ...updateLayer.bindings[selectedBindingIndex],
+    label: input,
+  };
+
+  const updatedLayers = [...layers];
+  updatedLayers.splice(selectedLayerIndex, 1, updateLayer);
+  console.log({ updateLayer });
+  return updatedLayers;
+};
+
 export const moveLayerUtil = ({ direction, index, layers }) => {
   const updatedLayers = [...layers];
   const sourceLayer = updatedLayers.find((layer) => layer.index === index);
