@@ -5,7 +5,7 @@ export const layersInitialState = [
     bindings: [
       {
         index: 0,
-        label: "q",
+        label: "",
         tapped: {
           id: 5218,
           key_category_id: 61,
@@ -41,7 +41,7 @@ export const layersInitialState = [
       },
       {
         index: 1,
-        label: "w",
+        label: "",
         tapped: {
           id: 5207,
           key_category_id: 61,
@@ -82,7 +82,7 @@ export const layersInitialState = [
       },
       {
         index: 2,
-        label: "e",
+        label: "",
         tapped: {
           id: 5202,
           key_category_id: 61,
@@ -123,7 +123,7 @@ export const layersInitialState = [
       },
       {
         index: 3,
-        label: "r",
+        label: "",
         tapped: {
           id: 5217,
           key_category_id: 61,
@@ -164,7 +164,7 @@ export const layersInitialState = [
       },
       {
         index: 4,
-        label: "t",
+        label: "",
         tapped: {
           id: 5223,
           key_category_id: 61,
@@ -205,7 +205,7 @@ export const layersInitialState = [
       },
       {
         index: 5,
-        label: "y",
+        label: "",
         tapped: {
           id: 5212,
           key_category_id: 61,
@@ -246,7 +246,7 @@ export const layersInitialState = [
       },
       {
         index: 6,
-        label: "u",
+        label: "",
         tapped: {
           id: 5221,
           key_category_id: 61,
@@ -287,7 +287,7 @@ export const layersInitialState = [
       },
       {
         index: 7,
-        label: "i",
+        label: "",
         tapped: {
           id: 5205,
           key_category_id: 61,
@@ -328,7 +328,7 @@ export const layersInitialState = [
       },
       {
         index: 8,
-        label: "o",
+        label: "",
         tapped: {
           id: 5220,
           key_category_id: 61,
@@ -369,7 +369,7 @@ export const layersInitialState = [
       },
       {
         index: 9,
-        label: "p",
+        label: "",
         tapped: {
           id: 5209,
           key_category_id: 61,
@@ -410,7 +410,7 @@ export const layersInitialState = [
       },
       {
         index: 10,
-        label: "a",
+        label: "",
         tapped: {
           id: 5199,
           key_category_id: 61,
@@ -451,7 +451,7 @@ export const layersInitialState = [
       },
       {
         index: 11,
-        label: "s",
+        label: "",
         tapped: {
           id: 5215,
           key_category_id: 61,
@@ -492,7 +492,7 @@ export const layersInitialState = [
       },
       {
         index: 12,
-        label: "d",
+        label: "",
         tapped: {
           id: 5206,
           key_category_id: 61,
@@ -533,7 +533,7 @@ export const layersInitialState = [
       },
       {
         index: 13,
-        label: "f",
+        label: "",
         tapped: {
           id: 5200,
           key_category_id: 61,
@@ -574,7 +574,7 @@ export const layersInitialState = [
       },
       {
         index: 14,
-        label: "g",
+        label: "",
         tapped: {
           id: 5208,
           key_category_id: 61,
@@ -615,7 +615,7 @@ export const layersInitialState = [
       },
       {
         index: 15,
-        label: "h",
+        label: "",
         tapped: {
           id: 5219,
           key_category_id: 61,
@@ -656,7 +656,7 @@ export const layersInitialState = [
       },
       {
         index: 16,
-        label: "j",
+        label: "",
         tapped: {
           id: 5210,
           key_category_id: 61,
@@ -697,7 +697,7 @@ export const layersInitialState = [
       },
       {
         index: 17,
-        label: "k",
+        label: "",
         tapped: {
           id: 5224,
           key_category_id: 61,
@@ -738,7 +738,7 @@ export const layersInitialState = [
       },
       {
         index: 18,
-        label: "l",
+        label: "",
         tapped: {
           id: 5211,
           key_category_id: 61,
@@ -779,7 +779,7 @@ export const layersInitialState = [
       },
       {
         index: 19,
-        label: ":",
+        label: "",
         tapped: {
           id: 5199,
           key_category_id: 61,
@@ -820,7 +820,7 @@ export const layersInitialState = [
       },
       {
         index: 20,
-        label: "z",
+        label: "",
         tapped: {
           id: 5214,
           key_category_id: 61,
@@ -861,7 +861,7 @@ export const layersInitialState = [
       },
       {
         index: 21,
-        label: "x",
+        label: "",
         tapped: {
           id: 5213,
           key_category_id: 61,
@@ -902,7 +902,7 @@ export const layersInitialState = [
       },
       {
         index: 22,
-        label: "c",
+        label: "",
         tapped: {
           id: 5216,
           key_category_id: 61,
@@ -943,7 +943,7 @@ export const layersInitialState = [
       },
       {
         index: 23,
-        label: "v",
+        label: "",
         tapped: {
           id: 5204,
           key_category_id: 61,
@@ -984,7 +984,7 @@ export const layersInitialState = [
       },
       {
         index: 24,
-        label: "b",
+        label: "",
         tapped: {
           id: 5203,
           key_category_id: 61,
@@ -1025,7 +1025,7 @@ export const layersInitialState = [
       },
       {
         index: 25,
-        label: "n",
+        label: "",
         tapped: {
           id: 5222,
           key_category_id: 61,
@@ -1066,7 +1066,7 @@ export const layersInitialState = [
       },
       {
         index: 26,
-        label: "m",
+        label: "",
         tapped: {
           id: 5201,
           key_category_id: 61,
@@ -1107,7 +1107,7 @@ export const layersInitialState = [
       },
       {
         index: 27,
-        label: ",",
+        label: "",
         tapped: {
           id: 5199,
           key_category_id: 61,
@@ -1148,7 +1148,7 @@ export const layersInitialState = [
       },
       {
         index: 28,
-        label: ".",
+        label: "",
         tapped: {
           id: 5199,
           key_category_id: 61,
@@ -1189,7 +1189,7 @@ export const layersInitialState = [
       },
       {
         index: 29,
-        label: "/",
+        label: "",
         tapped: {
           id: 5199,
           key_category_id: 61,
@@ -1230,7 +1230,7 @@ export const layersInitialState = [
       },
       {
         index: 30,
-        label: "1",
+        label: "",
         tapped: {
           id: 6001,
           key_category_id: 63,
@@ -1249,7 +1249,7 @@ export const layersInitialState = [
       },
       {
         index: 31,
-        label: "2",
+        label: "",
         tapped: {
           id: 5589,
           key_category_id: 81,
@@ -1267,7 +1267,7 @@ export const layersInitialState = [
       },
       {
         index: 32,
-        label: "3",
+        label: "",
         tapped: {
           id: 6254,
           key_category_id: 65,
@@ -1291,7 +1291,7 @@ export const layersInitialState = [
       },
       {
         index: 33,
-        label: "4",
+        label: "",
         tapped: {
           id: 5199,
           key_category_id: 61,
@@ -1332,7 +1332,7 @@ export const layersInitialState = [
       },
       {
         index: 34,
-        label: "5",
+        label: "",
         tapped: {
           id: 5577,
           key_category_id: 81,
@@ -1350,7 +1350,7 @@ export const layersInitialState = [
       },
       {
         index: 35,
-        label: "6",
+        label: "",
         tapped: {
           id: 6254,
           key_category_id: 65,
