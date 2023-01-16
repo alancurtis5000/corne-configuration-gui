@@ -38,12 +38,12 @@ export const KeyButton = (props) => {
   };
   const small = {
     fontSize: "10px",
+    margin: "-4px",
   };
 
   const buttonModes = {
     display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: "column",
   };
   return (
     <>
@@ -55,12 +55,22 @@ export const KeyButton = (props) => {
             <>
               <div style={buttonModes}>
                 <div style={small}>Tap:</div>
-                <div style={bold}>{tapped.label}</div>
+                <div style={bold}>
+                  {tapped.label}
+                  {tapped?.layer?.label && (
+                    <div style={small}>{tapped.layer.label}</div>
+                  )}
+                </div>
               </div>
               {held.label && (
                 <div style={buttonModes}>
                   <div style={small}>Hold:</div>
-                  <div style={bold}>{held.label}</div>
+                  <div style={bold}>
+                    {held.label}
+                    {held?.layer?.label && (
+                      <div style={small}>{held.layer.label}</div>
+                    )}
+                  </div>
                 </div>
               )}
             </>
