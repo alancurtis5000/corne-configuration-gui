@@ -92,9 +92,9 @@ export const KeyDialogPage1 = (props) => {
       <DialogTitle>
         <div> Key: {index + 1}</div>
         <TextField
-          id="layer-label"
+          id="binding-label"
           value={localLabel}
-          label="Layer Name"
+          label="Binding Label"
           variant="standard"
           onChange={handleOnChange}
           disabled={!isEdit}

@@ -33,6 +33,9 @@ export const changeBindingLabelUtil = ({
   layers,
   selectedBindingIndex,
 }) => {
+  if (input === null) {
+    input = "";
+  }
   const updateLayer = { ...layers[selectedLayerIndex] };
   updateLayer.bindings[selectedBindingIndex] = {
     ...updateLayer.bindings[selectedBindingIndex],
