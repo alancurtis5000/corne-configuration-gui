@@ -105,6 +105,51 @@ export const addModifierToTappedBindingUtil = ({
   return updatedLayers;
 };
 
+export const addModifierToHeldBindingUtil = ({
+  modifier,
+  layers,
+  selectedLayerIndex,
+  selectedBindingIndex,
+}) => {
+  const updateLayer = { ...layers[selectedLayerIndex] };
+  const modifiers = updateLayer.bindings[selectedBindingIndex].held.modifiers;
+
+  const doesAlternateExist = modifiers.findIndex((mod) => {
+    const currentModSplit = mod.label.split(" ");
+    const modifierSplit = modifier.label.split(" ");
+    return (
+      currentModSplit[0] !== modifierSplit[0] &&
+      currentModSplit[1] === modifierSplit[1]
+    );
+  });
+  if (doesAlternateExist === -1) {
+    const doesModifierExist = modifiers.findIndex(
+      (mod) => mod.label === modifier.label
+    );
+    if (doesModifierExist === -1) {
+      updateLayer.bindings[selectedBindingIndex].held.modifiers = [
+        ...modifiers,
+        modifier,
+      ];
+    } else {
+      modifiers.splice(doesModifierExist, 1);
+      updateLayer.bindings[selectedBindingIndex].held.modifiers = [
+        ...modifiers,
+      ];
+    }
+  } else {
+    modifiers.splice(doesAlternateExist, 1);
+    updateLayer.bindings[selectedBindingIndex].held.modifiers = [
+      ...modifiers,
+      modifier,
+    ];
+  }
+
+  const updatedLayers = [...layers];
+  updatedLayers.splice(selectedLayerIndex, 1, updateLayer);
+  return updatedLayers;
+};
+
 export const changeBindingTappedUtil = ({
   newBindingTappedValue,
   layers,
@@ -119,6 +164,30 @@ export const changeBindingTappedUtil = ({
 
   const updateLayer = { ...layers[selectedLayerIndex] };
   updateLayer.bindings[selectedBindingIndex].tapped = {
+    ...newBindingTappedValue,
+    modifiers: [],
+  };
+
+  const updatedLayers = [...layers];
+  updatedLayers.splice(selectedLayerIndex, 1, updateLayer);
+
+  return updatedLayers;
+};
+
+export const changeBindingHeldUtil = ({
+  newBindingTappedValue,
+  layers,
+  selectedLayerIndex,
+  selectedBindingIndex,
+}) => {
+  if (newBindingTappedValue.key_category_id === 65) {
+    const index = 0;
+    const label = layers[0].label;
+    newBindingTappedValue.layer = { index, label };
+  }
+
+  const updateLayer = { ...layers[selectedLayerIndex] };
+  updateLayer.bindings[selectedBindingIndex].held = {
     ...newBindingTappedValue,
     modifiers: [],
   };

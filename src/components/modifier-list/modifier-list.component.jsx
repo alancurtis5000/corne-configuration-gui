@@ -3,29 +3,48 @@ import { Button } from "@mui/material";
 import "./modifier-list.styles.scss";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
 import { keys } from "../../constants/keys";
+import { HELD, TAPPED } from "../../constants/button-modes";
 
 export const ModifierList = () => {
   const {
     addModifierToTappedBinding,
+    addModifierToHeldBinding,
     layers,
     selectedLayerIndex,
     selectedBindingIndex,
+    buttonMode,
   } = useContext(KeymapContext);
   const modifiers = keys.filter((key) => key.key_category_id === 63);
 
   const leftMods = [];
   const rightMods = [];
 
+  const modLocation = () => {
+    if (buttonMode === TAPPED) {
+      return TAPPED;
+    } else if (buttonMode === HELD) {
+      return HELD;
+    }
+  };
+
+  const handleAddMod = ({ modifier }) => {
+    if (buttonMode === TAPPED) {
+      addModifierToTappedBinding({ modifier });
+    } else if (buttonMode === HELD) {
+      addModifierToHeldBinding({ modifier });
+    }
+  };
+
   modifiers.forEach((modifier) => {
     const isSelected = layers[selectedLayerIndex].bindings[
       selectedBindingIndex
-    ].tapped.modifiers.find((mod) => mod.label === modifier.label);
+    ][modLocation()].modifiers.find((mod) => mod.label === modifier.label);
     if (modifier.label && modifier.label.includes("Left")) {
       leftMods.push(
         <Button
           variant={isSelected ? "contained" : "outlined"}
           key={modifier.label}
-          onClick={() => addModifierToTappedBinding({ modifier })}
+          onClick={() => handleAddMod({ modifier })}
         >
           {modifier.label}
         </Button>
@@ -35,7 +54,7 @@ export const ModifierList = () => {
         <Button
           variant={isSelected ? "contained" : "outlined"}
           key={modifier.label}
-          onClick={() => addModifierToTappedBinding({ modifier })}
+          onClick={() => handleAddMod({ modifier })}
         >
           {modifier.label}
         </Button>

@@ -10,12 +10,13 @@ import "./key-dialog-page-2.styles.scss";
 import { BackButton } from "../back-button/back-button.component";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
 import { LayerSelect } from "../layer-select/layer-select.component";
+import { HELD, TAPPED } from "../../constants/button-modes";
 
 export const KeyDialogPage2 = (props) => {
   const { setPage } = props;
-  const { selectedBindingIndex, selectedLayerIndex, layers } =
+  const { selectedBindingIndex, selectedLayerIndex, layers, buttonMode } =
     useContext(KeymapContext);
-  const { index, tapped } =
+  const { index, tapped, held } =
     layers[selectedLayerIndex].bindings[selectedBindingIndex];
 
   const backToHome = () => {
@@ -26,7 +27,13 @@ export const KeyDialogPage2 = (props) => {
     setPage(3);
   };
 
-  // alan todo!!! do something with button mode to display certain option on held vs tapped
+  const label = () => {
+    if (buttonMode === TAPPED) {
+      return tapped.label;
+    } else if (buttonMode === HELD) {
+      return held.label;
+    }
+  };
 
   return (
     <div className="key-dialog-page-2">
@@ -37,7 +44,7 @@ export const KeyDialogPage2 = (props) => {
             <BackButton onClick={backToHome} />
             <Button onClick={goToChangePage}> Change</Button>
           </div>
-          <div className="current-value">{tapped.label}</div>
+          <div className="current-value">{label()}</div>
           {tapped.modifiable && (
             <>
               <DialogContentText>Add Modifiers</DialogContentText>
@@ -46,7 +53,6 @@ export const KeyDialogPage2 = (props) => {
           )}
           {tapped.key_category_id === 65 && (
             <>
-              {/* alan here next make layer select drop down */}
               <DialogContentText>Layer Select</DialogContentText>
               <LayerSelect />
             </>

@@ -24,6 +24,7 @@ export const KeyDialogPage3 = (props) => {
     layers,
     buttonMode,
     changeBindingTapped,
+    changeBindingHeld,
   } = useContext(KeymapContext);
   const { index, tapped, held } =
     layers[selectedLayerIndex].bindings[selectedBindingIndex];
@@ -45,7 +46,12 @@ export const KeyDialogPage3 = (props) => {
   };
 
   const handleOnClick = ({ newBindingTappedValue }) => {
-    changeBindingTapped({ newBindingTappedValue });
+    if (buttonMode === TAPPED) {
+      changeBindingTapped({ newBindingTappedValue });
+    } else if (buttonMode === HELD) {
+      changeBindingHeld({ newBindingTappedValue });
+    }
+
     setPage(2);
   };
   const sections = categories.map((category, index) => {

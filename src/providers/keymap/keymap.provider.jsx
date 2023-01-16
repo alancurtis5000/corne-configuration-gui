@@ -6,8 +6,10 @@ import {
   moveLayerUtil,
   deleteLayerUtil,
   addModifierToTappedBindingUtil,
+  addModifierToHeldBindingUtil,
   changeBindingTappedUtil,
   setSelectedBindingLayerUtil,
+  changeBindingHeldUtil,
 } from "./keymap.utils";
 import { layersInitialState } from "./layersInitialState";
 
@@ -28,7 +30,9 @@ export const KeymapContext = createContext({
   moveLayer: () => {},
   deleteLayer: () => {},
   addModifierToTappedBinding: () => {},
+  addModifierToHeldBinding: () => {},
   changeBindingTapped: () => {},
+  changeBindingHeld: () => {},
   setSelectedLayerIndex: () => {},
   setSelectedBindingIndex: () => {},
   setSelectedBindingLayer: () => {},
@@ -64,9 +68,27 @@ export const KeymapProvider = ({ children }) => {
         selectedBindingIndex,
       })
     );
+  const addModifierToHeldBinding = ({ modifier }) =>
+    setLayers(
+      addModifierToHeldBindingUtil({
+        modifier,
+        layers,
+        selectedLayerIndex,
+        selectedBindingIndex,
+      })
+    );
   const changeBindingTapped = ({ newBindingTappedValue }) =>
     setLayers(
       changeBindingTappedUtil({
+        newBindingTappedValue,
+        layers,
+        selectedLayerIndex,
+        selectedBindingIndex,
+      })
+    );
+  const changeBindingHeld = ({ newBindingTappedValue }) =>
+    setLayers(
+      changeBindingHeldUtil({
         newBindingTappedValue,
         layers,
         selectedLayerIndex,
@@ -105,7 +127,9 @@ export const KeymapProvider = ({ children }) => {
         moveLayer,
         deleteLayer,
         addModifierToTappedBinding,
+        addModifierToHeldBinding,
         changeBindingTapped,
+        changeBindingHeld,
         setSelectedLayerIndex,
         setSelectedBindingIndex,
         setSelectedBindingLayer,
