@@ -11,8 +11,14 @@ import { isEmpty } from "../../utilities/data-parsing";
 
 export const KeyDialogPage1 = (props) => {
   const { onClose, setPage } = props;
-  const { selectedBindingIndex, selectedLayerIndex, layers, setButtonMode } =
-    useContext(KeymapContext);
+  const {
+    selectedBindingIndex,
+    selectedLayerIndex,
+    layers,
+    setButtonMode,
+    changeBindingTapped,
+    changeBindingHeld,
+  } = useContext(KeymapContext);
   if (!layers[selectedLayerIndex].bindings[selectedBindingIndex]) return;
   const { index, label, tapped, held } =
     layers[selectedLayerIndex].bindings[selectedBindingIndex];
@@ -40,6 +46,13 @@ export const KeyDialogPage1 = (props) => {
     }
   };
 
+  const handleClearTapped = () => {
+    changeBindingTapped({ newBindingTappedValue: {} });
+  };
+  const handleClearHeld = () => {
+    changeBindingHeld({ newBindingTappedValue: {} });
+  };
+
   return (
     <>
       <DialogTitle>
@@ -56,7 +69,7 @@ export const KeyDialogPage1 = (props) => {
           <DialogContentText>When</DialogContentText>{" "}
           <Button onClick={handleTapped}>Tapped</Button>
           <DialogContentText>:</DialogContentText> {tapped.label}
-          <Button onClick={handleClose}>Clear</Button>
+          <Button onClick={handleClearTapped}>Clear</Button>
         </div>
         <div
           style={{
@@ -67,7 +80,7 @@ export const KeyDialogPage1 = (props) => {
           <DialogContentText>When</DialogContentText>{" "}
           <Button onClick={handleHold}>Held</Button>
           <DialogContentText>:</DialogContentText> {held.label}
-          <Button onClick={handleClose}>Clear</Button>
+          <Button onClick={handleClearHeld}>Clear</Button>
         </div>
       </DialogContent>
     </>

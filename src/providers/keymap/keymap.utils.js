@@ -1,4 +1,6 @@
 import { Layer } from "../../classes/layer";
+import { isEmpty } from "../../utilities/data-parsing";
+import { keys } from "../../constants/keys";
 
 export const incrementCount = (count, margin) => {
   return count + margin * 1;
@@ -156,6 +158,9 @@ export const changeBindingTappedUtil = ({
   selectedLayerIndex,
   selectedBindingIndex,
 }) => {
+  if (isEmpty(newBindingTappedValue)) {
+    newBindingTappedValue = keys.find((key) => key.id === 5002);
+  }
   if (newBindingTappedValue.key_category_id === 65) {
     const index = 0;
     const label = layers[0].label;
