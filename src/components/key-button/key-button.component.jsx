@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { Button } from "@mui/material";
 import { KeyDialog } from "../key-dialog/key-dialog.component";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
-import { isEmpty } from "../../utilities/data-parsing";
 
 export const KeyButton = (props) => {
   const { keyData } = props;
@@ -31,6 +30,7 @@ export const KeyButton = (props) => {
   const labelStyles = {
     display: "flex",
     flexDirection: "column",
+    opacity: tapped.label === "None" ? ".5" : "1",
   };
 
   const bold = {
@@ -45,7 +45,6 @@ export const KeyButton = (props) => {
     flexDirection: "row",
     alignItems: "center",
   };
-
   return (
     <>
       <Button sx={buttonStyles()} variant="outlined" onClick={handleOpenDialog}>
