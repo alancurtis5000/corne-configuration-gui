@@ -24,6 +24,7 @@ export const LayerPanel = (props) => {
   } = useContext(KeymapContext);
   const [isEdit, setIsEdit] = useState(false);
   const [label, setLabel] = useState(layer.label);
+  const [error, setError] = useState(false);
 
   const gridLeft = () => {
     return (
@@ -74,12 +75,18 @@ export const LayerPanel = (props) => {
 
   const handleCancel = () => {
     setIsEdit(false);
+    setError(false);
     setLabel(layer.label);
   };
 
   const handleSave = () => {
     const input = label;
-    changeLayerName({ input });
+    if (!label) {
+      setError(true);
+    } else {
+      changeLayerName({ input });
+      setError(false);
+    }
   };
 
   const handleMoveLayer = (e) => {
@@ -117,6 +124,9 @@ export const LayerPanel = (props) => {
                 variant="standard"
                 onChange={handleOnChange}
                 disabled={!isEdit}
+                required
+                helperText={error ? "Label required." : " "}
+                error={error}
               />
               {isEdit ? (
                 <>
