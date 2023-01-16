@@ -109,4 +109,15 @@ export const categories = [
     priority: 56,
     deleted: false,
   },
+  {
+    id: 76,
+    code: "nav",
+    label: "Navigation",
+    created_at: "2021-10-26T01:56:10.677Z",
+    updated_at: "2022-12-16T02:24:53.728Z",
+    url: null,
+    description: null,
+    priority: 52,
+    deleted: false,
+  },
 ];
