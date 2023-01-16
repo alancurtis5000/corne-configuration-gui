@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Button } from "@mui/material";
 import { KeyDialog } from "../key-dialog/key-dialog.component";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
+import { isEmpty } from "../../utilities/data-parsing";
 
 export const KeyButton = (props) => {
   const { keyData } = props;
@@ -23,6 +24,7 @@ export const KeyButton = (props) => {
     return {
       backgroundColor: isOpen ? "red" : "inherit",
       padding: "5px",
+      textTransform: "unset",
     };
   };
 
@@ -31,13 +33,39 @@ export const KeyButton = (props) => {
     flexDirection: "column",
   };
 
+  const bold = {
+    fontWeight: "bold",
+  };
+  const small = {
+    fontSize: "10px",
+  };
+
+  const buttonModes = {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+  };
+
   return (
     <>
       <Button sx={buttonStyles()} variant="outlined" onClick={handleOpenDialog}>
         <div style={labelStyles}>
-          <div>{label}</div>
-          <div>{tapped.label}</div>
-          <div>{held.label}</div>
+          {label ? (
+            <div style={bold}>{label}</div>
+          ) : (
+            <>
+              <div style={buttonModes}>
+                <div style={small}>Tap:</div>
+                <div style={bold}>{tapped.label}</div>
+              </div>
+              {held.label && (
+                <div style={buttonModes}>
+                  <div style={small}>Hold:</div>
+                  <div style={bold}>{held.label}</div>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </Button>
       <KeyDialog onClose={handleCloseDialog} isOpen={isOpen} />

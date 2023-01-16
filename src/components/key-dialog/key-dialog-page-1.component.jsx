@@ -37,15 +37,9 @@ export const KeyDialogPage1 = (props) => {
   const { index, tapped, held } =
     layers[selectedLayerIndex]?.bindings[selectedBindingIndex];
 
-  const handleClose = () => {
-    onClose();
-    setPage(1);
-    setButtonMode(null);
-  };
-
   const handleTapped = () => {
     setButtonMode(TAPPED);
-    if (isEmpty(tapped)) {
+    if (!tapped.label) {
       setPage(3);
     } else {
       setPage(2);
@@ -53,7 +47,7 @@ export const KeyDialogPage1 = (props) => {
   };
   const handleHold = () => {
     setButtonMode(HELD);
-    if (isEmpty(held)) {
+    if (!held.label) {
       setPage(3);
     } else {
       setPage(2);
@@ -93,7 +87,7 @@ export const KeyDialogPage1 = (props) => {
         <div> Key: {index + 1}</div>
         <TextField
           id="binding-label"
-          value={localLabel}
+          value={localLabel || ""}
           label="Binding Label"
           variant="standard"
           onChange={handleOnChange}

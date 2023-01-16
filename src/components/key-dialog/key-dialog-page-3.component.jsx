@@ -31,13 +31,13 @@ export const KeyDialogPage3 = (props) => {
 
   const back = () => {
     if (buttonMode === TAPPED) {
-      if (isEmpty(tapped)) {
+      if (!tapped.label) {
         setPage(1);
       } else {
         setPage(2);
       }
     } else if (buttonMode === HELD) {
-      if (isEmpty(held)) {
+      if (!held.label) {
         setPage(1);
       } else {
         setPage(2);
