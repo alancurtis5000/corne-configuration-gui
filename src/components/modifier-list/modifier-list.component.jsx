@@ -14,7 +14,9 @@ export const ModifierList = () => {
     selectedBindingIndex,
     buttonMode,
   } = useContext(KeymapContext);
-  const modifiers = keys.filter((key) => key.key_category_id === 63);
+  const modifiers = keys.filter(
+    (key) => key.key_category_id === 63 && key.modCode
+  );
 
   const leftMods = [];
   const rightMods = [];
