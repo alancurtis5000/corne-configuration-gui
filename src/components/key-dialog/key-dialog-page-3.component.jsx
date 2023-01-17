@@ -69,15 +69,37 @@ export const KeyDialogPage3 = (props) => {
         </AccordionSummary>
         <AccordionDetails>
           {options.map((option) => {
-            return (
-              <Button
-                variant="outlined"
-                key={option.id}
-                onClick={() => handleOnClick({ newBindingTappedValue: option })}
-              >
-                {option.label}
-              </Button>
-            );
+            if (buttonMode === TAPPED) {
+              if (option.tap) {
+                return (
+                  <Button
+                    variant="outlined"
+                    key={option.id}
+                    onClick={() =>
+                      handleOnClick({ newBindingTappedValue: option })
+                    }
+                  >
+                    {option.label}
+                  </Button>
+                );
+              }
+            }
+            if (buttonMode === HELD) {
+              if (option.hold) {
+                return (
+                  <Button
+                    variant="outlined"
+                    key={option.id}
+                    onClick={() =>
+                      handleOnClick({ newBindingTappedValue: option })
+                    }
+                  >
+                    {option.label}
+                  </Button>
+                );
+              }
+            }
+            return null;
           })}
         </AccordionDetails>
       </Accordion>
