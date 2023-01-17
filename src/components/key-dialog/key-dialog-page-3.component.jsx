@@ -14,7 +14,6 @@ import { Button } from "@mui/material";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
 import { categories } from "../../constants/categories";
 import { HELD, TAPPED } from "../../constants/button-modes";
-import { isEmpty } from "../../utilities/data-parsing";
 
 export const KeyDialogPage3 = (props) => {
   const { setPage } = props;
