@@ -3,34 +3,10 @@ import { IconButton } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
 import { saveAs } from "file-saver";
+import { generateBindingCode } from "../../utilities/generate-binding-code";
 
 export const DownloadButton = (props) => {
   const { layers } = useContext(KeymapContext);
-
-  const generateLayerSwitchCode = (tappedBinding) => {
-    // lt needs tap and hold
-    let code = `&${tappedBinding.code} ${tappedBinding.layer.label}`;
-    return code;
-  };
-
-  const generateTappedBindingCode = (tappedBinding) => {
-    let code = "";
-
-    if (tappedBinding.modifiers.length === 0) {
-      code = `&kp ${tappedBinding.code}`;
-      return code;
-    }
-
-    code = `${tappedBinding.code}`;
-    tappedBinding.modifiers.forEach((modifier, index) => {
-      if (index === tappedBinding.modifiers.length - 1) {
-        code = `&kp ${modifier.modCode}(${code})`;
-      } else {
-        code = `${modifier.modCode}(${code})`;
-      }
-    });
-    return code;
-  };
 
   const generateConfigFile = () => {
     const defineLayers = [];
@@ -41,11 +17,8 @@ export const DownloadButton = (props) => {
       defineLayers.push(`#define ${layer.label} ${layer.index} `);
       layer.bindings.forEach((binding) => {
         let tappedBindingCode = undefined;
-        if (binding.tapped.key_category_id === 65) {
-          tappedBindingCode = generateLayerSwitchCode(binding.tapped);
-        } else {
-          tappedBindingCode = generateTappedBindingCode(binding.tapped);
-        }
+
+        tappedBindingCode = generateBindingCode(binding);
 
         if (binding.index === 0) {
           bindingsConfig.push(`     &none       ${tappedBindingCode}`);
