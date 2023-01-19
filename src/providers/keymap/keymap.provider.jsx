@@ -12,10 +12,10 @@ import {
   setSelectedBindingLayerUtil,
   changeBindingHeldUtil,
 } from "./keymap.utils";
+import { layersInitialStateNew as layersInitialState } from "./layersInitialStateNew";
 // import { layersInitialState } from "./layersInitialState";
-import { layersInitialStateWithCombos as layersInitialState } from "./initial-state-with-button-combos";
 
-// import { incrementCount, decrementCount } from "./keymap.utils";
+// import { layersInitialStateWithCombos as layersInitialState } from "./initial-state-with-button-combos";
 
 // can I and should I right test for this?
 /* istanbul ignore next */
