@@ -1,5 +1,6 @@
-const isNone = ({ tapped }) => {
+const isNone = ({ tapped, held }) => {
   if (tapped.code !== "none") return;
+  if (held.code === "mo") return;
   return `&${tapped.code}`;
 };
 // keypress values would only be on tapped
@@ -62,13 +63,13 @@ const isHoldModifierTapAndHeldMods = ({ tapped, held }) => {
   )}`;
 };
 
-const isBluetooth = ({ tapped, held }) => {
+const isBluetooth = ({ tapped }) => {
   if (tapped.code.includes("BT_")) {
     return `&bt ${tapped.code}`;
   }
 };
 
-const isLayerSwitchHold = ({ tapped, held }) => {
+const isLayerSwitchHold = ({ held }) => {
   // todo logic if MO is selected clear tap option and dont allow.
   if (held.code === "mo") {
     return `&mo ${held.layer.label}`;
@@ -111,8 +112,6 @@ const addModsToCode = (code, modifiers) => {
 };
 
 export const generateBindingCode = (binding) => {
-  const { tapped, held, index } = binding;
-  console.log({ index });
   let code = isNone(binding);
 
   if (!code) {
@@ -145,88 +144,5 @@ export const generateBindingCode = (binding) => {
   if (!code) {
     code = isLayerSwitchTo(binding);
   }
-  console.log({ code });
   return code;
 };
-
-/*
-export const generateBindingCodeOld = (binding) => {
-  // alan for now just focus on basics  one toggle on key not combos
-  const { tapped, held, index } = binding;
-  console.log("gen", { binding });
-
-  if (!held.label && tapped.modifiers.length < 1) {
-    // if layer toggle
-    if (tapped.code === "to") {
-      return `&to ${tapped.layer.label}`;
-    }
-    // if bluetooth
-    if (tapped.code.includes("BT_")) {
-      return `&bt ${tapped.code}`;
-    }
-    // just key press no mods
-    return `&kp ${tapped.code}`;
-  }
-  // if tapped has modifiers add them to keycode
-  if (!held.label && tapped.modifiers.length > 0) {
-    let code = `${tapped.code}`;
-    tapped.modifiers.forEach((modifier, index) => {
-      if (index === tapped.modifiers.length - 1) {
-        // if tapped code is toggle layer and held has key with mods
-        if (tapped.code === "to") {
-          code`&to ${tapped.layer.label} ${modifier.modCode}(${code})`;
-        } else {
-          // else its just keypress with mods
-          code = `&kp ${modifier.modCode}(${code})`;
-        }
-      } else {
-        console.log("im here!!!!!");
-        code = `${modifier.modCode}(${code})`;
-      }
-    });
-    return code;
-  }
-  // if  held
-  if (held.label) {
-    // if keycode is layer toggle while held return lt
-    if (held.code === "lt") {
-      return `&lt ${held.layer.label} ${tapped.code}`;
-    } else {
-      // if tapped has modifiers add them to keycode
-      if (!held.label && tapped.modifiers.length > 0) {
-        let code = `${tapped.code}`;
-        tapped.modifiers.forEach((modifier, index) => {
-          if (index === tapped.modifiers.length - 1) {
-            // else its just keypress with mods
-            code = `${modifier.modCode}(${code})`;
-          } else {
-            console.log("im here!!!!!");
-            code = `${modifier.modCode}(${code})`;
-          }
-        });
-        return `&lt ${held.layer.label} ${code}`;
-      }
-      // if layer toggle
-      if (tapped.code === "to") {
-        if (held.modifiers.length > 0) {
-          let code = `${tapped.code}`;
-          tapped.modifiers.forEach((modifier, index) => {
-            if (index === tapped.modifiers.length - 1) {
-              // else its just keypress with mods
-              code = `${modifier.modCode}(${code})`;
-            } else {
-              console.log("im here!!!!!");
-              code = `${modifier.modCode}(${code})`;
-            }
-          });
-          return `&to ${tapped.layer.label} ${code}`;
-        }
-        return `&to ${tapped.layer.label} ${held.code}`;
-      }
-
-      return `&hm ${held.code} ${tapped.code}`;
-    }
-  }
-};
-
-*/
