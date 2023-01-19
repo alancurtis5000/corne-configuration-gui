@@ -62,6 +62,46 @@ const isHoldModifierTapAndHeldMods = ({ tapped, held }) => {
   )}`;
 };
 
+const isBluetooth = ({ tapped, held }) => {
+  if (tapped.code.includes("BT_")) {
+    return `&bt ${tapped.code}`;
+  }
+};
+
+const isLayerSwitchHold = ({ tapped, held }) => {
+  // todo logic if MO is selected clear tap option and dont allow.
+  if (held.code === "mo") {
+    return `&mo ${held.layer.label}`;
+  }
+  return;
+};
+
+const isLayerSwitchHoldWithTap = ({ tapped, held }) => {
+  // todo logic if LT is selected force tap option. or dynamically check if tap is selected us lt and if no tap us MO
+  // then none option would have to be able to be cleared
+  if (held.code === "lt") {
+    if (tapped.code) {
+      if (tapped.modifiers.length > 0) {
+        return `&lt ${held.layer.label} ${addModsToCode(
+          tapped.code,
+          tapped.modifiers
+        )}`;
+      }
+      return `&lt ${held.layer.label} ${tapped.code}`;
+    }
+  }
+  return;
+};
+
+const isLayerSwitchTo = ({ tapped, held }) => {
+  // todo logic ux if to selected dont allow hold mods or automatically assign layer switch key depended on options selected
+  // held release , tap , tapped with held
+  if (tapped.code === "to") {
+    return `&to ${tapped.layer.label}`;
+  }
+  return;
+};
+
 const addModsToCode = (code, modifiers) => {
   let codeWithmodifiers = code;
   modifiers.forEach((modifier, index) => {
@@ -93,7 +133,18 @@ export const generateBindingCode = (binding) => {
   if (!code) {
     code = isHoldModifierTapAndHeldMods(binding);
   }
-
+  if (!code) {
+    code = isBluetooth(binding);
+  }
+  if (!code) {
+    code = isLayerSwitchHold(binding);
+  }
+  if (!code) {
+    code = isLayerSwitchHoldWithTap(binding);
+  }
+  if (!code) {
+    code = isLayerSwitchTo(binding);
+  }
   console.log({ code });
   return code;
 };
