@@ -12,8 +12,8 @@ import {
   setSelectedBindingLayerUtil,
   changeBindingHeldUtil,
 } from "./keymap.utils";
-import { layersInitialStateNew as layersInitialState } from "./layersInitialStateNew";
-// import { layersInitialState } from "./layersInitialState";
+// import { layersInitialStateNew as layersInitialState } from "./layersInitialStateNew";
+import { layersInitialState } from "./layersInitialState";
 
 // import { layersInitialStateWithCombos as layersInitialState } from "./initial-state-with-button-combos";
 
