@@ -27,6 +27,7 @@ const isHoldModifierBasic = ({ tapped, held }) => {
   if (tapped.modifiers.length > 0) return; // tapped has mods
   if (held.modifiers.length > 0) return; // held has mods
   if (held.code === "lt") return; // is held layer toggle keycode
+  if (held.code === "mo") return; // is held layer toggle keycode
   return `&hm ${held.code} ${tapped.code}`;
 };
 
@@ -37,6 +38,7 @@ const isHoldModifierTapMods = ({ tapped, held }) => {
   if (tapped.modifiers.length < 0) return; // needs tapped has mods
   if (held.modifiers.length > 0) return; // held has mods
   if (held.code === "lt") return; // is held layer toggle keycode
+  if (held.code === "mo") return; // is held layer toggle keycode
   return `&hm ${held.code} ${addModsToCode(tapped.code, tapped.modifiers)}`;
 };
 
@@ -47,6 +49,7 @@ const isHoldModifierHeldMods = ({ tapped, held }) => {
   if (tapped.modifiers.length > 0) return; // tapped has mods
   if (held.modifiers.length < 0) return; //  needs held has mods
   if (held.code === "lt") return; // is held layer toggle keycode
+  if (held.code === "mo") return; // is held layer toggle keycode
   return `&hm ${addModsToCode(held.code, held.modifiers)} ${tapped.code}`;
 };
 
@@ -57,6 +60,7 @@ const isHoldModifierTapAndHeldMods = ({ tapped, held }) => {
   if (tapped.modifiers.length < 0) return; // needs tapped has mods
   if (held.modifiers.length < 0) return; //  needs held has mods
   if (held.code === "lt") return; // is held layer toggle keycode
+  if (held.code === "mo") return; // is held layer toggle keycode
   return `&hm ${addModsToCode(held.code, held.modifiers)} ${addModsToCode(
     tapped.code,
     tapped.modifiers

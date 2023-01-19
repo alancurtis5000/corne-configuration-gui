@@ -1,7 +1,7 @@
 export const layersInitialState = [
   {
     index: 0,
-    label: " PC",
+    label: "PC",
     bindings: [
       {
         index: 0,
@@ -1749,7 +1749,7 @@ export const layersInitialState = [
   },
   {
     index: 1,
-    label: " Mac",
+    label: "Mac",
     bindings: [
       {
         index: 0,
@@ -3523,7 +3523,7 @@ export const layersInitialState = [
   },
   {
     index: 2,
-    label: " Numbers",
+    label: "Numbers",
     bindings: [
       {
         index: 0,
