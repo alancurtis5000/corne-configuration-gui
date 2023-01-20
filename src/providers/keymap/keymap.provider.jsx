@@ -12,8 +12,6 @@ import {
   setSelectedBindingLayerUtil,
   changeBindingHeldUtil,
 } from "./keymap.utils";
-// import { layersInitialStateNew as layersInitialState } from "./layersInitialStateNew";
-import { layersInitialState } from "./layersInitialState";
 import axios from "axios";
 
 const apiCall = () => {
@@ -36,8 +34,6 @@ const apiSaveLayout = (layoutId, body) => {
       console.log({ err });
     });
 };
-
-// import { layersInitialStateWithCombos as layersInitialState } from "./initial-state-with-button-combos";
 
 // can I and should I right test for this?
 /* istanbul ignore next */
@@ -96,15 +92,13 @@ export const KeymapProvider = ({ children }) => {
     const body = {
       id: data[0].id,
       label: data[0].label,
-      config: layers,
+      layers: layers,
     };
     const layoutId = data[0].id;
     setLoading(true);
     try {
-      const layouts = await apiSaveLayout(layoutId, body);
-      console.log({ layouts });
-      setData(layouts);
-      setLoading(false);
+      await apiSaveLayout(layoutId, body);
+      getLayouts();
     } catch (error) {
       console.log(error);
     }
