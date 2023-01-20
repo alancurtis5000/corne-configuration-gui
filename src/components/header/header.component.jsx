@@ -19,14 +19,16 @@ const MenuProps = {
   },
 };
 export const Header = () => {
-  const { data, layout, setLayout } = useContext(KeymapContext);
+  const { layouts, selectedLayoutIndex, setSelectedLayoutIndex } =
+    useContext(KeymapContext);
 
   const handleChange = (event) => {
-    setLayout(event.target.value);
+    console.log(event.target.value);
+    setSelectedLayoutIndex(event.target.value);
   };
 
-  const layoutOptions = data?.map((layoutOption) => (
-    <MenuItem value={layoutOption} key={layoutOption.id}>
+  const layoutOptions = layouts?.map((layoutOption) => (
+    <MenuItem value={layoutOption.id} key={layoutOption.id}>
       {layoutOption.label}
     </MenuItem>
   ));
@@ -40,7 +42,7 @@ export const Header = () => {
           <Select
             labelId="layout-select-label"
             id="layout-select"
-            value={layout}
+            value={selectedLayoutIndex}
             label="Layout"
             onChange={handleChange}
             MenuProps={MenuProps}

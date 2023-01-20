@@ -42,10 +42,12 @@ export const KeymapContext = createContext({
   layout: {},
   selectedLayerIndex: 0,
   selectedBindingIndex: null,
+  selectedLayoutIndex: 0,
   buttonMode: null,
   // actions
   // increment: () => {},
   setButtonMode: () => {},
+  setSelectedLayoutIndex: () => {},
   createLayer: () => {},
   changeLayerName: () => {},
   changeBindingLabel: () => {},
@@ -66,13 +68,13 @@ export const KeymapContext = createContext({
 // can I and should I right test for this?
 /* istanbul ignore next */
 export const KeymapProvider = ({ children }) => {
-  const [layers, setLayers] = useState([]);
   const [selectedLayerIndex, setSelectedLayerIndex] = useState(0);
+  const [selectedLayoutIndex, setSelectedLayoutIndex] = useState(0);
   const [selectedBindingIndex, setSelectedBindingIndex] = useState(null);
   const [buttonMode, setButtonMode] = useState(null);
+  const [layouts, setLayouts] = useState(null);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [layout, setLayout] = useState({});
 
   const getLayouts = async () => {
     setLoading(true);
@@ -80,9 +82,8 @@ export const KeymapProvider = ({ children }) => {
       const layouts = await apiCall();
       console.log({ layouts });
       setData(layouts);
+      setLayouts(layouts);
       setLoading(false);
-      setLayers(layouts[0].layers);
-      setLayout(layouts[0]);
     } catch (error) {
       console.log(error);
     }
@@ -92,7 +93,6 @@ export const KeymapProvider = ({ children }) => {
     const body = {
       id: data[0].id,
       label: data[0].label,
-      layers: layers,
     };
     const layoutId = data[0].id;
     setLoading(true);
@@ -109,74 +109,75 @@ export const KeymapProvider = ({ children }) => {
   }, []);
 
   // actions
+
   const createLayer = () => {
-    setLayers(createLayerUtil({ layers }));
-    setSelectedLayerIndex(layers.length);
+    setLayouts(createLayerUtil({ layouts, selectedLayoutIndex }));
+    setSelectedLayerIndex(layouts[selectedLayoutIndex].layers.length - 1);
   };
 
-  const changeLayerName = ({ input }) =>
-    setLayers(changeLayerNameUtil({ input, selectedLayerIndex, layers }));
-  const changeBindingLabel = ({ input }) =>
-    setLayers(
-      changeBindingLabelUtil({
-        input,
-        selectedLayerIndex,
-        layers,
-        selectedBindingIndex,
-      })
-    );
-  const moveLayer = ({ direction, index }) =>
-    setLayers(moveLayerUtil({ direction, index, layers }));
-  const deleteLayer = ({ selectedLayerIndex }) =>
-    setLayers(deleteLayerUtil({ selectedLayerIndex, layers }));
-  const addModifierToTappedBinding = ({ modifier }) =>
-    setLayers(
-      addModifierToTappedBindingUtil({
-        modifier,
-        layers,
-        selectedLayerIndex,
-        selectedBindingIndex,
-      })
-    );
-  const addModifierToHeldBinding = ({ modifier }) =>
-    setLayers(
-      addModifierToHeldBindingUtil({
-        modifier,
-        layers,
-        selectedLayerIndex,
-        selectedBindingIndex,
-      })
-    );
-  const changeBindingTapped = ({ newBindingTappedValue }) =>
-    setLayers(
-      changeBindingTappedUtil({
-        newBindingTappedValue,
-        layers,
-        selectedLayerIndex,
-        selectedBindingIndex,
-      })
-    );
-  const changeBindingHeld = ({ newBindingTappedValue }) =>
-    setLayers(
-      changeBindingHeldUtil({
-        newBindingTappedValue,
-        layers,
-        selectedLayerIndex,
-        selectedBindingIndex,
-      })
-    );
+  const changeLayerName = ({ input }) => {};
+  // setLayers(changeLayerNameUtil({ input, selectedLayerIndex, layers }));
+  const changeBindingLabel = ({ input }) => {};
+  // setLayers(
+  //   changeBindingLabelUtil({
+  //     input,
+  //     selectedLayerIndex,
+  //     layers,
+  //     selectedBindingIndex,
+  //   })
+  // );
+  const moveLayer = ({ direction, index }) => {};
+  // setLayers(moveLayerUtil({ direction, index, layers }));
+  const deleteLayer = ({ selectedLayerIndex }) => {};
+  // setLayers(deleteLayerUtil({ selectedLayerIndex, layers }));
+  const addModifierToTappedBinding = ({ modifier }) => {};
+  // setLayers(
+  //   addModifierToTappedBindingUtil({
+  //     modifier,
+  //     layers,
+  //     selectedLayerIndex,
+  //     selectedBindingIndex,
+  //   })
+  // );
+  const addModifierToHeldBinding = ({ modifier }) => {};
+  // setLayers(
+  //   addModifierToHeldBindingUtil({
+  //     modifier,
+  //     layers,
+  //     selectedLayerIndex,
+  //     selectedBindingIndex,
+  //   })
+  // );
+  const changeBindingTapped = ({ newBindingTappedValue }) => {};
+  // setLayers(
+  //   changeBindingTappedUtil({
+  //     newBindingTappedValue,
+  //     layers,
+  //     selectedLayerIndex,
+  //     selectedBindingIndex,
+  //   })
+  // );
+  const changeBindingHeld = ({ newBindingTappedValue }) => {};
+  // setLayers(
+  //   changeBindingHeldUtil({
+  //     newBindingTappedValue,
+  //     layers,
+  //     selectedLayerIndex,
+  //     selectedBindingIndex,
+  //   })
+  // );
 
-  const setSelectedBindingLayer = ({ index, label }) =>
-    setLayers(
-      setSelectedBindingLayerUtil({
-        buttonMode,
-        index,
-        label,
-        layers,
-        selectedLayerIndex,
-        selectedBindingIndex,
-      })
-    );
+  const setSelectedBindingLayer = ({ index, label }) => {};
+  // setLayers(
+  //   setSelectedBindingLayerUtil({
+  //     buttonMode,
+  //     index,
+  //     label,
+  //     layers,
+  //     selectedLayerIndex,
+  //     selectedBindingIndex,
+  //   })
+  // );
 
   // if count changes do something
   // useEffect(() => {
@@ -187,18 +188,18 @@ export const KeymapProvider = ({ children }) => {
     <KeymapContext.Provider
       value={{
         //increment
-        layers,
         selectedLayerIndex,
         selectedBindingIndex,
         buttonMode,
         loading,
         data,
-        layout,
-        setLayout,
+        selectedLayoutIndex,
+        layouts,
+        setLayouts,
+        setSelectedLayoutIndex,
         getLayouts,
         saveLayoutById,
         setButtonMode,
-        setLayers,
         createLayer,
         changeLayerName,
         changeBindingLabel,

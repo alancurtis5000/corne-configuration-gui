@@ -9,12 +9,20 @@ export const decrementCount = (count, margin) => {
   return count - margin * 1;
 };
 
-export const createLayerUtil = ({ layers }) => {
-  const label = `Layer ${layers.length}`;
+export const createLayerUtil = ({ layouts, selectedLayoutIndex }) => {
+  const selectedLayout = layouts[selectedLayoutIndex];
+  const layers = selectedLayout.layers;
+
+  const label = `Layer_${layers.length}`;
   const index = layers.length;
+
   const layer = new Layer(label, index);
-  const updatedLayers = [...layers, layer];
-  return updatedLayers;
+  let updatedLayout = (layouts[selectedLayoutIndex].layers = [
+    ...layers,
+    layer,
+  ]);
+  let updatedLayouts = [...layouts, updatedLayout];
+  return updatedLayouts;
 };
 
 export const changeLayerNameUtil = ({ input, selectedLayerIndex, layers }) => {

@@ -14,39 +14,40 @@ function a11yProps(index) {
   };
 }
 export const LayerTabs = () => {
-  const { layers, createLayer, setSelectedLayerIndex, selectedLayerIndex } =
-    useContext(KeymapContext);
+  const {
+    createLayer,
+    setSelectedLayerIndex,
+    selectedLayerIndex,
+    selectedLayoutIndex,
+    layouts,
+  } = useContext(KeymapContext);
+  if (!layouts) return;
 
   const handleChange = (event, layerIndex) => {
-    if (layerIndex === layers.length) {
+    if (layerIndex === layouts[selectedLayoutIndex]?.layers.length) {
+      console.log("create layer");
       createLayer();
     } else {
       setSelectedLayerIndex(layerIndex);
     }
   };
+  let some = [];
+  layouts[selectedLayoutIndex]?.layers?.forEach((layer) => {
+    some.push(layer.label);
+  });
 
-  const addTab = () => {
-    const allTabs = [];
-    layers.forEach((layer) => {
-      allTabs.push(
-        <Tab
-          label={layer.label}
-          key={layer.index}
-          {...a11yProps(layer.index)}
-        />
-      );
-    });
-    allTabs.push(
-      <Tab
-        label={"New"}
-        icon={<AddIcon />}
-        iconPosition="start"
-        key={-1}
-        {...a11yProps(-1)}
-      />
-    );
-    return allTabs;
-  };
+  let tabs = layouts[selectedLayoutIndex].layers.map((layer) => (
+    <Tab label={layer.label} key={layer.index} {...a11yProps(layer.index)} />
+  ));
+  tabs.push(
+    <Tab
+      label={"New"}
+      icon={<AddIcon />}
+      iconPosition="start"
+      key={-1}
+      {...a11yProps(-1)}
+    />
+  );
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -54,15 +55,16 @@ export const LayerTabs = () => {
         <Tabs
           value={selectedLayerIndex}
           onChange={handleChange}
-          aria-label="basic tabs example"
+          aria-label="basic tabs"
         >
-          {addTab()}
+          {tabs}
         </Tabs>
       </Box>
-      {layers.map((layer) => {
-        return (
-          <LayerPanel key={layer.label} index={layer.index} layer={layer} />
-        );
+      {layouts[selectedLayoutIndex]?.layers.map((layer) => {
+        return <div>content</div>;
+        // return (
+        //   <LayerPanel key={layer.label} index={layer.index} layer={layer} />
+        // );
       })}
     </Box>
   );
