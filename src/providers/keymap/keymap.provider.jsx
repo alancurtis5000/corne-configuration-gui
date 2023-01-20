@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import propTypes from "prop-types";
 import {
   changeLayerNameUtil,
@@ -14,6 +14,18 @@ import {
 } from "./keymap.utils";
 // import { layersInitialStateNew as layersInitialState } from "./layersInitialStateNew";
 import { layersInitialState } from "./layersInitialState";
+import axios from "axios";
+
+const apiCall = () => {
+  return axios
+    .get("/layouts")
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      console.log({ err });
+    });
+};
 
 // import { layersInitialStateWithCombos as layersInitialState } from "./initial-state-with-button-combos";
 
@@ -39,6 +51,7 @@ export const KeymapContext = createContext({
   setSelectedLayerIndex: () => {},
   setSelectedBindingIndex: () => {},
   setSelectedBindingLayer: () => {},
+  getLayouts: () => {},
 });
 
 // can I and should I right test for this?
@@ -48,9 +61,26 @@ export const KeymapProvider = ({ children }) => {
   const [selectedLayerIndex, setSelectedLayerIndex] = useState(0);
   const [selectedBindingIndex, setSelectedBindingIndex] = useState(null);
   const [buttonMode, setButtonMode] = useState(null);
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const getLayouts = async () => {
+    setLoading(true);
+    try {
+      const layouts = await apiCall();
+      console.log({ layouts });
+      setData(layouts);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getLayouts();
+  }, []);
 
   // actions
-  // const increment = () => setCount(incrementCount(count, margin));
   const createLayer = () => {
     setLayers(createLayerUtil({ layers }));
     setSelectedLayerIndex(layers.length);
@@ -133,6 +163,9 @@ export const KeymapProvider = ({ children }) => {
         selectedLayerIndex,
         selectedBindingIndex,
         buttonMode,
+        loading,
+        data,
+        getLayouts,
         setButtonMode,
         setLayers,
         createLayer,
