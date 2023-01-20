@@ -1469,6 +1469,40 @@
                 "modifiers": []
               },
               "held": {
+                "id": 6255,
+                "key_category_id": 65,
+                "code": "mo",
+                "label": "MO",
+                "description": "Momentary layer toggle: Activates the selected layer, but only as long as you keep this key pressed.",
+                "created_at": "2021-12-28T09:53:10.617Z",
+                "updated_at": "2022-12-16T23:38:33.840Z",
+                "deleted": false,
+                "modifiable": false,
+                "shifted": false,
+                "tap": false,
+                "hold": true,
+                "doubleTap": false,
+                "tapHold": true,
+                "searchLabel": null,
+                "tag": "hold",
+                "glyph": "layer_tap",
+                "jsCode": null,
+                "url": null,
+                "os": null,
+                "geometry": null,
+                "params": {
+                  "layer": "forwardLayers"
+                },
+                "models": null,
+                "priority": null,
+                "macro": null,
+                "shape": null,
+                "comboPickable": false,
+                "comboTrigger": false,
+                "layer": {
+                  "index": 5,
+                  "label": "Blue"
+                },
                 "modifiers": []
               }
             },
