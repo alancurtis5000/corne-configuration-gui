@@ -26,6 +26,16 @@ const apiCall = () => {
       console.log({ err });
     });
 };
+const apiSaveLayout = (layoutId, body) => {
+  return axios
+    .put(`/layouts/${layoutId}`, body)
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      console.log({ err });
+    });
+};
 
 // import { layersInitialStateWithCombos as layersInitialState } from "./initial-state-with-button-combos";
 
@@ -52,6 +62,7 @@ export const KeymapContext = createContext({
   setSelectedBindingIndex: () => {},
   setSelectedBindingLayer: () => {},
   getLayouts: () => {},
+  saveLayoutById: () => {},
 });
 
 // can I and should I right test for this?
@@ -68,6 +79,24 @@ export const KeymapProvider = ({ children }) => {
     setLoading(true);
     try {
       const layouts = await apiCall();
+      console.log({ layouts });
+      setData(layouts);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const saveLayoutById = async () => {
+    const body = {
+      id: data[0].id,
+      label: data[0].label,
+      config: layers,
+    };
+    const layoutId = data[0].id;
+    setLoading(true);
+    try {
+      const layouts = await apiSaveLayout(layoutId, body);
       console.log({ layouts });
       setData(layouts);
       setLoading(false);
@@ -166,6 +195,7 @@ export const KeymapProvider = ({ children }) => {
         loading,
         data,
         getLayouts,
+        saveLayoutById,
         setButtonMode,
         setLayers,
         createLayer,

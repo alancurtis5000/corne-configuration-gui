@@ -6,9 +6,9 @@ import { DownloadButton } from "../download-button/download-button";
 
 import { KeymapContext } from "../../providers/keymap/keymap.provider";
 export const BottomActions = () => {
-  const { layers } = useContext(KeymapContext);
+  const { saveLayoutById } = useContext(KeymapContext);
   const handleSave = () => {
-    console.log("save", { layers });
+    saveLayoutById();
   };
 
   return (
