@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "./header.styles.scss";
 import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
@@ -19,8 +19,7 @@ const MenuProps = {
   },
 };
 export const Header = () => {
-  const { data } = useContext(KeymapContext);
-  const [layout, setLayout] = useState("");
+  const { data, layout, setLayout } = useContext(KeymapContext);
 
   const handleChange = (event) => {
     setLayout(event.target.value);

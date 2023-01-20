@@ -43,6 +43,7 @@ const apiSaveLayout = (layoutId, body) => {
 /* istanbul ignore next */
 export const KeymapContext = createContext({
   layers: [],
+  layout: {},
   selectedLayerIndex: 0,
   selectedBindingIndex: null,
   buttonMode: null,
@@ -61,6 +62,7 @@ export const KeymapContext = createContext({
   setSelectedLayerIndex: () => {},
   setSelectedBindingIndex: () => {},
   setSelectedBindingLayer: () => {},
+  setLayout: () => {},
   getLayouts: () => {},
   saveLayoutById: () => {},
 });
@@ -68,12 +70,13 @@ export const KeymapContext = createContext({
 // can I and should I right test for this?
 /* istanbul ignore next */
 export const KeymapProvider = ({ children }) => {
-  const [layers, setLayers] = useState([...layersInitialState]);
+  const [layers, setLayers] = useState([]);
   const [selectedLayerIndex, setSelectedLayerIndex] = useState(0);
   const [selectedBindingIndex, setSelectedBindingIndex] = useState(null);
   const [buttonMode, setButtonMode] = useState(null);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [layout, setLayout] = useState({});
 
   const getLayouts = async () => {
     setLoading(true);
@@ -82,6 +85,8 @@ export const KeymapProvider = ({ children }) => {
       console.log({ layouts });
       setData(layouts);
       setLoading(false);
+      setLayers(layouts[0].layers);
+      setLayout(layouts[0]);
     } catch (error) {
       console.log(error);
     }
@@ -194,6 +199,8 @@ export const KeymapProvider = ({ children }) => {
         buttonMode,
         loading,
         data,
+        layout,
+        setLayout,
         getLayouts,
         saveLayoutById,
         setButtonMode,

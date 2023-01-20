@@ -116,6 +116,25 @@ export const LayerPanel = (props) => {
       {selectedLayerIndex === index && (
         <Box sx={{ p: 3 }}>
           <div className="layer-actions">
+            <div className="move-buttons">
+              <IconButton
+                color="default"
+                onClick={handleMoveLayer}
+                value="left"
+                className="move-button"
+              >
+                <ArrowCircleLeftIcon sx={{ pointerEvents: "none" }} />
+              </IconButton>
+              <Typography>Move Layer</Typography>
+              <IconButton
+                color="default"
+                onClick={handleMoveLayer}
+                value="right"
+                className="move-button"
+              >
+                <ArrowCircleRightIcon sx={{ pointerEvents: "none" }} />
+              </IconButton>
+            </div>
             <div className="label">
               <TextField
                 id="layer-label"
@@ -148,25 +167,6 @@ export const LayerPanel = (props) => {
                   </IconButton>
                 </>
               )}
-            </div>
-            <div className="move-buttons">
-              <IconButton
-                color="default"
-                onClick={handleMoveLayer}
-                value="left"
-                className="move-button"
-              >
-                <ArrowCircleLeftIcon sx={{ pointerEvents: "none" }} />
-              </IconButton>
-              <Typography>Move Layer</Typography>
-              <IconButton
-                color="default"
-                onClick={handleMoveLayer}
-                value="right"
-                className="move-button"
-              >
-                <ArrowCircleRightIcon sx={{ pointerEvents: "none" }} />
-              </IconButton>
             </div>
             <div className="delete-button">
               <DeleteLayerButton />
