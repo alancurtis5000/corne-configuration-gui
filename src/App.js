@@ -4,16 +4,17 @@ import { LayerTabs } from "./components/layer-tabs/layer-tabs.component";
 import { KeymapProvider } from "./providers/keymap/keymap.provider";
 import { BottomActions } from "./components/bottom-actions/bottom-actions.componet";
 import { Header } from "./components/header/header.component";
-
+import { AppRouter } from "./router/app-router";
 function App() {
   return (
     <div className="App">
       <KeymapProvider>
-        <Header />
+        <AppRouter />
+        {/* <Header />
         <MainPage>
           <LayerTabs />
         </MainPage>
-        <BottomActions />
+        <BottomActions /> */}
       </KeymapProvider>
     </div>
   );
