@@ -128,8 +128,11 @@ export const KeymapProvider = ({ children }) => {
   // );
   const moveLayer = ({ direction, index }) => {};
   // setLayers(moveLayerUtil({ direction, index, layers }));
-  const deleteLayer = ({ selectedLayerIndex }) => {};
-  // setLayers(deleteLayerUtil({ selectedLayerIndex, layers }));
+  const deleteLayer = () => {
+    setLayouts(
+      deleteLayerUtil({ layouts, selectedLayoutIndex, selectedLayerIndex })
+    );
+  };
   const addModifierToTappedBinding = ({ modifier }) => {};
   // setLayers(
   //   addModifierToTappedBindingUtil({

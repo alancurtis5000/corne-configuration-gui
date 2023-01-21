@@ -84,11 +84,30 @@ export const moveLayerUtil = ({ direction, index, layers }) => {
   return layers;
 };
 
-export const deleteLayerUtil = ({ selectedLayerIndex, layers }) => {
+export const deleteLayerUtil = ({
+  layouts,
+  selectedLayoutIndex,
+  selectedLayerIndex,
+}) => {
+  // get selected layout
+  const selectedLayout = layouts[selectedLayoutIndex];
+  // get selected layers
+  const layers = selectedLayout.layers;
+  // clone layers
   const updatedLayers = [...layers];
+  // delete selected layer from cloned layers
   updatedLayers.splice(selectedLayerIndex, 1);
+  // update their indexes after removing one
   updatedLayers.forEach((layer, index) => (layer.index = index));
-  return updatedLayers;
+  // clone selected layout
+  const updatedLayout = { ...selectedLayout, layers: updatedLayers };
+
+  // clone layouts
+  const updatedLayouts = [...layouts];
+
+  // replace selected layout with updated layout
+  updatedLayouts.splice(selectedLayoutIndex, 1, updatedLayout);
+  return updatedLayouts;
 };
 
 export const addModifierToTappedBindingUtil = ({

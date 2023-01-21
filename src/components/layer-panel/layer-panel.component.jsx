@@ -18,13 +18,16 @@ export const LayerPanel = (props) => {
   const {
     changeLayerName,
     moveLayer,
-    layers,
     setSelectedLayerIndex,
     selectedLayerIndex,
+    selectedLayoutIndex,
+    layouts,
   } = useContext(KeymapContext);
+
   const [isEdit, setIsEdit] = useState(false);
   const [label, setLabel] = useState(layer.label);
   const [error, setError] = useState(false);
+  const layers = layouts[selectedLayoutIndex].layers;
 
   const gridLeft = () => {
     return (
