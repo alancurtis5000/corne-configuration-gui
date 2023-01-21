@@ -19,12 +19,17 @@ const MenuProps = {
   },
 };
 export const Header = () => {
-  const { layouts, selectedLayoutIndex, setSelectedLayoutIndex } =
-    useContext(KeymapContext);
+  const {
+    layouts,
+    selectedLayoutIndex,
+    setSelectedLayoutIndex,
+    setSelectedLayerIndex,
+  } = useContext(KeymapContext);
 
   const handleChange = (event) => {
     console.log(event.target.value);
     setSelectedLayoutIndex(event.target.value);
+    setSelectedLayerIndex(0);
   };
 
   const layoutOptions = layouts?.map((layoutOption) => (
