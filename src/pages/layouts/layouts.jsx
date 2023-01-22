@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Box from "@mui/material/Box";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
+import {
+  Box,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  ListItemIcon,
+} from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
 import { useNavigate } from "react-router-dom";
 
 export const Layouts = () => {
@@ -25,12 +29,13 @@ export const Layouts = () => {
   const handleLayoutSelect = (layoutId) => {
     navigate(`/layout/${layoutId}`);
   };
+  const handleCreateNewLayout = () => {
+    console.log("create new layout");
+  };
 
   return (
     <div className="page">
       <div>Layouts</div>
-      <div> create new layout</div>
-      <div>List of layouts </div>
       <Box
         sx={{
           width: "100%",
@@ -51,6 +56,14 @@ export const Layouts = () => {
               "& ul": { padding: 0 },
             }}
           >
+            <ListItem key={-1} disablePadding>
+              <ListItemButton onClick={handleCreateNewLayout}>
+                <ListItemIcon>
+                  <AddIcon />
+                </ListItemIcon>
+                <ListItemText primary={"New Layout"} />
+              </ListItemButton>
+            </ListItem>
             {layouts.map((layout) => (
               <ListItem key={layout.id} disablePadding>
                 <ListItemButton onClick={() => handleLayoutSelect(layout.id)}>
