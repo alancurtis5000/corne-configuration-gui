@@ -1,0 +1,11 @@
+import { Layer } from "./layer";
+
+const layer = new Layer("base", 0);
+export class Layout {
+  constructor({ label, createdAt }) {
+    this.createdAt = createdAt;
+    this.id = null;
+    this.label = label;
+    this.bindings = [layer];
+  }
+}
