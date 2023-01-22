@@ -34,6 +34,15 @@ const createNewLayout = async (body) => {
     .catch((error) => console.log(error));
 };
 
+const deleteLayout = async (layoutId) => {
+  return axios
+    .delete(`/layouts/${layoutId}`)
+    .then((res) => {
+      return res;
+    })
+    .catch((error) => console.log(error));
+};
+
 export const Layouts = () => {
   const [layouts, setLayouts] = useState([]);
   const navigate = useNavigate();
@@ -58,13 +67,16 @@ export const Layouts = () => {
     const label = `layout_${layouts.length}`;
     const layout = new Layout({ label, createdAt });
     const body = layout;
-    const response = await createNewLayout(body);
-    navigate(`/layout/${response.data.id}`);
+    await createNewLayout(body);
+    const response = await getLayouts();
+    setLayouts(response.data);
   };
 
-  const handleDeleteLayout = (event, layoutId) => {
+  const handleDeleteLayout = async (event, layoutId) => {
     event.stopPropagation();
-    console.log("delete", { layoutId });
+    await deleteLayout(layoutId);
+    const response = await getLayouts();
+    setLayouts(response.data);
   };
 
   const buttonSX = {
@@ -82,6 +94,13 @@ export const Layouts = () => {
     },
   };
 
+  const deleteSX = {
+    "&:hover": {
+      svg: {
+        fill: "red",
+      },
+    },
+  };
   return (
     <div className="page">
       <div>Layouts</div>
@@ -118,6 +137,7 @@ export const Layouts = () => {
                 <ListItemButton onClick={() => handleLayoutSelect(layout.id)}>
                   <ListItemText primary={layout.label} />
                   <IconButton
+                    sx={deleteSX}
                     onClick={(event) => handleDeleteLayout(event, layout.id)}
                   >
                     <DeleteIcon />
