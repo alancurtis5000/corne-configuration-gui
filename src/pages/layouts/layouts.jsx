@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import {
   Box,
   List,
@@ -14,44 +13,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { useNavigate } from "react-router-dom";
 import { Layout } from "../../classes/layout";
 import { boxSX, buttonSX, deleteSX, listSX } from "./layouts.styles";
-
-const getLayouts = async () => {
-  return axios
-    .get("/layouts")
-    .then((res) => {
-      return res;
-    })
-    .catch((err) => {
-      console.log({ err });
-    });
-};
-
-const createNewLayout = async (body) => {
-  return axios
-    .post("/layouts", body)
-    .then((res) => {
-      return res;
-    })
-    .catch((error) => console.log(error));
-};
-
-const deleteLayout = async (layoutId) => {
-  return axios
-    .delete(`/layouts/${layoutId}`)
-    .then((res) => {
-      return res;
-    })
-    .catch((error) => console.log(error));
-};
-
-const updateLayout = async (layoutId, body) => {
-  axios
-    .put(`/layouts/${layoutId}`, body)
-    .then((res) => {
-      return res;
-    })
-    .catch((error) => console.log(error));
-};
+import { createLayout, deleteLayout, getLayouts } from "../../api/layouts.api";
 
 export const Layouts = () => {
   const [layouts, setLayouts] = useState([]);
@@ -72,12 +34,12 @@ export const Layouts = () => {
   const handleLayoutSelect = (layoutId) => {
     navigate(`/layout/${layoutId}`);
   };
-  const handleCreateNewLayout = async () => {
+  const handleCreateLayout = async () => {
     const createdAt = Date.now();
     const label = `layout_${layouts.length}`;
     const layout = new Layout({ label, createdAt });
     const body = layout;
-    await createNewLayout(body);
+    await createLayout(body);
     const response = await getLayouts();
     setLayouts(response.data);
   };
@@ -96,7 +58,7 @@ export const Layouts = () => {
         <nav aria-label="secondary mailbox folders">
           <List sx={listSX}>
             <ListItem key={-1} disablePadding>
-              <ListItemButton onClick={handleCreateNewLayout}>
+              <ListItemButton onClick={handleCreateLayout}>
                 <ListItemIcon>
                   <AddIcon />
                 </ListItemIcon>
