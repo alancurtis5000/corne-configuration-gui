@@ -13,6 +13,7 @@ import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useNavigate } from "react-router-dom";
 import { Layout } from "../../classes/layout";
+import { boxSX, buttonSX, deleteSX, listSX } from "./layouts.styles";
 
 const getLayouts = async () => {
   return axios
@@ -37,6 +38,15 @@ const createNewLayout = async (body) => {
 const deleteLayout = async (layoutId) => {
   return axios
     .delete(`/layouts/${layoutId}`)
+    .then((res) => {
+      return res;
+    })
+    .catch((error) => console.log(error));
+};
+
+const updateLayout = async (layoutId, body) => {
+  axios
+    .put(`/layouts/${layoutId}`, body)
     .then((res) => {
       return res;
     })
@@ -79,51 +89,12 @@ export const Layouts = () => {
     setLayouts(response.data);
   };
 
-  const buttonSX = {
-    div: {
-      button: {
-        opacity: "0",
-      },
-    },
-    "&:hover": {
-      div: {
-        button: {
-          opacity: "1",
-        },
-      },
-    },
-  };
-
-  const deleteSX = {
-    "&:hover": {
-      svg: {
-        fill: "red",
-      },
-    },
-  };
   return (
     <div className="page">
       <div>Layouts</div>
-      <Box
-        sx={{
-          width: "100%",
-          maxWidth: 360,
-          maxHeight: 400,
-          bgcolor: "background.paper",
-        }}
-      >
+      <Box sx={boxSX}>
         <nav aria-label="secondary mailbox folders">
-          <List
-            sx={{
-              width: "100%",
-              maxWidth: 360,
-              bgcolor: "background.paper",
-              position: "relative",
-              overflow: "auto",
-              maxHeight: 300,
-              "& ul": { padding: 0 },
-            }}
-          >
+          <List sx={listSX}>
             <ListItem key={-1} disablePadding>
               <ListItemButton onClick={handleCreateNewLayout}>
                 <ListItemIcon>
