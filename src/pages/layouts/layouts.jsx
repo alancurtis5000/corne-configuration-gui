@@ -20,7 +20,7 @@ export const Layouts = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const get = async () => {
+    const apiCallGetLayouts = async () => {
       try {
         const response = await getLayouts();
         setLayouts(response.data);
@@ -28,7 +28,7 @@ export const Layouts = () => {
         console.log(error);
       }
     };
-    get();
+    apiCallGetLayouts();
   }, []);
 
   const handleLayoutSelect = (layoutId) => {
