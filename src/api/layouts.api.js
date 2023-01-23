@@ -30,9 +30,20 @@ export const deleteLayout = async (layoutId) => {
 };
 
 export const updateLayout = async (layoutId, body) => {
-  axios
+  return axios
     .put(`/layouts/${layoutId}`, body)
     .then((res) => {
+      return res;
+    })
+    .catch((error) => console.log(error));
+};
+
+export const getLayout = async (layoutId) => {
+  console.log({ layoutId });
+  return axios
+    .get(`/layouts/${layoutId}/`)
+    .then((res) => {
+      console.log({ res });
       return res;
     })
     .catch((error) => console.log(error));
