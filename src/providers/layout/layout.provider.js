@@ -4,6 +4,7 @@ import {
   createLayerUtil,
   moveLayerUtil,
   deleteLayerUtil,
+  updateLayerLabelUtil,
 } from "./layout.utils";
 
 // can I and should I right test for this?
@@ -23,6 +24,7 @@ export const LayoutContext = createContext({
   createLayer: () => {},
   moveLayer: () => {},
   deleteLayer: () => {},
+  updateLayerLabel: () => {},
 });
 
 // can I and should I right test for this?
@@ -35,6 +37,13 @@ export const LayoutProvider = ({ children }) => {
   const [hasBeenChanged, setHasBeenChanged] = useState(false);
 
   // extra actions
+
+  const forceTabsToRerender = async () => {
+    // mui would not update deleting the first tab without await
+    let oldSelectedLayerIndex = selectedLayerIndex;
+    await setSelectedLayerIndex(1);
+    setSelectedLayerIndex(oldSelectedLayerIndex);
+  };
   const createLayer = () => {
     setLayout(createLayerUtil({ layout }));
     setSelectedLayerIndex(layout.layers.length);
@@ -62,12 +71,15 @@ export const LayoutProvider = ({ children }) => {
     setLayout(deleteLayerUtil({ layout, selectedLayerIndex }));
     setHasBeenChanged(true);
     if (selectedLayerIndex === 0) {
-      // mui would not update deleting the first tab without await
-      await setSelectedLayerIndex(1);
-      setSelectedLayerIndex(0);
+      forceTabsToRerender();
     } else {
       setSelectedLayerIndex(selectedLayerIndex - 1);
     }
+  };
+
+  const updateLayerLabel = async ({ input }) => {
+    setLayout(updateLayerLabelUtil({ layout, input, selectedLayerIndex }));
+    forceTabsToRerender();
   };
 
   return (
@@ -86,6 +98,7 @@ export const LayoutProvider = ({ children }) => {
         createLayer,
         moveLayer,
         deleteLayer,
+        updateLayerLabel,
       }}
     >
       {children}

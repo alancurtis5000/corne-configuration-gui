@@ -46,3 +46,15 @@ export const deleteLayerUtil = ({ layout, selectedLayerIndex }) => {
   layout.layers = updatedLayers;
   return layout;
 };
+
+export const updateLayerLabelUtil = ({ layout, input, selectedLayerIndex }) => {
+  const layers = layout.layers;
+  const updatedLayer = { ...layers[selectedLayerIndex] };
+  updatedLayer.label = input;
+
+  const updatedLayers = [...layers];
+
+  updatedLayers.splice(selectedLayerIndex, 1, updatedLayer);
+  layout.layers = updatedLayers;
+  return layout;
+};

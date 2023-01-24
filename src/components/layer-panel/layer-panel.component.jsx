@@ -17,6 +17,7 @@ export const LayerPanel = (props) => {
   const { children, index, layer, ...other } = props;
   const {
     // changeLayerName,
+    updateLayerLabel,
     moveLayer,
     selectedLayerIndex,
   } = useContext(LayoutContext);
@@ -82,8 +83,9 @@ export const LayerPanel = (props) => {
     if (!label) {
       setError(true);
     } else {
-      // changeLayerName({ input });
+      updateLayerLabel({ input });
       setError(false);
+      setIsEdit(false);
     }
   };
 
