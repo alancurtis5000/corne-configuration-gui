@@ -4,19 +4,23 @@ import Button from "@mui/material/Button";
 import "./bottom-actions.styles.scss";
 import { DownloadButton } from "../download-button/download-button";
 
-import { KeymapContext } from "../../providers/keymap/keymap.provider";
+import { LayoutContext } from "../../providers/layout/layout.provider";
 export const BottomActions = () => {
-  const { saveLayoutById } = useContext(KeymapContext);
+  const { hasBeenChanged /*saveLayoutById*/ } = useContext(LayoutContext);
   const handleSave = () => {
-    saveLayoutById();
+    // saveLayoutById();
   };
 
   return (
     <div className="bottom-actions">
-      <Button onClick={handleSave} startIcon={<ArrowBackIcon />}>
-        Save
-      </Button>
-      <DownloadButton />
+      {hasBeenChanged && (
+        <>
+          <Button onClick={handleSave} startIcon={<ArrowBackIcon />}>
+            Save
+          </Button>
+          <DownloadButton />
+        </>
+      )}
     </div>
   );
 };
