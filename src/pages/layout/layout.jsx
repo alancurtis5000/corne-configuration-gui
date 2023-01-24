@@ -2,9 +2,10 @@ import React, { useEffect, useContext } from "react";
 import { getLayout } from "../../api/layouts.api";
 import { LayoutContext } from "../../providers/layout/layout.provider";
 import { useParams } from "react-router-dom";
+import { LayerTabs } from "../../components/layer-tabs/layer-tabs.component";
 
 export const Layout = () => {
-  const { setLayout, setLayoutOriginal } = useContext(LayoutContext);
+  const { layout, setLayout, setLayoutOriginal } = useContext(LayoutContext);
   const params = useParams();
   const layoutId = params.id * 1;
 
@@ -22,9 +23,11 @@ export const Layout = () => {
     apiCallGetLayout();
   }, [layoutId, params, setLayout, setLayoutOriginal]);
 
+  console.log({ layout });
   return (
     <div className="page">
       <div>Layout page</div>
+      <LayerTabs />
     </div>
   );
 };
