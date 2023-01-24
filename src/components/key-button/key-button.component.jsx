@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
 import { Button } from "@mui/material";
 import { KeyDialog } from "../key-dialog/key-dialog.component";
-import { KeymapContext } from "../../providers/keymap/keymap.provider";
+import { LayoutContext } from "../../providers/layout/layout.provider";
 
 export const KeyButton = (props) => {
   const { keyData } = props;
   const { index, tapped, held, label } = keyData;
   const [isOpen, setIsOpen] = useState(false);
-  const { setSelectedBindingIndex } = useContext(KeymapContext);
+  const { setSelectedBindingIndex } = useContext(LayoutContext);
 
   const handleOpenDialog = () => {
     setSelectedBindingIndex(index);

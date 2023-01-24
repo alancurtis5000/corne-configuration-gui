@@ -19,6 +19,8 @@ export const LayoutContext = createContext({
   setSelectedLayerIndex: () => {},
   hasBeenChanged: false,
   setHasBeenChanged: () => {},
+  selectedBindingIndex: 0,
+  setSelectedBindingIndex: () => {},
 
   // extra actions
   createLayer: () => {},
@@ -35,6 +37,7 @@ export const LayoutProvider = ({ children }) => {
   const [layoutOriginal, setLayoutOriginal] = useState({});
   const [selectedLayerIndex, setSelectedLayerIndex] = useState(0);
   const [hasBeenChanged, setHasBeenChanged] = useState(false);
+  const [selectedBindingIndex, setSelectedBindingIndex] = useState(0);
 
   // extra actions
 
@@ -94,6 +97,8 @@ export const LayoutProvider = ({ children }) => {
         setSelectedLayerIndex,
         hasBeenChanged,
         setHasBeenChanged,
+        selectedBindingIndex,
+        setSelectedBindingIndex,
         // extra actions
         createLayer,
         moveLayer,

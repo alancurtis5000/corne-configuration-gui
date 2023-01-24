@@ -15,12 +15,8 @@ import { LayoutContext } from "../../providers/layout/layout.provider";
 
 export const LayerPanel = (props) => {
   const { children, index, layer, ...other } = props;
-  const {
-    // changeLayerName,
-    updateLayerLabel,
-    moveLayer,
-    selectedLayerIndex,
-  } = useContext(LayoutContext);
+  const { updateLayerLabel, moveLayer, selectedLayerIndex } =
+    useContext(LayoutContext);
   const [isEdit, setIsEdit] = useState(false);
   const [label, setLabel] = useState(layer.label);
   const [error, setError] = useState(false);
