@@ -18,9 +18,9 @@ export const BottomActions = () => {
           <Button onClick={handleSave} startIcon={<ArrowBackIcon />}>
             Save
           </Button>
-          <DownloadButton />
         </>
       )}
+      <DownloadButton />
     </div>
   );
 };

@@ -18,9 +18,7 @@ export const LayerTabs = () => {
   const { layout, createLayer, setSelectedLayerIndex, selectedLayerIndex } =
     useContext(LayoutContext);
 
-  console.log({ layout });
   const handleChange = (event, layerIndex) => {
-    console.log("handleChange");
     if (layerIndex === layout?.layers.length) {
       createLayer();
     } else {
@@ -56,7 +54,6 @@ export const LayerTabs = () => {
         </Tabs>
       </Box>
       {layout.layers.map((layer) => {
-        return <div key={layer.label}>hello</div>;
         return (
           <LayerPanel key={layer.label} index={layer.index} layer={layer} />
         );

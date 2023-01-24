@@ -5,23 +5,22 @@ import "./layer-panel.styles.scss";
 import { KeyButton } from "../key-button/key-button.component";
 import { IconButton, TextField, Typography } from "@mui/material";
 import { useContext } from "react";
-import { KeymapContext } from "../../providers/keymap/keymap.provider";
 import EditIcon from "@mui/icons-material/Edit";
 import SaveIcon from "@mui/icons-material/Save";
 import CancelIcon from "@mui/icons-material/Cancel";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import { DeleteLayerButton } from "../delete-layer-button/delete-layer-button.compnent";
+import { LayoutContext } from "../../providers/layout/layout.provider";
 
 export const LayerPanel = (props) => {
   const { children, index, layer, ...other } = props;
   const {
-    changeLayerName,
+    // changeLayerName,
     moveLayer,
-    layers,
-    setSelectedLayerIndex,
     selectedLayerIndex,
-  } = useContext(KeymapContext);
+    layout,
+  } = useContext(LayoutContext);
   const [isEdit, setIsEdit] = useState(false);
   const [label, setLabel] = useState(layer.label);
   const [error, setError] = useState(false);
@@ -84,24 +83,14 @@ export const LayerPanel = (props) => {
     if (!label) {
       setError(true);
     } else {
-      changeLayerName({ input });
+      // changeLayerName({ input });
       setError(false);
     }
   };
 
   const handleMoveLayer = (e) => {
     const direction = e.target.value;
-    if (direction === "left") {
-      if (index !== 0) {
-        moveLayer({ direction, index });
-        setSelectedLayerIndex(index - 1);
-      }
-    } else {
-      if (index !== layers.length - 1) {
-        moveLayer({ direction, index });
-        setSelectedLayerIndex(index + 1);
-      }
-    }
+    moveLayer({ direction, index });
   };
 
   return (
@@ -168,9 +157,9 @@ export const LayerPanel = (props) => {
                 </>
               )}
             </div>
-            <div className="delete-button">
+            {/* <div className="delete-button">
               <DeleteLayerButton />
-            </div>
+            </div> */}
           </div>
 
           <div className="full-keyboard">

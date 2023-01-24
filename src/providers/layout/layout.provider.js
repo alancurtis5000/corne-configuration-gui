@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 import propTypes from "prop-types";
-import { createLayerUtil } from "./layout.utils";
+import { createLayerUtil, moveLayerUtil } from "./layout.utils";
 
 // can I and should I right test for this?
 /* istanbul ignore next */
@@ -17,6 +17,7 @@ export const LayoutContext = createContext({
 
   // extra actions
   createLayer: () => {},
+  moveLayer: () => {},
 });
 
 // can I and should I right test for this?
@@ -30,10 +31,23 @@ export const LayoutProvider = ({ children }) => {
 
   // extra actions
   const createLayer = () => {
-    console.log("createLayer");
     setLayout(createLayerUtil({ layout }));
     setSelectedLayerIndex(layout.layers.length);
     setHasBeenChanged(true);
+  };
+
+  const moveLayer = ({ direction, index }) => {
+    setLayout(moveLayerUtil({ layout, direction, index }));
+    setHasBeenChanged(true);
+    if (direction === "left") {
+      if (index !== 0) {
+        setSelectedLayerIndex(index - 1);
+      }
+    } else {
+      if (index !== layout.layers.length - 1) {
+        setSelectedLayerIndex(index + 1);
+      }
+    }
   };
 
   return (
@@ -50,6 +64,7 @@ export const LayoutProvider = ({ children }) => {
         setHasBeenChanged,
         // extra actions
         createLayer,
+        moveLayer,
       }}
     >
       {children}
