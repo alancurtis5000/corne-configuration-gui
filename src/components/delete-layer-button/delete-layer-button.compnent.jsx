@@ -7,11 +7,11 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { KeymapContext } from "../../providers/keymap/keymap.provider";
+import { LayoutContext } from "../../providers/layout/layout.provider";
 
 export const DeleteLayerButton = (props) => {
-  const { deleteLayer, layers, setSelectedLayerIndex, selectedLayerIndex } =
-    useContext(KeymapContext);
+  const { deleteLayer, layout, selectedLayerIndex } = useContext(LayoutContext);
+  const { layers } = layout;
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -23,11 +23,8 @@ export const DeleteLayerButton = (props) => {
   };
 
   const handleDeleteLayer = () => {
-    if (selectedLayerIndex === 0 && layers.length === 1) return;
-    if (selectedLayerIndex === layers.length - 1) {
-      setSelectedLayerIndex(selectedLayerIndex - 1);
-    }
-    deleteLayer({ selectedLayerIndex });
+    deleteLayer();
+    handleClose();
   };
 
   return (

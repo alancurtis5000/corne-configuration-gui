@@ -37,3 +37,12 @@ export const moveLayerUtil = ({ layout, direction, index }) => {
   }
   return layout;
 };
+
+export const deleteLayerUtil = ({ layout, selectedLayerIndex }) => {
+  const layers = layout.layers;
+  const updatedLayers = [...layers];
+  updatedLayers.splice(selectedLayerIndex, 1);
+  updatedLayers.forEach((layer, index) => (layer.index = index));
+  layout.layers = updatedLayers;
+  return layout;
+};

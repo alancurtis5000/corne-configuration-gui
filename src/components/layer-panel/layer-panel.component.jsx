@@ -19,7 +19,6 @@ export const LayerPanel = (props) => {
     // changeLayerName,
     moveLayer,
     selectedLayerIndex,
-    layout,
   } = useContext(LayoutContext);
   const [isEdit, setIsEdit] = useState(false);
   const [label, setLabel] = useState(layer.label);
@@ -157,9 +156,9 @@ export const LayerPanel = (props) => {
                 </>
               )}
             </div>
-            {/* <div className="delete-button">
+            <div className="delete-button">
               <DeleteLayerButton />
-            </div> */}
+            </div>
           </div>
 
           <div className="full-keyboard">

@@ -1,6 +1,10 @@
 import React, { createContext, useState } from "react";
 import propTypes from "prop-types";
-import { createLayerUtil, moveLayerUtil } from "./layout.utils";
+import {
+  createLayerUtil,
+  moveLayerUtil,
+  deleteLayerUtil,
+} from "./layout.utils";
 
 // can I and should I right test for this?
 /* istanbul ignore next */
@@ -18,6 +22,7 @@ export const LayoutContext = createContext({
   // extra actions
   createLayer: () => {},
   moveLayer: () => {},
+  deleteLayer: () => {},
 });
 
 // can I and should I right test for this?
@@ -49,6 +54,21 @@ export const LayoutProvider = ({ children }) => {
       }
     }
   };
+  const deleteLayer = async () => {
+    const layers = layout.layers;
+    // cant delete if only one layer
+    if (selectedLayerIndex === 0 && layers.length === 1) return;
+
+    setLayout(deleteLayerUtil({ layout, selectedLayerIndex }));
+    setHasBeenChanged(true);
+    if (selectedLayerIndex === 0) {
+      // mui would not update deleting the first tab without await
+      await setSelectedLayerIndex(1);
+      setSelectedLayerIndex(0);
+    } else {
+      setSelectedLayerIndex(selectedLayerIndex - 1);
+    }
+  };
 
   return (
     <LayoutContext.Provider
@@ -65,6 +85,7 @@ export const LayoutProvider = ({ children }) => {
         // extra actions
         createLayer,
         moveLayer,
+        deleteLayer,
       }}
     >
       {children}
