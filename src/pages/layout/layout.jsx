@@ -6,14 +6,13 @@ import { useParams } from "react-router-dom";
 export const Layout = () => {
   const { setLayout, setLayoutOriginal } = useContext(LayoutContext);
   const params = useParams();
+  const layoutId = params.id * 1;
 
   useEffect(() => {
     const apiCallGetLayout = async () => {
       try {
-        const layoutId = params.id * 1;
-
-        if (!layoutId) return;
         const response = await getLayout(layoutId);
+        console.log({ response });
         setLayout(response.data);
         setLayoutOriginal(response.data);
       } catch (error) {
@@ -21,7 +20,7 @@ export const Layout = () => {
       }
     };
     apiCallGetLayout();
-  }, [params, setLayout, setLayoutOriginal]);
+  }, [layoutId, params, setLayout, setLayoutOriginal]);
 
   return (
     <div className="page">
