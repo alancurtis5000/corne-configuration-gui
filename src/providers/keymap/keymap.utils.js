@@ -44,7 +44,6 @@ export const changeBindingLabelUtil = ({
 
   const updatedLayers = [...layers];
   updatedLayers.splice(selectedLayerIndex, 1, updateLayer);
-  console.log({ updateLayer });
   return updatedLayers;
 };
 

@@ -39,11 +39,9 @@ export const updateLayout = async (layoutId, body) => {
 };
 
 export const getLayout = async (layoutId) => {
-  console.log({ layoutId });
   return axios
     .get(`/layouts/${layoutId}/`)
     .then((res) => {
-      console.log({ res });
       return res;
     })
     .catch((error) => console.log(error));

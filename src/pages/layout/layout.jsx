@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { LayerTabs } from "../../components/layer-tabs/layer-tabs.component";
 
 export const Layout = () => {
-  const { layout, setLayout, setLayoutOriginal } = useContext(LayoutContext);
+  const { setLayout, setLayoutOriginal } = useContext(LayoutContext);
   const params = useParams();
   const layoutId = params.id * 1;
 
@@ -13,7 +13,6 @@ export const Layout = () => {
     const apiCallGetLayout = async () => {
       try {
         const response = await getLayout(layoutId);
-        console.log({ response });
         setLayout(response.data);
         setLayoutOriginal(response.data);
       } catch (error) {
@@ -23,7 +22,6 @@ export const Layout = () => {
     apiCallGetLayout();
   }, [layoutId, params, setLayout, setLayoutOriginal]);
 
-  console.log({ layout });
   return (
     <div className="page">
       <div>Layout page</div>

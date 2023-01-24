@@ -78,7 +78,6 @@ export const KeymapProvider = ({ children }) => {
     setLoading(true);
     try {
       const layouts = await apiCall();
-      console.log({ layouts });
       setData(layouts);
       setLoading(false);
       setLayers(layouts[0].layers);
