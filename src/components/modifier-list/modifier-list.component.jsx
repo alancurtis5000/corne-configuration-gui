@@ -1,19 +1,21 @@
 import React, { useContext } from "react";
 import { Button } from "@mui/material";
 import "./modifier-list.styles.scss";
-import { KeymapContext } from "../../providers/keymap/keymap.provider";
 import { keys } from "../../constants/keys";
 import { HELD, TAPPED } from "../../constants/button-modes";
+import { LayoutContext } from "../../providers/layout/layout.provider";
 
 export const ModifierList = () => {
   const {
     addModifierToTappedBinding,
     addModifierToHeldBinding,
-    layers,
+    layout,
     selectedLayerIndex,
     selectedBindingIndex,
-    buttonMode,
-  } = useContext(KeymapContext);
+    selectedBindingActionKey,
+  } = useContext(LayoutContext);
+  const layers = layout.layers;
+
   const modifiers = keys.filter(
     (key) => key.key_category_id === 63 && key.modCode
   );
@@ -22,17 +24,17 @@ export const ModifierList = () => {
   const rightMods = [];
 
   const modLocation = () => {
-    if (buttonMode === TAPPED) {
+    if (selectedBindingActionKey === TAPPED) {
       return TAPPED;
-    } else if (buttonMode === HELD) {
+    } else if (selectedBindingActionKey === HELD) {
       return HELD;
     }
   };
 
   const handleAddMod = ({ modifier }) => {
-    if (buttonMode === TAPPED) {
+    if (selectedBindingActionKey === TAPPED) {
       addModifierToTappedBinding({ modifier });
-    } else if (buttonMode === HELD) {
+    } else if (selectedBindingActionKey === HELD) {
       addModifierToHeldBinding({ modifier });
     }
   };

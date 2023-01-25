@@ -8,14 +8,19 @@ import Button from "@mui/material/Button";
 import { ModifierList } from "../modifier-list/modifier-list.component";
 import "./key-dialog-page-2.styles.scss";
 import { BackButton } from "../back-button/back-button.component";
-import { KeymapContext } from "../../providers/keymap/keymap.provider";
 import { LayerSelect } from "../layer-select/layer-select.component";
 import { HELD, TAPPED } from "../../constants/button-modes";
+import { LayoutContext } from "../../providers/layout/layout.provider";
 
 export const KeyDialogPage2 = (props) => {
   const { setPage } = props;
-  const { selectedBindingIndex, selectedLayerIndex, layers, buttonMode } =
-    useContext(KeymapContext);
+  const {
+    selectedBindingIndex,
+    selectedLayerIndex,
+    layout,
+    selectedBindingActionKey,
+  } = useContext(LayoutContext);
+  const layers = layout.layers;
   const { index, tapped, held } =
     layers[selectedLayerIndex].bindings[selectedBindingIndex];
 
@@ -27,7 +32,7 @@ export const KeyDialogPage2 = (props) => {
     setPage(3);
   };
 
-  if (buttonMode === TAPPED) {
+  if (selectedBindingActionKey === TAPPED) {
     return (
       <div className="key-dialog-page-2">
         <DialogTitle>Key: {index + 1} (Edit Tapped) </DialogTitle>
@@ -55,7 +60,7 @@ export const KeyDialogPage2 = (props) => {
         </DialogContent>
       </div>
     );
-  } else if (buttonMode === HELD) {
+  } else if (selectedBindingActionKey === HELD) {
     return (
       <div className="key-dialog-page-2">
         <DialogTitle>Key: {index + 1} (Edit Tapped) </DialogTitle>
