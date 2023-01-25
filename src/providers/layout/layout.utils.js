@@ -1,6 +1,4 @@
 import { Layer } from "../../classes/layer";
-import { keys } from "../../constants/keys";
-import { isEmpty } from "../../utilities/data-parsing";
 
 export const createLayerUtil = ({ layout }) => {
   const label = `Layer_${layout.layers.length}`;
@@ -35,9 +33,11 @@ export const moveLayerUtil = ({ layout, direction, index }) => {
     updatedLayers.splice(sourceLayer.index, 1, sourceLayer);
     updatedLayers.splice(targetLayer.index, 1, targetLayer);
     layout.layers = updatedLayers;
-    return layout;
+
+    return { ...layout };
   }
-  return layout;
+
+  return { ...layout };
 };
 
 export const deleteLayerUtil = ({ layout, selectedLayerIndex }) => {
@@ -46,7 +46,8 @@ export const deleteLayerUtil = ({ layout, selectedLayerIndex }) => {
   updatedLayers.splice(selectedLayerIndex, 1);
   updatedLayers.forEach((layer, index) => (layer.index = index));
   layout.layers = updatedLayers;
-  return layout;
+
+  return { ...layout };
 };
 
 export const updateLayerLabelUtil = ({ layout, input, selectedLayerIndex }) => {
@@ -58,7 +59,8 @@ export const updateLayerLabelUtil = ({ layout, input, selectedLayerIndex }) => {
 
   updatedLayers.splice(selectedLayerIndex, 1, updatedLayer);
   layout.layers = updatedLayers;
-  return layout;
+
+  return { ...layout };
 };
 
 export const setBindingActionValueUtil = ({
@@ -87,7 +89,7 @@ export const setBindingActionValueUtil = ({
   //   // binding[bindingActionKey].layer = { index, label };
   // }
 
-  return layout;
+  return { ...layout };
 };
 
 export const setBindingActionKeyModifiersUtil = ({

@@ -48,12 +48,6 @@ export const LayoutProvider = ({ children }) => {
 
   // extra actions
 
-  const forceTabsToRerender = async () => {
-    // mui would not update deleting the first tab without await
-    let oldSelectedLayerIndex = selectedLayerIndex;
-    await setSelectedLayerIndex(1);
-    setSelectedLayerIndex(oldSelectedLayerIndex);
-  };
   const createLayer = () => {
     setLayout(createLayerUtil({ layout }));
     setSelectedLayerIndex(layout.layers.length);
@@ -81,7 +75,6 @@ export const LayoutProvider = ({ children }) => {
     setLayout(deleteLayerUtil({ layout, selectedLayerIndex }));
     setHasBeenChanged(true);
     if (selectedLayerIndex === 0) {
-      forceTabsToRerender();
     } else {
       setSelectedLayerIndex(selectedLayerIndex - 1);
     }
@@ -89,7 +82,6 @@ export const LayoutProvider = ({ children }) => {
 
   const updateLayerLabel = async ({ input }) => {
     setLayout(updateLayerLabelUtil({ layout, input, selectedLayerIndex }));
-    forceTabsToRerender();
   };
 
   const setBindingActionValue = ({ bindingActionKey, bindingActionValue }) => {
