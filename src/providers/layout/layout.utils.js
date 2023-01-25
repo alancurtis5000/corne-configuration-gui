@@ -89,3 +89,48 @@ export const setBindingActionValueUtil = ({
 
   return layout;
 };
+
+export const setBindingActionKeyModifiersUtil = ({
+  layout,
+  selectedBindingActionKey,
+  selectedLayerIndex,
+  selectedBindingIndex,
+  modifier,
+}) => {
+  const layers = layout.layers;
+  const layer = { ...layers[selectedLayerIndex] };
+
+  const modifiers =
+    layer.bindings[selectedBindingIndex][selectedBindingActionKey].modifiers;
+
+  const doesAlternateExist = modifiers.findIndex((mod) => {
+    const currentModSplit = mod.label.split(" ");
+    const modifierSplit = modifier.label.split(" ");
+    return (
+      currentModSplit[0] !== modifierSplit[0] &&
+      currentModSplit[1] === modifierSplit[1]
+    );
+  });
+  if (doesAlternateExist === -1) {
+    const doesModifierExist = modifiers.findIndex(
+      (mod) => mod.label === modifier.label
+    );
+    if (doesModifierExist === -1) {
+      layer.bindings[selectedBindingIndex][selectedBindingActionKey].modifiers =
+        [...modifiers, modifier];
+    } else {
+      modifiers.splice(doesModifierExist, 1);
+      layer.bindings[selectedBindingIndex][selectedBindingActionKey].modifiers =
+        [...modifiers];
+    }
+  } else {
+    modifiers.splice(doesAlternateExist, 1);
+    layer.bindings[selectedBindingIndex][selectedBindingActionKey].modifiers = [
+      ...modifiers,
+      modifier,
+    ];
+  }
+
+  const updateLayout = { ...layout };
+  return updateLayout;
+};

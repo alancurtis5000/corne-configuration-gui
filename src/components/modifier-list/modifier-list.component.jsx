@@ -7,8 +7,7 @@ import { LayoutContext } from "../../providers/layout/layout.provider";
 
 export const ModifierList = () => {
   const {
-    addModifierToTappedBinding,
-    addModifierToHeldBinding,
+    setBindingActionKeyModifiers,
     layout,
     selectedLayerIndex,
     selectedBindingIndex,
@@ -32,11 +31,7 @@ export const ModifierList = () => {
   };
 
   const handleAddMod = ({ modifier }) => {
-    if (selectedBindingActionKey === TAPPED) {
-      addModifierToTappedBinding({ modifier });
-    } else if (selectedBindingActionKey === HELD) {
-      addModifierToHeldBinding({ modifier });
-    }
+    setBindingActionKeyModifiers({ modifier });
   };
 
   modifiers.forEach((modifier) => {
