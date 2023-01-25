@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import Dialog from "@mui/material/Dialog";
-import { KeyDialogPage1 } from "./key-dialog-page-1.component";
+import { KeyDialogPage1CurrentBindingSettings } from "./key-dialog-page-1-current-binding-settings.component";
 import { KeyDialogPage2 } from "./key-dialog-page-2.component";
 import { KeyDialogPage3 } from "./key-dialog-page-3.component";
 import { LayoutContext } from "../../providers/layout/layout.provider";
@@ -21,7 +21,7 @@ export const KeyDialog = (props) => {
     switch (page) {
       case 1:
         return (
-          <KeyDialogPage1
+          <KeyDialogPage1CurrentBindingSettings
             setPage={setPage}
             isOpen={isOpen}
             onClose={handleClose}

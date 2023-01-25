@@ -16,7 +16,7 @@ import { HELD, TAPPED } from "../../constants/button-modes";
 import { LayoutContext } from "../../providers/layout/layout.provider";
 import { isEmpty } from "../../utilities/data-parsing";
 
-export const KeyDialogPage1 = (props) => {
+export const KeyDialogPage1CurrentBindingSettings = (props) => {
   const { onClose, setPage } = props;
   const [isEdit, setIsEdit] = useState(false);
   const {
@@ -139,7 +139,7 @@ export const KeyDialogPage1 = (props) => {
   );
 };
 
-KeyDialogPage1.propTypes = {
+KeyDialogPage1CurrentBindingSettings.propTypes = {
   onClose: PropTypes.func.isRequired,
   setPage: PropTypes.func.isRequired,
 };
