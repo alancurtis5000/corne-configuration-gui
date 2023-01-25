@@ -4,17 +4,17 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { KeymapContext } from "../../providers/keymap/keymap.provider";
+import { LayoutContext } from "../../providers/layout/layout.provider";
 
 export const LayerSelect = () => {
   const {
     setSelectedBindingLayer,
     selectedLayerIndex,
     selectedBindingIndex,
-    layers,
-    buttonMode,
-  } = useContext(KeymapContext);
-
+    layout,
+    selectedBindingActionKey,
+  } = useContext(LayoutContext);
+  const layers = layout.layers;
   const selectedBinding =
     layers[selectedLayerIndex].bindings[selectedBindingIndex];
 
@@ -37,7 +37,7 @@ export const LayerSelect = () => {
         <Select
           labelId="layer-select-label"
           id="layer-select"
-          value={selectedBinding[buttonMode].layer.index}
+          value={selectedBinding[selectedBindingActionKey].layer.index}
           label="Layer"
           onChange={handleChange}
         >

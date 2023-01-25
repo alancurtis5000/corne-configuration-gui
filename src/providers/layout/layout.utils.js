@@ -136,3 +136,25 @@ export const setBindingActionKeyModifiersUtil = ({
   const updateLayout = { ...layout };
   return updateLayout;
 };
+
+export const setSelectedBindingLayerUtil = ({
+  selectedBindingActionKey,
+  index,
+  label,
+  layout,
+  selectedLayerIndex,
+  selectedBindingIndex,
+}) => {
+  const layers = layout.layers;
+  const updateLayer = { ...layers[selectedLayerIndex] };
+  updateLayer.bindings[selectedBindingIndex][selectedBindingActionKey].layer = {
+    index,
+    label,
+  };
+
+  const updatedLayers = [...layers];
+  updatedLayers.splice(selectedLayerIndex, 1, updateLayer);
+
+  const updateLayout = { ...layout, layers: updatedLayers };
+  return updateLayout;
+};

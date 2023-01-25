@@ -7,6 +7,7 @@ import {
   updateLayerLabelUtil,
   setBindingActionValueUtil,
   setBindingActionKeyModifiersUtil,
+  setSelectedBindingLayerUtil,
 } from "./layout.utils";
 
 // can I and should I right test for this?
@@ -33,6 +34,7 @@ export const LayoutContext = createContext({
   updateLayerLabel: () => {},
   setBindingActionValue: () => {},
   setBindingActionKeyModifiers: () => {},
+  setSelectedBindingLayer: () => {},
 });
 
 // can I and should I right test for this?
@@ -108,6 +110,19 @@ export const LayoutProvider = ({ children }) => {
     );
   };
 
+  const setSelectedBindingLayer = ({ index, label }) => {
+    setLayout(
+      setSelectedBindingLayerUtil({
+        layout,
+        selectedBindingActionKey,
+        selectedLayerIndex,
+        selectedBindingIndex,
+        index,
+        label,
+      })
+    );
+  };
+
   return (
     <LayoutContext.Provider
       value={{
@@ -131,6 +146,7 @@ export const LayoutProvider = ({ children }) => {
         updateLayerLabel,
         setBindingActionValue,
         setBindingActionKeyModifiers,
+        setSelectedBindingLayer,
       }}
     >
       {children}
