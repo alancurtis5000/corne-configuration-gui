@@ -12,23 +12,21 @@ import {
 import EditIcon from "@mui/icons-material/Edit";
 import SaveIcon from "@mui/icons-material/Save";
 import CancelIcon from "@mui/icons-material/Cancel";
-import { KeymapContext } from "../../providers/keymap/keymap.provider";
 import { HELD, TAPPED } from "../../constants/button-modes";
-import { isEmpty } from "../../utilities/data-parsing";
+import { LayoutContext } from "../../providers/layout/layout.provider";
 
 export const KeyDialogPage1 = (props) => {
   const { onClose, setPage } = props;
   const [isEdit, setIsEdit] = useState(false);
-
   const {
     selectedBindingIndex,
     selectedLayerIndex,
-    layers,
-    changeBindingLabel,
-    setButtonMode,
-    changeBindingTapped,
-    changeBindingHeld,
-  } = useContext(KeymapContext);
+    layout,
+    // changeBindingLabel,
+    setSelectedBindingActionKey,
+    setBindingActionValue,
+  } = useContext(LayoutContext);
+  const layers = layout.layers;
   const [localLabel, setLocalLabel] = useState(
     layers[selectedLayerIndex]?.bindings[selectedBindingIndex]?.label || null
   );
@@ -37,28 +35,19 @@ export const KeyDialogPage1 = (props) => {
   const { index, tapped, held } =
     layers[selectedLayerIndex]?.bindings[selectedBindingIndex];
 
-  const handleTapped = () => {
-    setButtonMode(TAPPED);
-    if (!tapped.label) {
-      setPage(3);
-    } else {
-      setPage(2);
-    }
-  };
-  const handleHold = () => {
-    setButtonMode(HELD);
-    if (!held.label) {
-      setPage(3);
-    } else {
-      setPage(2);
-    }
+  const handleSelectBindingKey = (bindingType) => {
+    setSelectedBindingActionKey(bindingType);
+    // logic for if bindingtype have value goto page
+    // if (!held.label) {
+    //   setPage(3);
+    // } else {
+    //   setPage(2);
+    // }
   };
 
-  const handleClearTapped = () => {
-    changeBindingTapped({ newBindingTappedValue: {} });
-  };
-  const handleClearHeld = () => {
-    changeBindingHeld({ newBindingTappedValue: {} });
+  const handleClearBindingTypeValue = (bindingActionKey) => {
+    const bindingActionValue = {};
+    setBindingActionValue({ bindingActionKey, bindingActionValue });
   };
 
   const handleEdit = () => {
@@ -73,7 +62,7 @@ export const KeyDialogPage1 = (props) => {
   const handleSave = () => {
     const input = localLabel;
     setIsEdit(false);
-    changeBindingLabel({ input });
+    // changeBindingLabel({ input });
   };
 
   const handleOnChange = (e) => {
@@ -122,9 +111,11 @@ export const KeyDialogPage1 = (props) => {
           }}
         >
           <DialogContentText>When</DialogContentText>{" "}
-          <Button onClick={handleTapped}>Tapped</Button>
+          <Button onClick={() => handleSelectBindingKey(TAPPED)}>Tapped</Button>
           <DialogContentText>:</DialogContentText> {tapped.label}
-          <Button onClick={handleClearTapped}>Clear</Button>
+          <Button onClick={() => handleClearBindingTypeValue(TAPPED)}>
+            Clear
+          </Button>
         </div>
         <div
           style={{
@@ -133,9 +124,11 @@ export const KeyDialogPage1 = (props) => {
           }}
         >
           <DialogContentText>When</DialogContentText>{" "}
-          <Button onClick={handleHold}>Held</Button>
+          <Button onClick={() => handleSelectBindingKey(HELD)}>Held</Button>
           <DialogContentText>:</DialogContentText> {held.label}
-          <Button onClick={handleClearHeld}>Clear</Button>
+          <Button onClick={() => handleClearBindingTypeValue(HELD)}>
+            Clear
+          </Button>
         </div>
       </DialogContent>
     </>

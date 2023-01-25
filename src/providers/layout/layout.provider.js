@@ -5,6 +5,7 @@ import {
   moveLayerUtil,
   deleteLayerUtil,
   updateLayerLabelUtil,
+  setBindingActionValueUtil,
 } from "./layout.utils";
 
 // can I and should I right test for this?
@@ -21,12 +22,15 @@ export const LayoutContext = createContext({
   setHasBeenChanged: () => {},
   selectedBindingIndex: 0,
   setSelectedBindingIndex: () => {},
+  selectedBindingActionKey: "",
+  setSelectedBindingActionKey: () => {},
 
   // extra actions
   createLayer: () => {},
   moveLayer: () => {},
   deleteLayer: () => {},
   updateLayerLabel: () => {},
+  setBindingActionValue: () => {},
 });
 
 // can I and should I right test for this?
@@ -38,6 +42,7 @@ export const LayoutProvider = ({ children }) => {
   const [selectedLayerIndex, setSelectedLayerIndex] = useState(0);
   const [hasBeenChanged, setHasBeenChanged] = useState(false);
   const [selectedBindingIndex, setSelectedBindingIndex] = useState(0);
+  const [selectedBindingActionKey, setSelectedBindingActionKey] = useState("");
 
   // extra actions
 
@@ -85,6 +90,18 @@ export const LayoutProvider = ({ children }) => {
     forceTabsToRerender();
   };
 
+  const setBindingActionValue = ({ bindingActionKey, bindingActionValue }) => {
+    setLayout(
+      setBindingActionValueUtil({
+        layout,
+        bindingActionKey,
+        bindingActionValue,
+        selectedLayerIndex,
+        selectedBindingIndex,
+      })
+    );
+  };
+
   return (
     <LayoutContext.Provider
       value={{
@@ -99,11 +116,14 @@ export const LayoutProvider = ({ children }) => {
         setHasBeenChanged,
         selectedBindingIndex,
         setSelectedBindingIndex,
+        selectedBindingActionKey,
+        setSelectedBindingActionKey,
         // extra actions
         createLayer,
         moveLayer,
         deleteLayer,
         updateLayerLabel,
+        setBindingActionValue,
       }}
     >
       {children}

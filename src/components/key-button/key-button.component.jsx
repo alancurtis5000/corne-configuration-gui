@@ -73,7 +73,7 @@ export const KeyButton = (props) => {
                 <div style={bold}>
                   <div style={labelWithMods}>
                     {tapped.label}
-                    {tapped?.modifiers.length > 0 && (
+                    {tapped?.modifiers?.length > 0 && (
                       <div style={modStyles}>{"mods"}</div>
                     )}
                   </div>

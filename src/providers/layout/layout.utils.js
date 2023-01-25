@@ -1,4 +1,6 @@
 import { Layer } from "../../classes/layer";
+import { keys } from "../../constants/keys";
+import { isEmpty } from "../../utilities/data-parsing";
 
 export const createLayerUtil = ({ layout }) => {
   const label = `Layer_${layout.layers.length}`;
@@ -56,5 +58,31 @@ export const updateLayerLabelUtil = ({ layout, input, selectedLayerIndex }) => {
 
   updatedLayers.splice(selectedLayerIndex, 1, updatedLayer);
   layout.layers = updatedLayers;
+  return layout;
+};
+
+export const setBindingActionValueUtil = ({
+  layout,
+  bindingActionKey,
+  bindingActionValue,
+  selectedLayerIndex,
+  selectedBindingIndex,
+}) => {
+  const layers = layout.layers;
+  const layer = { ...layers[selectedLayerIndex] };
+  const binding = layer.bindings[selectedBindingIndex];
+  if (isEmpty(bindingActionValue)) {
+    binding[bindingActionKey] = keys.find((key) => key.id === 5002);
+  } else {
+    binding[bindingActionKey] = bindingActionValue;
+  }
+  if (bindingActionValue.key_category_id === 65) {
+    console.log("binding layer toggle", { bindingActionValue });
+    // todo handle layer key category
+    // const index = 0;
+    // const label = layers[0].label;
+    // binding[bindingActionKey].layer = { index, label };
+  }
+
   return layout;
 };
