@@ -14,6 +14,7 @@ import SaveIcon from "@mui/icons-material/Save";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { HELD, TAPPED } from "../../constants/button-modes";
 import { LayoutContext } from "../../providers/layout/layout.provider";
+import { isEmpty } from "../../utilities/data-parsing";
 
 export const KeyDialogPage1 = (props) => {
   const { onClose, setPage } = props;
@@ -35,14 +36,17 @@ export const KeyDialogPage1 = (props) => {
   const { index, tapped, held } =
     layers[selectedLayerIndex]?.bindings[selectedBindingIndex];
 
+  const selectedBinding =
+    layers[selectedLayerIndex]?.bindings[selectedBindingIndex];
+
   const handleSelectBindingKey = (bindingType) => {
     setSelectedBindingActionKey(bindingType);
-    // logic for if bindingtype have value goto page
-    // if (!held.label) {
-    //   setPage(3);
-    // } else {
-    //   setPage(2);
-    // }
+    console.log({ selectedBinding, key: selectedBinding[bindingType] });
+    if (isEmpty(selectedBinding[bindingType])) {
+      setPage(3);
+    } else {
+      setPage(2);
+    }
   };
 
   const handleClearBindingTypeValue = (bindingActionKey) => {
