@@ -6,13 +6,13 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import Button from "@mui/material/Button";
 import { ModifierList } from "../modifier-list/modifier-list.component";
-import "./key-dialog-page-2.styles.scss";
+import "./key-dialog-page-2-edit-action.styles.scss";
 import { BackButton } from "../back-button/back-button.component";
 import { LayerSelect } from "../layer-select/layer-select.component";
 import { HELD, TAPPED } from "../../constants/button-modes";
 import { LayoutContext } from "../../providers/layout/layout.provider";
 
-export const KeyDialogPage2 = (props) => {
+export const KeyDialogPage2EditAction = (props) => {
   const { setPage } = props;
   const {
     selectedBindingIndex,
@@ -34,7 +34,7 @@ export const KeyDialogPage2 = (props) => {
 
   if (selectedBindingActionKey === TAPPED) {
     return (
-      <div className="key-dialog-page-2">
+      <div className="key-dialog-page-2-edit-action">
         <DialogTitle>Key: {index + 1} (Edit Tapped) </DialogTitle>
         <DialogContent dividers>
           <div className="content">
@@ -62,7 +62,7 @@ export const KeyDialogPage2 = (props) => {
     );
   } else if (selectedBindingActionKey === HELD) {
     return (
-      <div className="key-dialog-page-2">
+      <div className="key-dialog-page-2-edit-action">
         <DialogTitle>Key: {index + 1} (Edit Tapped) </DialogTitle>
         <DialogContent dividers>
           <div className="content">
@@ -91,6 +91,6 @@ export const KeyDialogPage2 = (props) => {
   }
 };
 
-KeyDialogPage2.propTypes = {
+KeyDialogPage2EditAction.propTypes = {
   setPage: PropTypes.func.isRequired,
 };
