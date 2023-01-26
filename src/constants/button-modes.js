@@ -1,2 +1,2 @@
 export const HELD = "held";
-export const TAPPED = "tapped";
+export const TAP = "tap";

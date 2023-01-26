@@ -5,7 +5,7 @@ import { LayoutContext } from "../../providers/layout/layout.provider";
 
 export const KeyButton = (props) => {
   const { keyData } = props;
-  const { index, tapped, held, label } = keyData;
+  const { index, tap, held, label } = keyData;
   const [isOpen, setIsOpen] = useState(false);
   const { setSelectedBindingIndex } = useContext(LayoutContext);
 
@@ -30,7 +30,7 @@ export const KeyButton = (props) => {
   const labelStyles = {
     display: "flex",
     flexDirection: "column",
-    opacity: tapped.label === "None" ? ".5" : "1",
+    opacity: tap.label === "None" ? ".5" : "1",
   };
 
   const bold = {
@@ -72,13 +72,13 @@ export const KeyButton = (props) => {
                 <div style={small}>Tap:</div>
                 <div style={bold}>
                   <div style={labelWithMods}>
-                    {tapped.label}
-                    {tapped?.modifiers?.length > 0 && (
+                    {tap.label}
+                    {tap?.modifiers?.length > 0 && (
                       <div style={modStyles}>{"mods"}</div>
                     )}
                   </div>
-                  {tapped?.layer?.label && (
-                    <div style={small}>{tapped.layer.label}</div>
+                  {tap?.layer?.label && (
+                    <div style={small}>{tap.layer.label}</div>
                   )}
                 </div>
               </div>

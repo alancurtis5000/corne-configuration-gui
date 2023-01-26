@@ -6,7 +6,7 @@ export const layersInitialState = [
       {
         index: 0,
         label: "",
-        tapped: {
+        tap: {
           id: 5218,
           key_category_id: 61,
           code: "Q",
@@ -44,7 +44,7 @@ export const layersInitialState = [
       {
         index: 1,
         label: "",
-        tapped: {
+        tap: {
           id: 5207,
           key_category_id: 61,
           code: "W",
@@ -110,7 +110,7 @@ export const layersInitialState = [
       {
         index: 2,
         label: "",
-        tapped: {
+        tap: {
           id: 5202,
           key_category_id: 61,
           code: "E",
@@ -184,7 +184,7 @@ export const layersInitialState = [
       {
         index: 3,
         label: "",
-        tapped: {
+        tap: {
           id: 5217,
           key_category_id: 61,
           code: "R",
@@ -250,7 +250,7 @@ export const layersInitialState = [
       {
         index: 4,
         label: "",
-        tapped: {
+        tap: {
           id: 5223,
           key_category_id: 61,
           code: "T",
@@ -288,7 +288,7 @@ export const layersInitialState = [
       {
         index: 5,
         label: "",
-        tapped: {
+        tap: {
           id: 5212,
           key_category_id: 61,
           code: "Y",
@@ -326,7 +326,7 @@ export const layersInitialState = [
       {
         index: 6,
         label: "",
-        tapped: {
+        tap: {
           id: 5221,
           key_category_id: 61,
           code: "U",
@@ -392,7 +392,7 @@ export const layersInitialState = [
       {
         index: 7,
         label: "",
-        tapped: {
+        tap: {
           id: 5205,
           key_category_id: 61,
           code: "I",
@@ -466,7 +466,7 @@ export const layersInitialState = [
       {
         index: 8,
         label: "",
-        tapped: {
+        tap: {
           id: 5220,
           key_category_id: 61,
           code: "O",
@@ -532,7 +532,7 @@ export const layersInitialState = [
       {
         index: 9,
         label: "",
-        tapped: {
+        tap: {
           id: 5209,
           key_category_id: 61,
           code: "P",
@@ -570,7 +570,7 @@ export const layersInitialState = [
       {
         index: 10,
         label: "",
-        tapped: {
+        tap: {
           id: 5199,
           key_category_id: 61,
           code: "A",
@@ -608,7 +608,7 @@ export const layersInitialState = [
       {
         index: 11,
         label: "",
-        tapped: {
+        tap: {
           id: 5215,
           key_category_id: 61,
           code: "S",
@@ -646,7 +646,7 @@ export const layersInitialState = [
       {
         index: 12,
         label: "",
-        tapped: {
+        tap: {
           id: 5206,
           key_category_id: 61,
           code: "D",
@@ -683,7 +683,7 @@ export const layersInitialState = [
           code: "lt",
           label: "LT",
           description:
-            "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tapped for a short time.",
+            "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tap for a short time.",
           created_at: "2021-12-28T09:53:10.574Z",
           updated_at: "2022-12-16T23:38:33.797Z",
           deleted: false,
@@ -721,7 +721,7 @@ export const layersInitialState = [
       {
         index: 13,
         label: "",
-        tapped: {
+        tap: {
           id: 5200,
           key_category_id: 61,
           code: "F",
@@ -758,7 +758,7 @@ export const layersInitialState = [
           code: "lt",
           label: "LT",
           description:
-            "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tapped for a short time.",
+            "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tap for a short time.",
           created_at: "2021-12-28T09:53:10.574Z",
           updated_at: "2022-12-16T23:38:33.797Z",
           deleted: false,
@@ -796,7 +796,7 @@ export const layersInitialState = [
       {
         index: 14,
         label: "",
-        tapped: {
+        tap: {
           id: 5208,
           key_category_id: 61,
           code: "G",
@@ -834,7 +834,7 @@ export const layersInitialState = [
       {
         index: 15,
         label: "",
-        tapped: {
+        tap: {
           id: 5219,
           key_category_id: 61,
           code: "H",
@@ -872,7 +872,7 @@ export const layersInitialState = [
       {
         index: 16,
         label: "",
-        tapped: {
+        tap: {
           id: 5210,
           key_category_id: 61,
           code: "J",
@@ -909,7 +909,7 @@ export const layersInitialState = [
           code: "lt",
           label: "LT",
           description:
-            "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tapped for a short time.",
+            "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tap for a short time.",
           created_at: "2021-12-28T09:53:10.574Z",
           updated_at: "2022-12-16T23:38:33.797Z",
           deleted: false,
@@ -947,7 +947,7 @@ export const layersInitialState = [
       {
         index: 17,
         label: "",
-        tapped: {
+        tap: {
           id: 5224,
           key_category_id: 61,
           code: "K",
@@ -985,7 +985,7 @@ export const layersInitialState = [
       {
         index: 18,
         label: "",
-        tapped: {
+        tap: {
           id: 5211,
           key_category_id: 61,
           code: "L",
@@ -1023,7 +1023,7 @@ export const layersInitialState = [
       {
         index: 19,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1096,7 +1096,7 @@ export const layersInitialState = [
       {
         index: 20,
         label: "",
-        tapped: {
+        tap: {
           id: 5214,
           key_category_id: 61,
           code: "Z",
@@ -1133,7 +1133,7 @@ export const layersInitialState = [
           code: "lt",
           label: "LT",
           description:
-            "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tapped for a short time.",
+            "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tap for a short time.",
           created_at: "2021-12-28T09:53:10.574Z",
           updated_at: "2022-12-16T23:38:33.797Z",
           deleted: false,
@@ -1171,7 +1171,7 @@ export const layersInitialState = [
       {
         index: 21,
         label: "",
-        tapped: {
+        tap: {
           id: 5213,
           key_category_id: 61,
           code: "X",
@@ -1209,7 +1209,7 @@ export const layersInitialState = [
       {
         index: 22,
         label: "",
-        tapped: {
+        tap: {
           id: 5216,
           key_category_id: 61,
           code: "C",
@@ -1247,7 +1247,7 @@ export const layersInitialState = [
       {
         index: 23,
         label: "",
-        tapped: {
+        tap: {
           id: 5204,
           key_category_id: 61,
           code: "V",
@@ -1285,7 +1285,7 @@ export const layersInitialState = [
       {
         index: 24,
         label: "",
-        tapped: {
+        tap: {
           id: 5203,
           key_category_id: 61,
           code: "B",
@@ -1323,7 +1323,7 @@ export const layersInitialState = [
       {
         index: 25,
         label: "",
-        tapped: {
+        tap: {
           id: 5222,
           key_category_id: 61,
           code: "N",
@@ -1361,7 +1361,7 @@ export const layersInitialState = [
       {
         index: 26,
         label: "",
-        tapped: {
+        tap: {
           id: 5201,
           key_category_id: 61,
           code: "M",
@@ -1399,7 +1399,7 @@ export const layersInitialState = [
       {
         index: 27,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1437,7 +1437,7 @@ export const layersInitialState = [
       {
         index: 28,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1475,7 +1475,7 @@ export const layersInitialState = [
       {
         index: 29,
         label: "",
-        tapped: {
+        tap: {
           id: 6254,
           key_category_id: 65,
           code: "to",
@@ -1520,7 +1520,7 @@ export const layersInitialState = [
       {
         index: 30,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1558,7 +1558,7 @@ export const layersInitialState = [
       {
         index: 31,
         label: "",
-        tapped: {
+        tap: {
           id: 5589,
           key_category_id: 81,
           code: "SPACE",
@@ -1596,7 +1596,7 @@ export const layersInitialState = [
       {
         index: 32,
         label: "",
-        tapped: {
+        tap: {
           id: 6001,
           key_category_id: 63,
           code: "LSHIFT",
@@ -1634,7 +1634,7 @@ export const layersInitialState = [
       {
         index: 33,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1672,7 +1672,7 @@ export const layersInitialState = [
       {
         index: 34,
         label: "",
-        tapped: {
+        tap: {
           id: 5577,
           key_category_id: 81,
           code: "ENTER",
@@ -1710,7 +1710,7 @@ export const layersInitialState = [
       {
         index: 35,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1754,7 +1754,7 @@ export const layersInitialState = [
       {
         index: 0,
         label: "",
-        tapped: {
+        tap: {
           id: 5218,
           key_category_id: 61,
           code: "Q",
@@ -1792,7 +1792,7 @@ export const layersInitialState = [
       {
         index: 1,
         label: "",
-        tapped: {
+        tap: {
           id: 5207,
           key_category_id: 61,
           code: "W",
@@ -1858,7 +1858,7 @@ export const layersInitialState = [
       {
         index: 2,
         label: "",
-        tapped: {
+        tap: {
           id: 5202,
           key_category_id: 61,
           code: "E",
@@ -1932,7 +1932,7 @@ export const layersInitialState = [
       {
         index: 3,
         label: "",
-        tapped: {
+        tap: {
           id: 5217,
           key_category_id: 61,
           code: "R",
@@ -2011,7 +2011,7 @@ export const layersInitialState = [
       {
         index: 4,
         label: "",
-        tapped: {
+        tap: {
           id: 5223,
           key_category_id: 61,
           code: "T",
@@ -2049,7 +2049,7 @@ export const layersInitialState = [
       {
         index: 5,
         label: "",
-        tapped: {
+        tap: {
           id: 5212,
           key_category_id: 61,
           code: "Y",
@@ -2087,7 +2087,7 @@ export const layersInitialState = [
       {
         index: 6,
         label: "",
-        tapped: {
+        tap: {
           id: 5221,
           key_category_id: 61,
           code: "U",
@@ -2166,7 +2166,7 @@ export const layersInitialState = [
       {
         index: 7,
         label: "",
-        tapped: {
+        tap: {
           id: 5205,
           key_category_id: 61,
           code: "I",
@@ -2240,7 +2240,7 @@ export const layersInitialState = [
       {
         index: 8,
         label: "",
-        tapped: {
+        tap: {
           id: 5220,
           key_category_id: 61,
           code: "O",
@@ -2306,7 +2306,7 @@ export const layersInitialState = [
       {
         index: 9,
         label: "",
-        tapped: {
+        tap: {
           id: 5209,
           key_category_id: 61,
           code: "P",
@@ -2344,7 +2344,7 @@ export const layersInitialState = [
       {
         index: 10,
         label: "",
-        tapped: {
+        tap: {
           id: 5199,
           key_category_id: 61,
           code: "A",
@@ -2382,7 +2382,7 @@ export const layersInitialState = [
       {
         index: 11,
         label: "",
-        tapped: {
+        tap: {
           id: 5215,
           key_category_id: 61,
           code: "S",
@@ -2420,7 +2420,7 @@ export const layersInitialState = [
       {
         index: 12,
         label: "",
-        tapped: {
+        tap: {
           id: 5206,
           key_category_id: 61,
           code: "D",
@@ -2457,7 +2457,7 @@ export const layersInitialState = [
           code: "lt",
           label: "LT",
           description:
-            "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tapped for a short time.",
+            "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tap for a short time.",
           created_at: "2021-12-28T09:53:10.574Z",
           updated_at: "2022-12-16T23:38:33.797Z",
           deleted: false,
@@ -2495,7 +2495,7 @@ export const layersInitialState = [
       {
         index: 13,
         label: "",
-        tapped: {
+        tap: {
           id: 5200,
           key_category_id: 61,
           code: "F",
@@ -2532,7 +2532,7 @@ export const layersInitialState = [
           code: "lt",
           label: "LT",
           description:
-            "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tapped for a short time.",
+            "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tap for a short time.",
           created_at: "2021-12-28T09:53:10.574Z",
           updated_at: "2022-12-16T23:38:33.797Z",
           deleted: false,
@@ -2570,7 +2570,7 @@ export const layersInitialState = [
       {
         index: 14,
         label: "",
-        tapped: {
+        tap: {
           id: 5208,
           key_category_id: 61,
           code: "G",
@@ -2608,7 +2608,7 @@ export const layersInitialState = [
       {
         index: 15,
         label: "",
-        tapped: {
+        tap: {
           id: 5219,
           key_category_id: 61,
           code: "H",
@@ -2646,7 +2646,7 @@ export const layersInitialState = [
       {
         index: 16,
         label: "",
-        tapped: {
+        tap: {
           id: 5210,
           key_category_id: 61,
           code: "J",
@@ -2683,7 +2683,7 @@ export const layersInitialState = [
           code: "lt",
           label: "LT",
           description:
-            "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tapped for a short time.",
+            "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tap for a short time.",
           created_at: "2021-12-28T09:53:10.574Z",
           updated_at: "2022-12-16T23:38:33.797Z",
           deleted: false,
@@ -2721,7 +2721,7 @@ export const layersInitialState = [
       {
         index: 17,
         label: "",
-        tapped: {
+        tap: {
           id: 5224,
           key_category_id: 61,
           code: "K",
@@ -2759,7 +2759,7 @@ export const layersInitialState = [
       {
         index: 18,
         label: "",
-        tapped: {
+        tap: {
           id: 5211,
           key_category_id: 61,
           code: "L",
@@ -2797,7 +2797,7 @@ export const layersInitialState = [
       {
         index: 19,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -2870,7 +2870,7 @@ export const layersInitialState = [
       {
         index: 20,
         label: "",
-        tapped: {
+        tap: {
           id: 5214,
           key_category_id: 61,
           code: "Z",
@@ -2907,7 +2907,7 @@ export const layersInitialState = [
           code: "lt",
           label: "LT",
           description:
-            "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tapped for a short time.",
+            "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tap for a short time.",
           created_at: "2021-12-28T09:53:10.574Z",
           updated_at: "2022-12-16T23:38:33.797Z",
           deleted: false,
@@ -2945,7 +2945,7 @@ export const layersInitialState = [
       {
         index: 21,
         label: "",
-        tapped: {
+        tap: {
           id: 5213,
           key_category_id: 61,
           code: "X",
@@ -2983,7 +2983,7 @@ export const layersInitialState = [
       {
         index: 22,
         label: "",
-        tapped: {
+        tap: {
           id: 5216,
           key_category_id: 61,
           code: "C",
@@ -3021,7 +3021,7 @@ export const layersInitialState = [
       {
         index: 23,
         label: "",
-        tapped: {
+        tap: {
           id: 5204,
           key_category_id: 61,
           code: "V",
@@ -3059,7 +3059,7 @@ export const layersInitialState = [
       {
         index: 24,
         label: "",
-        tapped: {
+        tap: {
           id: 5203,
           key_category_id: 61,
           code: "B",
@@ -3097,7 +3097,7 @@ export const layersInitialState = [
       {
         index: 25,
         label: "",
-        tapped: {
+        tap: {
           id: 5222,
           key_category_id: 61,
           code: "N",
@@ -3135,7 +3135,7 @@ export const layersInitialState = [
       {
         index: 26,
         label: "",
-        tapped: {
+        tap: {
           id: 5201,
           key_category_id: 61,
           code: "M",
@@ -3173,7 +3173,7 @@ export const layersInitialState = [
       {
         index: 27,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -3211,7 +3211,7 @@ export const layersInitialState = [
       {
         index: 28,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -3249,7 +3249,7 @@ export const layersInitialState = [
       {
         index: 29,
         label: "",
-        tapped: {
+        tap: {
           id: 6254,
           key_category_id: 65,
           code: "to",
@@ -3294,7 +3294,7 @@ export const layersInitialState = [
       {
         index: 30,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -3332,7 +3332,7 @@ export const layersInitialState = [
       {
         index: 31,
         label: "",
-        tapped: {
+        tap: {
           id: 5589,
           key_category_id: 81,
           code: "SPACE",
@@ -3370,7 +3370,7 @@ export const layersInitialState = [
       {
         index: 32,
         label: "",
-        tapped: {
+        tap: {
           id: 6001,
           key_category_id: 63,
           code: "LSHIFT",
@@ -3408,7 +3408,7 @@ export const layersInitialState = [
       {
         index: 33,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -3446,7 +3446,7 @@ export const layersInitialState = [
       {
         index: 34,
         label: "",
-        tapped: {
+        tap: {
           id: 5577,
           key_category_id: 81,
           code: "ENTER",
@@ -3484,7 +3484,7 @@ export const layersInitialState = [
       {
         index: 35,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -3528,7 +3528,7 @@ export const layersInitialState = [
       {
         index: 0,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -3566,7 +3566,7 @@ export const layersInitialState = [
       {
         index: 1,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -3604,7 +3604,7 @@ export const layersInitialState = [
       {
         index: 2,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -3642,7 +3642,7 @@ export const layersInitialState = [
       {
         index: 3,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -3680,7 +3680,7 @@ export const layersInitialState = [
       {
         index: 4,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -3718,7 +3718,7 @@ export const layersInitialState = [
       {
         index: 5,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -3756,7 +3756,7 @@ export const layersInitialState = [
       {
         index: 6,
         label: "",
-        tapped: {
+        tap: {
           id: 6845,
           key_category_id: 62,
           code: "N7",
@@ -3794,7 +3794,7 @@ export const layersInitialState = [
       {
         index: 7,
         label: "",
-        tapped: {
+        tap: {
           id: 6848,
           key_category_id: 62,
           code: "N8",
@@ -3832,7 +3832,7 @@ export const layersInitialState = [
       {
         index: 8,
         label: "",
-        tapped: {
+        tap: {
           id: 6850,
           key_category_id: 62,
           code: "N9",
@@ -3870,7 +3870,7 @@ export const layersInitialState = [
       {
         index: 9,
         label: "",
-        tapped: {
+        tap: {
           id: 5631,
           key_category_id: 66,
           code: "EQUAL",
@@ -3908,7 +3908,7 @@ export const layersInitialState = [
       {
         index: 10,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -3946,7 +3946,7 @@ export const layersInitialState = [
       {
         index: 11,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -3984,7 +3984,7 @@ export const layersInitialState = [
       {
         index: 12,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -4022,7 +4022,7 @@ export const layersInitialState = [
       {
         index: 13,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -4060,7 +4060,7 @@ export const layersInitialState = [
       {
         index: 14,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -4098,7 +4098,7 @@ export const layersInitialState = [
       {
         index: 15,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -4136,7 +4136,7 @@ export const layersInitialState = [
       {
         index: 16,
         label: "",
-        tapped: {
+        tap: {
           id: 6863,
           key_category_id: 77,
           code: "KP_N4",
@@ -4174,7 +4174,7 @@ export const layersInitialState = [
       {
         index: 17,
         label: "",
-        tapped: {
+        tap: {
           id: 6847,
           key_category_id: 62,
           code: "N5",
@@ -4212,7 +4212,7 @@ export const layersInitialState = [
       {
         index: 18,
         label: "",
-        tapped: {
+        tap: {
           id: 6852,
           key_category_id: 62,
           code: "N6",
@@ -4250,7 +4250,7 @@ export const layersInitialState = [
       {
         index: 19,
         label: "",
-        tapped: {
+        tap: {
           id: 5632,
           key_category_id: 66,
           code: "COMMA",
@@ -4288,7 +4288,7 @@ export const layersInitialState = [
       {
         index: 20,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -4326,7 +4326,7 @@ export const layersInitialState = [
       {
         index: 21,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -4364,7 +4364,7 @@ export const layersInitialState = [
       {
         index: 22,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -4402,7 +4402,7 @@ export const layersInitialState = [
       {
         index: 23,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -4440,7 +4440,7 @@ export const layersInitialState = [
       {
         index: 24,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -4478,7 +4478,7 @@ export const layersInitialState = [
       {
         index: 25,
         label: "",
-        tapped: {
+        tap: {
           id: 6846,
           key_category_id: 62,
           code: "N0",
@@ -4516,7 +4516,7 @@ export const layersInitialState = [
       {
         index: 26,
         label: "",
-        tapped: {
+        tap: {
           id: 6844,
           key_category_id: 62,
           code: "N1",
@@ -4554,7 +4554,7 @@ export const layersInitialState = [
       {
         index: 27,
         label: "",
-        tapped: {
+        tap: {
           id: 6843,
           key_category_id: 62,
           code: "N2",
@@ -4592,7 +4592,7 @@ export const layersInitialState = [
       {
         index: 28,
         label: "",
-        tapped: {
+        tap: {
           id: 6851,
           key_category_id: 62,
           code: "N3",
@@ -4630,7 +4630,7 @@ export const layersInitialState = [
       {
         index: 29,
         label: "",
-        tapped: {
+        tap: {
           id: 5636,
           key_category_id: 66,
           code: "DOT",
@@ -4668,7 +4668,7 @@ export const layersInitialState = [
       {
         index: 30,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -4706,7 +4706,7 @@ export const layersInitialState = [
       {
         index: 31,
         label: "",
-        tapped: {
+        tap: {
           id: 5589,
           key_category_id: 81,
           code: "SPACE",
@@ -4744,7 +4744,7 @@ export const layersInitialState = [
       {
         index: 32,
         label: "",
-        tapped: {
+        tap: {
           id: 6001,
           key_category_id: 63,
           code: "LSHIFT",
@@ -4782,7 +4782,7 @@ export const layersInitialState = [
       {
         index: 33,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -4820,7 +4820,7 @@ export const layersInitialState = [
       {
         index: 34,
         label: "",
-        tapped: {
+        tap: {
           id: 5577,
           key_category_id: 81,
           code: "ENTER",
@@ -4858,7 +4858,7 @@ export const layersInitialState = [
       {
         index: 35,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -4902,7 +4902,7 @@ export const layersInitialState = [
       {
         index: 0,
         label: "",
-        tapped: {
+        tap: {
           id: 6160,
           key_category_id: 67,
           code: "QMARK",
@@ -4940,7 +4940,7 @@ export const layersInitialState = [
       {
         index: 1,
         label: "",
-        tapped: {
+        tap: {
           id: 5639,
           key_category_id: 66,
           code: "GRAVE",
@@ -4978,7 +4978,7 @@ export const layersInitialState = [
       {
         index: 2,
         label: "",
-        tapped: {
+        tap: {
           id: 6156,
           key_category_id: 67,
           code: "DQT",
@@ -5016,7 +5016,7 @@ export const layersInitialState = [
       {
         index: 3,
         label: "",
-        tapped: {
+        tap: {
           id: 5634,
           key_category_id: 66,
           code: "SINGLE_QUOTE",
@@ -5054,7 +5054,7 @@ export const layersInitialState = [
       {
         index: 4,
         label: "",
-        tapped: {
+        tap: {
           id: 6140,
           key_category_id: 67,
           code: "TILDE",
@@ -5092,7 +5092,7 @@ export const layersInitialState = [
       {
         index: 5,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -5130,7 +5130,7 @@ export const layersInitialState = [
       {
         index: 6,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -5168,7 +5168,7 @@ export const layersInitialState = [
       {
         index: 7,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -5206,7 +5206,7 @@ export const layersInitialState = [
       {
         index: 8,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -5244,7 +5244,7 @@ export const layersInitialState = [
       {
         index: 9,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -5282,7 +5282,7 @@ export const layersInitialState = [
       {
         index: 10,
         label: "",
-        tapped: {
+        tap: {
           id: 6147,
           key_category_id: 67,
           code: "EXCL",
@@ -5320,7 +5320,7 @@ export const layersInitialState = [
       {
         index: 11,
         label: "",
-        tapped: {
+        tap: {
           id: 6143,
           key_category_id: 67,
           code: "AT",
@@ -5358,7 +5358,7 @@ export const layersInitialState = [
       {
         index: 12,
         label: "",
-        tapped: {
+        tap: {
           id: 6142,
           key_category_id: 67,
           code: "HASH",
@@ -5396,7 +5396,7 @@ export const layersInitialState = [
       {
         index: 13,
         label: "",
-        tapped: {
+        tap: {
           id: 6151,
           key_category_id: 67,
           code: "DOLLAR",
@@ -5434,7 +5434,7 @@ export const layersInitialState = [
       {
         index: 14,
         label: "",
-        tapped: {
+        tap: {
           id: 6159,
           key_category_id: 67,
           code: "PERCENT",
@@ -5472,7 +5472,7 @@ export const layersInitialState = [
       {
         index: 15,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -5510,7 +5510,7 @@ export const layersInitialState = [
       {
         index: 16,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -5548,7 +5548,7 @@ export const layersInitialState = [
       {
         index: 17,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -5586,7 +5586,7 @@ export const layersInitialState = [
       {
         index: 18,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -5624,7 +5624,7 @@ export const layersInitialState = [
       {
         index: 19,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -5662,7 +5662,7 @@ export const layersInitialState = [
       {
         index: 20,
         label: "",
-        tapped: {
+        tap: {
           id: 5628,
           key_category_id: 66,
           code: "BACKSLASH",
@@ -5700,7 +5700,7 @@ export const layersInitialState = [
       {
         index: 21,
         label: "",
-        tapped: {
+        tap: {
           id: 5637,
           key_category_id: 66,
           code: "SLASH",
@@ -5738,7 +5738,7 @@ export const layersInitialState = [
       {
         index: 22,
         label: "",
-        tapped: {
+        tap: {
           id: 6150,
           key_category_id: 67,
           code: "ASTRK",
@@ -5776,7 +5776,7 @@ export const layersInitialState = [
       {
         index: 23,
         label: "",
-        tapped: {
+        tap: {
           id: 5626,
           key_category_id: 66,
           code: "MINUS",
@@ -5814,7 +5814,7 @@ export const layersInitialState = [
       {
         index: 24,
         label: "",
-        tapped: {
+        tap: {
           id: 6154,
           key_category_id: 67,
           code: "PLUS",
@@ -5852,7 +5852,7 @@ export const layersInitialState = [
       {
         index: 25,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -5890,7 +5890,7 @@ export const layersInitialState = [
       {
         index: 26,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -5928,7 +5928,7 @@ export const layersInitialState = [
       {
         index: 27,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -5966,7 +5966,7 @@ export const layersInitialState = [
       {
         index: 28,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -6004,7 +6004,7 @@ export const layersInitialState = [
       {
         index: 29,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -6042,7 +6042,7 @@ export const layersInitialState = [
       {
         index: 30,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -6080,7 +6080,7 @@ export const layersInitialState = [
       {
         index: 31,
         label: "",
-        tapped: {
+        tap: {
           id: 6141,
           key_category_id: 67,
           code: "UNDERSCORE",
@@ -6118,7 +6118,7 @@ export const layersInitialState = [
       {
         index: 32,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -6156,7 +6156,7 @@ export const layersInitialState = [
       {
         index: 33,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -6194,7 +6194,7 @@ export const layersInitialState = [
       {
         index: 34,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -6232,7 +6232,7 @@ export const layersInitialState = [
       {
         index: 35,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -6276,7 +6276,7 @@ export const layersInitialState = [
       {
         index: 0,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -6314,7 +6314,7 @@ export const layersInitialState = [
       {
         index: 1,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -6352,7 +6352,7 @@ export const layersInitialState = [
       {
         index: 2,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -6390,7 +6390,7 @@ export const layersInitialState = [
       {
         index: 3,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -6428,7 +6428,7 @@ export const layersInitialState = [
       {
         index: 4,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -6466,7 +6466,7 @@ export const layersInitialState = [
       {
         index: 5,
         label: "",
-        tapped: {
+        tap: {
           id: 6157,
           key_category_id: 67,
           code: "COLON",
@@ -6504,7 +6504,7 @@ export const layersInitialState = [
       {
         index: 6,
         label: "",
-        tapped: {
+        tap: {
           id: 5633,
           key_category_id: 66,
           code: "SEMICOLON",
@@ -6542,7 +6542,7 @@ export const layersInitialState = [
       {
         index: 7,
         label: "",
-        tapped: {
+        tap: {
           id: 6158,
           key_category_id: 67,
           code: "AMPERSAND",
@@ -6580,7 +6580,7 @@ export const layersInitialState = [
       {
         index: 8,
         label: "",
-        tapped: {
+        tap: {
           id: 6145,
           key_category_id: 67,
           code: "PIPE",
@@ -6618,7 +6618,7 @@ export const layersInitialState = [
       {
         index: 9,
         label: "",
-        tapped: {
+        tap: {
           id: 5631,
           key_category_id: 66,
           code: "EQUAL",
@@ -6656,7 +6656,7 @@ export const layersInitialState = [
       {
         index: 10,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -6694,7 +6694,7 @@ export const layersInitialState = [
       {
         index: 11,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -6732,7 +6732,7 @@ export const layersInitialState = [
       {
         index: 12,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -6770,7 +6770,7 @@ export const layersInitialState = [
       {
         index: 13,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -6808,7 +6808,7 @@ export const layersInitialState = [
       {
         index: 14,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -6846,7 +6846,7 @@ export const layersInitialState = [
       {
         index: 15,
         label: "",
-        tapped: {
+        tap: {
           id: 6153,
           key_category_id: 67,
           code: "LESS_THAN",
@@ -6884,7 +6884,7 @@ export const layersInitialState = [
       {
         index: 16,
         label: "",
-        tapped: {
+        tap: {
           id: 6148,
           key_category_id: 67,
           code: "LPAR",
@@ -6922,7 +6922,7 @@ export const layersInitialState = [
       {
         index: 17,
         label: "",
-        tapped: {
+        tap: {
           id: 6146,
           key_category_id: 67,
           code: "LBRC",
@@ -6960,7 +6960,7 @@ export const layersInitialState = [
       {
         index: 18,
         label: "",
-        tapped: {
+        tap: {
           id: 5638,
           key_category_id: 66,
           code: "LBKT",
@@ -6998,7 +6998,7 @@ export const layersInitialState = [
       {
         index: 19,
         label: "",
-        tapped: {
+        tap: {
           id: 5632,
           key_category_id: 66,
           code: "COMMA",
@@ -7036,7 +7036,7 @@ export const layersInitialState = [
       {
         index: 20,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -7074,7 +7074,7 @@ export const layersInitialState = [
       {
         index: 21,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -7112,7 +7112,7 @@ export const layersInitialState = [
       {
         index: 22,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -7150,7 +7150,7 @@ export const layersInitialState = [
       {
         index: 23,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -7188,7 +7188,7 @@ export const layersInitialState = [
       {
         index: 24,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -7226,7 +7226,7 @@ export const layersInitialState = [
       {
         index: 25,
         label: "",
-        tapped: {
+        tap: {
           id: 6155,
           key_category_id: 67,
           code: "GREATER_THAN",
@@ -7264,7 +7264,7 @@ export const layersInitialState = [
       {
         index: 26,
         label: "",
-        tapped: {
+        tap: {
           id: 6152,
           key_category_id: 67,
           code: "RPAR",
@@ -7302,7 +7302,7 @@ export const layersInitialState = [
       {
         index: 27,
         label: "",
-        tapped: {
+        tap: {
           id: 6144,
           key_category_id: 67,
           code: "RBRC",
@@ -7340,7 +7340,7 @@ export const layersInitialState = [
       {
         index: 28,
         label: "",
-        tapped: {
+        tap: {
           id: 5635,
           key_category_id: 66,
           code: " RBKT",
@@ -7378,7 +7378,7 @@ export const layersInitialState = [
       {
         index: 29,
         label: "",
-        tapped: {
+        tap: {
           id: 5636,
           key_category_id: 66,
           code: "DOT",
@@ -7416,7 +7416,7 @@ export const layersInitialState = [
       {
         index: 30,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -7454,7 +7454,7 @@ export const layersInitialState = [
       {
         index: 31,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -7492,7 +7492,7 @@ export const layersInitialState = [
       {
         index: 32,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -7530,7 +7530,7 @@ export const layersInitialState = [
       {
         index: 33,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -7568,7 +7568,7 @@ export const layersInitialState = [
       {
         index: 34,
         label: "",
-        tapped: {
+        tap: {
           id: 6149,
           key_category_id: 67,
           code: "CARET",
@@ -7606,7 +7606,7 @@ export const layersInitialState = [
       {
         index: 35,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -7650,7 +7650,7 @@ export const layersInitialState = [
       {
         index: 0,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -7688,7 +7688,7 @@ export const layersInitialState = [
       {
         index: 1,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -7726,7 +7726,7 @@ export const layersInitialState = [
       {
         index: 2,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -7764,7 +7764,7 @@ export const layersInitialState = [
       {
         index: 3,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -7802,7 +7802,7 @@ export const layersInitialState = [
       {
         index: 4,
         label: "",
-        tapped: {
+        tap: {
           id: 5019,
           key_category_id: 1256,
           code: "BT_CLR",
@@ -7840,7 +7840,7 @@ export const layersInitialState = [
       {
         index: 5,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -7878,7 +7878,7 @@ export const layersInitialState = [
       {
         index: 6,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -7916,7 +7916,7 @@ export const layersInitialState = [
       {
         index: 7,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -7954,7 +7954,7 @@ export const layersInitialState = [
       {
         index: 8,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -7992,7 +7992,7 @@ export const layersInitialState = [
       {
         index: 9,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8030,7 +8030,7 @@ export const layersInitialState = [
       {
         index: 10,
         label: "",
-        tapped: {
+        tap: {
           id: 5013,
           key_category_id: 1256,
           code: "BT_SEL 0 ",
@@ -8068,7 +8068,7 @@ export const layersInitialState = [
       {
         index: 11,
         label: "",
-        tapped: {
+        tap: {
           id: 5014,
           key_category_id: 1256,
           code: "BT_SEL 1",
@@ -8106,7 +8106,7 @@ export const layersInitialState = [
       {
         index: 12,
         label: "",
-        tapped: {
+        tap: {
           id: 5015,
           key_category_id: 1256,
           code: "BT_SEL 2",
@@ -8144,7 +8144,7 @@ export const layersInitialState = [
       {
         index: 13,
         label: "",
-        tapped: {
+        tap: {
           id: 5016,
           key_category_id: 1256,
           code: "BT_SEL 3",
@@ -8182,7 +8182,7 @@ export const layersInitialState = [
       {
         index: 14,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8220,7 +8220,7 @@ export const layersInitialState = [
       {
         index: 15,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8258,7 +8258,7 @@ export const layersInitialState = [
       {
         index: 16,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8296,7 +8296,7 @@ export const layersInitialState = [
       {
         index: 17,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8334,7 +8334,7 @@ export const layersInitialState = [
       {
         index: 18,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8372,7 +8372,7 @@ export const layersInitialState = [
       {
         index: 19,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8410,7 +8410,7 @@ export const layersInitialState = [
       {
         index: 20,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8448,7 +8448,7 @@ export const layersInitialState = [
       {
         index: 21,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8486,7 +8486,7 @@ export const layersInitialState = [
       {
         index: 22,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8524,7 +8524,7 @@ export const layersInitialState = [
       {
         index: 23,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8562,7 +8562,7 @@ export const layersInitialState = [
       {
         index: 24,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8600,7 +8600,7 @@ export const layersInitialState = [
       {
         index: 25,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8638,7 +8638,7 @@ export const layersInitialState = [
       {
         index: 26,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8676,7 +8676,7 @@ export const layersInitialState = [
       {
         index: 27,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8714,7 +8714,7 @@ export const layersInitialState = [
       {
         index: 28,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8752,7 +8752,7 @@ export const layersInitialState = [
       {
         index: 29,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8790,7 +8790,7 @@ export const layersInitialState = [
       {
         index: 30,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8828,7 +8828,7 @@ export const layersInitialState = [
       {
         index: 31,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8866,7 +8866,7 @@ export const layersInitialState = [
       {
         index: 32,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8904,7 +8904,7 @@ export const layersInitialState = [
       {
         index: 33,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8942,7 +8942,7 @@ export const layersInitialState = [
       {
         index: 34,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -8980,7 +8980,7 @@ export const layersInitialState = [
       {
         index: 35,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -9024,7 +9024,7 @@ export const layersInitialState = [
       {
         index: 0,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -9062,7 +9062,7 @@ export const layersInitialState = [
       {
         index: 1,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -9100,7 +9100,7 @@ export const layersInitialState = [
       {
         index: 2,
         label: "",
-        tapped: {
+        tap: {
           id: 5214,
           key_category_id: 61,
           code: "Z",
@@ -9170,7 +9170,7 @@ export const layersInitialState = [
       {
         index: 3,
         label: "",
-        tapped: {
+        tap: {
           id: 5212,
           key_category_id: 61,
           code: "Y",
@@ -9240,7 +9240,7 @@ export const layersInitialState = [
       {
         index: 4,
         label: "",
-        tapped: {
+        tap: {
           id: 5637,
           key_category_id: 66,
           code: "SLASH",
@@ -9310,7 +9310,7 @@ export const layersInitialState = [
       {
         index: 5,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -9348,7 +9348,7 @@ export const layersInitialState = [
       {
         index: 6,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -9386,7 +9386,7 @@ export const layersInitialState = [
       {
         index: 7,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -9424,7 +9424,7 @@ export const layersInitialState = [
       {
         index: 8,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -9462,7 +9462,7 @@ export const layersInitialState = [
       {
         index: 9,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -9500,7 +9500,7 @@ export const layersInitialState = [
       {
         index: 10,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -9538,7 +9538,7 @@ export const layersInitialState = [
       {
         index: 11,
         label: "",
-        tapped: {
+        tap: {
           id: 5215,
           key_category_id: 61,
           code: "S",
@@ -9608,7 +9608,7 @@ export const layersInitialState = [
       {
         index: 12,
         label: "",
-        tapped: {
+        tap: {
           id: 5580,
           key_category_id: 81,
           code: "BACKSPACE",
@@ -9646,7 +9646,7 @@ export const layersInitialState = [
       {
         index: 13,
         label: "",
-        tapped: {
+        tap: {
           id: 5582,
           key_category_id: 81,
           code: "DEL",
@@ -9684,7 +9684,7 @@ export const layersInitialState = [
       {
         index: 14,
         label: "",
-        tapped: {
+        tap: {
           id: 5579,
           key_category_id: 81,
           code: "TAB",
@@ -9722,7 +9722,7 @@ export const layersInitialState = [
       {
         index: 15,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -9760,7 +9760,7 @@ export const layersInitialState = [
       {
         index: 16,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -9798,7 +9798,7 @@ export const layersInitialState = [
       {
         index: 17,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -9836,7 +9836,7 @@ export const layersInitialState = [
       {
         index: 18,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -9874,7 +9874,7 @@ export const layersInitialState = [
       {
         index: 19,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -9912,7 +9912,7 @@ export const layersInitialState = [
       {
         index: 20,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -9950,7 +9950,7 @@ export const layersInitialState = [
       {
         index: 21,
         label: "",
-        tapped: {
+        tap: {
           id: 5213,
           key_category_id: 61,
           code: "X",
@@ -10020,7 +10020,7 @@ export const layersInitialState = [
       {
         index: 22,
         label: "",
-        tapped: {
+        tap: {
           id: 5204,
           key_category_id: 61,
           code: "V",
@@ -10090,7 +10090,7 @@ export const layersInitialState = [
       {
         index: 23,
         label: "",
-        tapped: {
+        tap: {
           id: 5216,
           key_category_id: 61,
           code: "C",
@@ -10160,7 +10160,7 @@ export const layersInitialState = [
       {
         index: 24,
         label: "",
-        tapped: {
+        tap: {
           id: 5199,
           key_category_id: 61,
           code: "A",
@@ -10230,7 +10230,7 @@ export const layersInitialState = [
       {
         index: 25,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -10268,7 +10268,7 @@ export const layersInitialState = [
       {
         index: 26,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -10306,7 +10306,7 @@ export const layersInitialState = [
       {
         index: 27,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -10344,7 +10344,7 @@ export const layersInitialState = [
       {
         index: 28,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -10382,7 +10382,7 @@ export const layersInitialState = [
       {
         index: 29,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -10420,7 +10420,7 @@ export const layersInitialState = [
       {
         index: 30,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -10458,7 +10458,7 @@ export const layersInitialState = [
       {
         index: 31,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -10496,7 +10496,7 @@ export const layersInitialState = [
       {
         index: 32,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -10534,7 +10534,7 @@ export const layersInitialState = [
       {
         index: 33,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -10572,7 +10572,7 @@ export const layersInitialState = [
       {
         index: 34,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -10610,7 +10610,7 @@ export const layersInitialState = [
       {
         index: 35,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -10654,7 +10654,7 @@ export const layersInitialState = [
       {
         index: 0,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -10692,7 +10692,7 @@ export const layersInitialState = [
       {
         index: 1,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -10730,7 +10730,7 @@ export const layersInitialState = [
       {
         index: 2,
         label: "",
-        tapped: {
+        tap: {
           id: 5214,
           key_category_id: 61,
           code: "Z",
@@ -10810,7 +10810,7 @@ export const layersInitialState = [
       {
         index: 3,
         label: "",
-        tapped: {
+        tap: {
           id: 5212,
           key_category_id: 61,
           code: "Y",
@@ -10890,7 +10890,7 @@ export const layersInitialState = [
       {
         index: 4,
         label: "",
-        tapped: {
+        tap: {
           id: 5637,
           key_category_id: 66,
           code: "SLASH",
@@ -10970,7 +10970,7 @@ export const layersInitialState = [
       {
         index: 5,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -11008,7 +11008,7 @@ export const layersInitialState = [
       {
         index: 6,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -11046,7 +11046,7 @@ export const layersInitialState = [
       {
         index: 7,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -11084,7 +11084,7 @@ export const layersInitialState = [
       {
         index: 8,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -11122,7 +11122,7 @@ export const layersInitialState = [
       {
         index: 9,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -11160,7 +11160,7 @@ export const layersInitialState = [
       {
         index: 10,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -11198,7 +11198,7 @@ export const layersInitialState = [
       {
         index: 11,
         label: "",
-        tapped: {
+        tap: {
           id: 5215,
           key_category_id: 61,
           code: "S",
@@ -11278,7 +11278,7 @@ export const layersInitialState = [
       {
         index: 12,
         label: "",
-        tapped: {
+        tap: {
           id: 5580,
           key_category_id: 81,
           code: "BACKSPACE",
@@ -11316,7 +11316,7 @@ export const layersInitialState = [
       {
         index: 13,
         label: "",
-        tapped: {
+        tap: {
           id: 5582,
           key_category_id: 81,
           code: "DEL",
@@ -11354,7 +11354,7 @@ export const layersInitialState = [
       {
         index: 14,
         label: "",
-        tapped: {
+        tap: {
           id: 5579,
           key_category_id: 81,
           code: "TAB",
@@ -11392,7 +11392,7 @@ export const layersInitialState = [
       {
         index: 15,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -11430,7 +11430,7 @@ export const layersInitialState = [
       {
         index: 16,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -11468,7 +11468,7 @@ export const layersInitialState = [
       {
         index: 17,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -11506,7 +11506,7 @@ export const layersInitialState = [
       {
         index: 18,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -11544,7 +11544,7 @@ export const layersInitialState = [
       {
         index: 19,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -11582,7 +11582,7 @@ export const layersInitialState = [
       {
         index: 20,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -11620,7 +11620,7 @@ export const layersInitialState = [
       {
         index: 21,
         label: "",
-        tapped: {
+        tap: {
           id: 5213,
           key_category_id: 61,
           code: "X",
@@ -11700,7 +11700,7 @@ export const layersInitialState = [
       {
         index: 22,
         label: "",
-        tapped: {
+        tap: {
           id: 5204,
           key_category_id: 61,
           code: "V",
@@ -11780,7 +11780,7 @@ export const layersInitialState = [
       {
         index: 23,
         label: "",
-        tapped: {
+        tap: {
           id: 5216,
           key_category_id: 61,
           code: "C",
@@ -11860,7 +11860,7 @@ export const layersInitialState = [
       {
         index: 24,
         label: "",
-        tapped: {
+        tap: {
           id: 5199,
           key_category_id: 61,
           code: "A",
@@ -11940,7 +11940,7 @@ export const layersInitialState = [
       {
         index: 25,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -11978,7 +11978,7 @@ export const layersInitialState = [
       {
         index: 26,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12016,7 +12016,7 @@ export const layersInitialState = [
       {
         index: 27,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12054,7 +12054,7 @@ export const layersInitialState = [
       {
         index: 28,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12092,7 +12092,7 @@ export const layersInitialState = [
       {
         index: 29,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12130,7 +12130,7 @@ export const layersInitialState = [
       {
         index: 30,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12168,7 +12168,7 @@ export const layersInitialState = [
       {
         index: 31,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12206,7 +12206,7 @@ export const layersInitialState = [
       {
         index: 32,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12244,7 +12244,7 @@ export const layersInitialState = [
       {
         index: 33,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12282,7 +12282,7 @@ export const layersInitialState = [
       {
         index: 34,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12320,7 +12320,7 @@ export const layersInitialState = [
       {
         index: 35,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12364,7 +12364,7 @@ export const layersInitialState = [
       {
         index: 0,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12402,7 +12402,7 @@ export const layersInitialState = [
       {
         index: 1,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12440,7 +12440,7 @@ export const layersInitialState = [
       {
         index: 2,
         label: "",
-        tapped: {
+        tap: {
           id: 5325,
           key_category_id: 76,
           code: "UP",
@@ -12478,7 +12478,7 @@ export const layersInitialState = [
       {
         index: 3,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12516,7 +12516,7 @@ export const layersInitialState = [
       {
         index: 4,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12554,7 +12554,7 @@ export const layersInitialState = [
       {
         index: 5,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12592,7 +12592,7 @@ export const layersInitialState = [
       {
         index: 6,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12630,7 +12630,7 @@ export const layersInitialState = [
       {
         index: 7,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12668,7 +12668,7 @@ export const layersInitialState = [
       {
         index: 8,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12706,7 +12706,7 @@ export const layersInitialState = [
       {
         index: 9,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12744,7 +12744,7 @@ export const layersInitialState = [
       {
         index: 10,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12782,7 +12782,7 @@ export const layersInitialState = [
       {
         index: 11,
         label: "",
-        tapped: {
+        tap: {
           id: 5333,
           key_category_id: 76,
           code: "LEFT",
@@ -12820,7 +12820,7 @@ export const layersInitialState = [
       {
         index: 12,
         label: "",
-        tapped: {
+        tap: {
           id: 5330,
           key_category_id: 76,
           code: "DOWN",
@@ -12858,7 +12858,7 @@ export const layersInitialState = [
       {
         index: 13,
         label: "",
-        tapped: {
+        tap: {
           id: 5334,
           key_category_id: 76,
           code: "RIGHT",
@@ -12896,7 +12896,7 @@ export const layersInitialState = [
       {
         index: 14,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12934,7 +12934,7 @@ export const layersInitialState = [
       {
         index: 15,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -12972,7 +12972,7 @@ export const layersInitialState = [
       {
         index: 16,
         label: "",
-        tapped: {
+        tap: {
           id: 6003,
           key_category_id: 63,
           code: "LCTRL",
@@ -13010,7 +13010,7 @@ export const layersInitialState = [
       {
         index: 17,
         label: "",
-        tapped: {
+        tap: {
           id: 6005,
           key_category_id: 63,
           code: "LALT",
@@ -13056,7 +13056,7 @@ export const layersInitialState = [
       {
         index: 18,
         label: "",
-        tapped: {
+        tap: {
           id: 6001,
           key_category_id: 63,
           code: "LSHIFT",
@@ -13094,7 +13094,7 @@ export const layersInitialState = [
       {
         index: 19,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -13132,7 +13132,7 @@ export const layersInitialState = [
       {
         index: 20,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -13170,7 +13170,7 @@ export const layersInitialState = [
       {
         index: 21,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -13208,7 +13208,7 @@ export const layersInitialState = [
       {
         index: 22,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -13246,7 +13246,7 @@ export const layersInitialState = [
       {
         index: 23,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -13284,7 +13284,7 @@ export const layersInitialState = [
       {
         index: 24,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -13322,7 +13322,7 @@ export const layersInitialState = [
       {
         index: 25,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -13360,7 +13360,7 @@ export const layersInitialState = [
       {
         index: 26,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -13398,7 +13398,7 @@ export const layersInitialState = [
       {
         index: 27,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -13436,7 +13436,7 @@ export const layersInitialState = [
       {
         index: 28,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -13474,7 +13474,7 @@ export const layersInitialState = [
       {
         index: 29,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -13512,7 +13512,7 @@ export const layersInitialState = [
       {
         index: 30,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -13550,7 +13550,7 @@ export const layersInitialState = [
       {
         index: 31,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -13588,7 +13588,7 @@ export const layersInitialState = [
       {
         index: 32,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -13626,7 +13626,7 @@ export const layersInitialState = [
       {
         index: 33,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -13664,7 +13664,7 @@ export const layersInitialState = [
       {
         index: 34,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -13702,7 +13702,7 @@ export const layersInitialState = [
       {
         index: 35,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",

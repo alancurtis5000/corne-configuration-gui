@@ -6,7 +6,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 0,
         label: "",
-        tapped: {
+        tap: {
           id: 5218,
           key_category_id: 61,
           code: "Q",
@@ -42,7 +42,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 1,
         label: "",
-        tapped: {
+        tap: {
           id: 5199,
           key_category_id: 61,
           code: "A",
@@ -222,7 +222,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 2,
         label: "",
-        tapped: {
+        tap: {
           id: 5202,
           key_category_id: 61,
           code: "E",
@@ -288,7 +288,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 3,
         label: "",
-        tapped: {
+        tap: {
           id: 5199,
           key_category_id: 61,
           code: "A",
@@ -417,7 +417,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 4,
         label: "",
-        tapped: {
+        tap: {
           id: 5199,
           key_category_id: 61,
           code: "A",
@@ -546,7 +546,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 5,
         label: "",
-        tapped: {
+        tap: {
           id: 5199,
           key_category_id: 61,
           code: "A",
@@ -817,7 +817,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 6,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -855,7 +855,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 7,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -892,7 +892,7 @@ export const layersInitialStateWithCombos = [
           code: "lt",
           label: "LT",
           description:
-            "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tapped for a short time.",
+            "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tap for a short time.",
           created_at: "2021-12-28T09:53:10.574Z",
           updated_at: "2022-12-16T23:38:33.797Z",
           deleted: false,
@@ -930,7 +930,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 8,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -968,7 +968,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 9,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1006,7 +1006,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 10,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1044,7 +1044,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 11,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1082,7 +1082,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 12,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1120,7 +1120,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 13,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1158,7 +1158,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 14,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1196,7 +1196,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 15,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1234,7 +1234,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 16,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1272,7 +1272,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 17,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1310,7 +1310,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 18,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1348,7 +1348,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 19,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1386,7 +1386,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 20,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1424,7 +1424,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 21,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1462,7 +1462,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 22,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1500,7 +1500,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 23,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1538,7 +1538,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 24,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1576,7 +1576,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 25,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1614,7 +1614,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 26,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1652,7 +1652,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 27,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1690,7 +1690,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 28,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1728,7 +1728,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 29,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1766,7 +1766,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 30,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1804,7 +1804,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 31,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1842,7 +1842,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 32,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1880,7 +1880,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 33,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1918,7 +1918,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 34,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",
@@ -1956,7 +1956,7 @@ export const layersInitialStateWithCombos = [
       {
         index: 35,
         label: "",
-        tapped: {
+        tap: {
           id: 5002,
           key_category_id: 121,
           code: "none",

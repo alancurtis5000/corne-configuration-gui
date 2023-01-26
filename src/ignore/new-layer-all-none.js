@@ -5,7 +5,7 @@ export const noneLayer = {
     {
       index: 0,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -43,7 +43,7 @@ export const noneLayer = {
     {
       index: 1,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -81,7 +81,7 @@ export const noneLayer = {
     {
       index: 2,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -119,7 +119,7 @@ export const noneLayer = {
     {
       index: 3,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -157,7 +157,7 @@ export const noneLayer = {
     {
       index: 4,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -195,7 +195,7 @@ export const noneLayer = {
     {
       index: 5,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -233,7 +233,7 @@ export const noneLayer = {
     {
       index: 6,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -271,7 +271,7 @@ export const noneLayer = {
     {
       index: 7,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -309,7 +309,7 @@ export const noneLayer = {
     {
       index: 8,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -347,7 +347,7 @@ export const noneLayer = {
     {
       index: 9,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -385,7 +385,7 @@ export const noneLayer = {
     {
       index: 10,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -423,7 +423,7 @@ export const noneLayer = {
     {
       index: 11,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -461,7 +461,7 @@ export const noneLayer = {
     {
       index: 12,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -499,7 +499,7 @@ export const noneLayer = {
     {
       index: 13,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -537,7 +537,7 @@ export const noneLayer = {
     {
       index: 14,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -575,7 +575,7 @@ export const noneLayer = {
     {
       index: 15,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -613,7 +613,7 @@ export const noneLayer = {
     {
       index: 16,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -651,7 +651,7 @@ export const noneLayer = {
     {
       index: 17,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -689,7 +689,7 @@ export const noneLayer = {
     {
       index: 18,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -727,7 +727,7 @@ export const noneLayer = {
     {
       index: 19,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -765,7 +765,7 @@ export const noneLayer = {
     {
       index: 20,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -803,7 +803,7 @@ export const noneLayer = {
     {
       index: 21,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -841,7 +841,7 @@ export const noneLayer = {
     {
       index: 22,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -879,7 +879,7 @@ export const noneLayer = {
     {
       index: 23,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -917,7 +917,7 @@ export const noneLayer = {
     {
       index: 24,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -955,7 +955,7 @@ export const noneLayer = {
     {
       index: 25,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -993,7 +993,7 @@ export const noneLayer = {
     {
       index: 26,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -1031,7 +1031,7 @@ export const noneLayer = {
     {
       index: 27,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -1069,7 +1069,7 @@ export const noneLayer = {
     {
       index: 28,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -1107,7 +1107,7 @@ export const noneLayer = {
     {
       index: 29,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -1145,7 +1145,7 @@ export const noneLayer = {
     {
       index: 30,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -1183,7 +1183,7 @@ export const noneLayer = {
     {
       index: 31,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -1221,7 +1221,7 @@ export const noneLayer = {
     {
       index: 32,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -1259,7 +1259,7 @@ export const noneLayer = {
     {
       index: 33,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -1297,7 +1297,7 @@ export const noneLayer = {
     {
       index: 34,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",
@@ -1335,7 +1335,7 @@ export const noneLayer = {
     {
       index: 35,
       label: "",
-      tapped: {
+      tap: {
         id: 5002,
         key_category_id: 121,
         code: "none",

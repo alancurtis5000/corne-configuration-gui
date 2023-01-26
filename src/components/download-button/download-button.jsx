@@ -16,22 +16,22 @@ export const DownloadButton = (props) => {
       const bindingsConfig = [];
       defineLayers.push(`#define ${layer.label} ${layer.index} `);
       layer.bindings.forEach((binding) => {
-        let tappedBindingCode = undefined;
+        let tapBindingCode = undefined;
 
-        tappedBindingCode = generateBindingCode(binding);
+        tapBindingCode = generateBindingCode(binding);
 
         if (binding.index === 0) {
-          bindingsConfig.push(`     &none       ${tappedBindingCode}`);
+          bindingsConfig.push(`     &none       ${tapBindingCode}`);
         } else if (binding.index === 9 || binding.index === 19) {
           bindingsConfig.push(
-            ` ${tappedBindingCode}     &none \n          &none `
+            ` ${tapBindingCode}     &none \n          &none `
           );
         } else if (binding.index === 29) {
           bindingsConfig.push(
-            ` ${tappedBindingCode}     &none \n                                    `
+            ` ${tapBindingCode}     &none \n                                    `
           );
         } else {
-          bindingsConfig.push(` ${tappedBindingCode}`);
+          bindingsConfig.push(` ${tapBindingCode}`);
         }
       });
       layerConfigs.push(`${layer.label}_layer {

@@ -12,7 +12,7 @@ import { BackButton } from "../back-button/back-button.component";
 import { keys } from "../../constants/keys";
 import { Button } from "@mui/material";
 import { categories } from "../../constants/categories";
-import { HELD, TAPPED } from "../../constants/button-modes";
+import { HELD, TAP } from "../../constants/button-modes";
 import { LayoutContext } from "../../providers/layout/layout.provider";
 import { BindingAction } from "../../classes/binding-action";
 
@@ -75,7 +75,7 @@ export const KeyDialogPage3 = (props) => {
         </AccordionSummary>
         <AccordionDetails>
           {options.map((option) => {
-            if (selectedBindingActionKey === TAPPED && option.tap) {
+            if (selectedBindingActionKey === TAP && option.tap) {
               return <OptionButton key={option.id} option={option} />;
             }
             if (selectedBindingActionKey === HELD && option.hold) {

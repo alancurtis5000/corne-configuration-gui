@@ -1594,7 +1594,7 @@ export const keys = [
     code: "lt",
     label: "LT",
     description:
-      "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tapped for a short time.",
+      "The 'layer-tap' behavior enables a layer when a key is held, and outputs a keypress when the key is only tap for a short time.",
     created_at: "2021-12-28T09:53:10.574Z",
     updated_at: "2022-12-16T23:38:33.797Z",
     deleted: false,

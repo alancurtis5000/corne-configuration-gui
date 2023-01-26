@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Button } from "@mui/material";
 import "./modifier-list.styles.scss";
 import { keys } from "../../constants/keys";
-import { HELD, TAPPED } from "../../constants/button-modes";
+import { HELD, TAP } from "../../constants/button-modes";
 import { LayoutContext } from "../../providers/layout/layout.provider";
 
 export const ModifierList = () => {
@@ -23,8 +23,8 @@ export const ModifierList = () => {
   const rightMods = [];
 
   const modLocation = () => {
-    if (selectedBindingActionKey === TAPPED) {
-      return TAPPED;
+    if (selectedBindingActionKey === TAP) {
+      return TAP;
     } else if (selectedBindingActionKey === HELD) {
       return HELD;
     }

@@ -89,7 +89,7 @@ export const addModifierToTappedBindingUtil = ({
   selectedBindingIndex,
 }) => {
   const updateLayer = { ...layers[selectedLayerIndex] };
-  const modifiers = updateLayer.bindings[selectedBindingIndex].tapped.modifiers;
+  const modifiers = updateLayer.bindings[selectedBindingIndex].tap.modifiers;
 
   const doesAlternateExist = modifiers.findIndex((mod) => {
     const currentModSplit = mod.label.split(" ");
@@ -104,19 +104,17 @@ export const addModifierToTappedBindingUtil = ({
       (mod) => mod.label === modifier.label
     );
     if (doesModifierExist === -1) {
-      updateLayer.bindings[selectedBindingIndex].tapped.modifiers = [
+      updateLayer.bindings[selectedBindingIndex].tap.modifiers = [
         ...modifiers,
         modifier,
       ];
     } else {
       modifiers.splice(doesModifierExist, 1);
-      updateLayer.bindings[selectedBindingIndex].tapped.modifiers = [
-        ...modifiers,
-      ];
+      updateLayer.bindings[selectedBindingIndex].tap.modifiers = [...modifiers];
     }
   } else {
     modifiers.splice(doesAlternateExist, 1);
-    updateLayer.bindings[selectedBindingIndex].tapped.modifiers = [
+    updateLayer.bindings[selectedBindingIndex].tap.modifiers = [
       ...modifiers,
       modifier,
     ];
@@ -188,7 +186,7 @@ export const changeBindingTappedUtil = ({
   }
 
   const updateLayer = { ...layers[selectedLayerIndex] };
-  updateLayer.bindings[selectedBindingIndex].tapped = {
+  updateLayer.bindings[selectedBindingIndex].tap = {
     ...newBindingTappedValue,
     modifiers: [],
   };

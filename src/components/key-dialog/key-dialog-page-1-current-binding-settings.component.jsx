@@ -12,7 +12,7 @@ import {
 import EditIcon from "@mui/icons-material/Edit";
 import SaveIcon from "@mui/icons-material/Save";
 import CancelIcon from "@mui/icons-material/Cancel";
-import { HELD, TAPPED } from "../../constants/button-modes";
+import { HELD, TAP } from "../../constants/button-modes";
 import { LayoutContext } from "../../providers/layout/layout.provider";
 import { isEmpty } from "../../utilities/data-parsing";
 
@@ -33,7 +33,7 @@ export const KeyDialogPage1CurrentBindingSettings = (props) => {
   );
   if (!layers[selectedLayerIndex].bindings[selectedBindingIndex]) return;
 
-  const { index, tapped, held } =
+  const { index, tap, held } =
     layers[selectedLayerIndex]?.bindings[selectedBindingIndex];
 
   const selectedBinding =
@@ -115,9 +115,9 @@ export const KeyDialogPage1CurrentBindingSettings = (props) => {
           }}
         >
           <DialogContentText>When</DialogContentText>{" "}
-          <Button onClick={() => handleSelectBindingKey(TAPPED)}>Tapped</Button>
-          <DialogContentText>:</DialogContentText> {tapped.label}
-          <Button onClick={() => handleClearBindingTypeValue(TAPPED)}>
+          <Button onClick={() => handleSelectBindingKey(TAP)}>Tapped</Button>
+          <DialogContentText>:</DialogContentText> {tap.label}
+          <Button onClick={() => handleClearBindingTypeValue(TAP)}>
             Clear
           </Button>
         </div>
