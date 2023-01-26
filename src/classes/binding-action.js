@@ -28,6 +28,12 @@ export class BindingAction {
     this.comboPickable = bindingAction.comboPickable;
     this.comboTrigger = bindingAction.comboTrigger;
     this.modifiers = [];
-    this.layer = { index: layer.index, label: layer.label };
+    this.layer =
+      bindingAction.key_category_id === 65
+        ? {
+            index: layer.index,
+            label: layer.label,
+          }
+        : {};
   }
 }
