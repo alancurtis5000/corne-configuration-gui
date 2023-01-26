@@ -54,7 +54,6 @@ export const KeyDialogPage3 = (props) => {
     return (
       <Button
         variant="outlined"
-        key={option.id}
         onClick={() => handleOnClick({ newBindingTappedValue: option })}
       >
         {option.label}
@@ -77,10 +76,10 @@ export const KeyDialogPage3 = (props) => {
         <AccordionDetails>
           {options.map((option) => {
             if (selectedBindingActionKey === TAPPED && option.tap) {
-              return <OptionButton option={option} />;
+              return <OptionButton key={option.id} option={option} />;
             }
             if (selectedBindingActionKey === HELD && option.hold) {
-              return <OptionButton option={option} />;
+              return <OptionButton key={option.id} option={option} />;
             }
             return null;
           })}
