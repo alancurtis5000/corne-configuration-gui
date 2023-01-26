@@ -11,47 +11,55 @@ import "./key-dialog-page-3.styles.scss";
 import { BackButton } from "../back-button/back-button.component";
 import { keys } from "../../constants/keys";
 import { Button } from "@mui/material";
-import { KeymapContext } from "../../providers/keymap/keymap.provider";
 import { categories } from "../../constants/categories";
 import { HELD, TAPPED } from "../../constants/button-modes";
+import { LayoutContext } from "../../providers/layout/layout.provider";
+import { BindingAction } from "../../classes/binding-action";
 
 export const KeyDialogPage3 = (props) => {
   const { setPage } = props;
   const {
     selectedBindingIndex,
     selectedLayerIndex,
-    layers,
-    buttonMode,
-    changeBindingTapped,
-    changeBindingHeld,
-  } = useContext(KeymapContext);
-  const { index, tapped, held } =
-    layers[selectedLayerIndex].bindings[selectedBindingIndex];
+    setBindingActionValue,
+    layout,
+    selectedBindingActionKey,
+  } = useContext(LayoutContext);
+  const layers = layout.layers;
+  const { index } = layers[selectedLayerIndex].bindings[selectedBindingIndex];
 
   const back = () => {
-    if (buttonMode === TAPPED) {
-      if (!tapped.label) {
-        setPage(1);
-      } else {
-        setPage(2);
-      }
-    } else if (buttonMode === HELD) {
-      if (!held.label) {
-        setPage(1);
-      } else {
-        setPage(2);
-      }
+    if ([selectedBindingActionKey].label) {
+      setPage(1);
+    } else {
+      setPage(2);
     }
   };
 
   const handleOnClick = ({ newBindingTappedValue }) => {
-    if (buttonMode === TAPPED) {
-      changeBindingTapped({ newBindingTappedValue });
-    } else if (buttonMode === HELD) {
-      changeBindingHeld({ newBindingTappedValue });
-    }
+    const { index, label } = layers[0];
+    const bindingActionValue = new BindingAction({
+      bindingAction: newBindingTappedValue,
+      layer: { index, label },
+    });
+    setBindingActionValue({
+      bindingActionKey: selectedBindingActionKey,
+      bindingActionValue,
+    });
 
     setPage(2);
+  };
+
+  const OptionButton = ({ option }) => {
+    return (
+      <Button
+        variant="outlined"
+        key={option.id}
+        onClick={() => handleOnClick({ newBindingTappedValue: option })}
+      >
+        {option.label}
+      </Button>
+    );
   };
   const sections = categories.map((category, index) => {
     const options = keys.filter((key) => key.key_category_id === category.id);
@@ -68,35 +76,11 @@ export const KeyDialogPage3 = (props) => {
         </AccordionSummary>
         <AccordionDetails>
           {options.map((option) => {
-            if (buttonMode === TAPPED) {
-              if (option.tap) {
-                return (
-                  <Button
-                    variant="outlined"
-                    key={option.id}
-                    onClick={() =>
-                      handleOnClick({ newBindingTappedValue: option })
-                    }
-                  >
-                    {option.label}
-                  </Button>
-                );
-              }
+            if (selectedBindingActionKey === TAPPED && option.tap) {
+              return <OptionButton option={option} />;
             }
-            if (buttonMode === HELD) {
-              if (option.hold) {
-                return (
-                  <Button
-                    variant="outlined"
-                    key={option.id}
-                    onClick={() =>
-                      handleOnClick({ newBindingTappedValue: option })
-                    }
-                  >
-                    {option.label}
-                  </Button>
-                );
-              }
+            if (selectedBindingActionKey === HELD && option.hold) {
+              return <OptionButton option={option} />;
             }
             return null;
           })}
@@ -107,7 +91,9 @@ export const KeyDialogPage3 = (props) => {
 
   return (
     <div className="key-dialog-page-3">
-      <DialogTitle>Key: {index + 1} (Edit Tapped) </DialogTitle>
+      <DialogTitle>{`Key: ${
+        index + 1
+      } (Edit ${selectedBindingActionKey} ) `}</DialogTitle>
       <DialogContent dividers>
         <div className="content">
           <div>
