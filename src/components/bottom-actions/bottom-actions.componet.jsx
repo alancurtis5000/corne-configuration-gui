@@ -3,23 +3,20 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Button from "@mui/material/Button";
 import "./bottom-actions.styles.scss";
 import { DownloadButton } from "../download-button/download-button";
-
 import { LayoutContext } from "../../providers/layout/layout.provider";
+
 export const BottomActions = () => {
-  const { hasBeenChanged /*saveLayoutById*/ } = useContext(LayoutContext);
+  const { saveLayout } = useContext(LayoutContext);
+
   const handleSave = () => {
-    // saveLayoutById();
+    saveLayout();
   };
 
   return (
     <div className="bottom-actions">
-      {hasBeenChanged && (
-        <>
-          <Button onClick={handleSave} startIcon={<ArrowBackIcon />}>
-            Save
-          </Button>
-        </>
-      )}
+      <Button onClick={handleSave} startIcon={<ArrowBackIcon />}>
+        Save
+      </Button>
       <DownloadButton />
     </div>
   );

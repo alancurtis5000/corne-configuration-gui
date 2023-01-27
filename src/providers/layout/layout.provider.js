@@ -9,6 +9,7 @@ import {
   setBindingActionKeyModifiersUtil,
   setSelectedBindingLayerUtil,
 } from "./layout.utils";
+import { updateLayoutApi } from "../../api/layouts.api";
 
 // can I and should I right test for this?
 /* istanbul ignore next */
@@ -35,6 +36,7 @@ export const LayoutContext = createContext({
   setBindingActionValue: () => {},
   setBindingActionKeyModifiers: () => {},
   setSelectedBindingLayer: () => {},
+  saveLayout: () => {},
 });
 
 // can I and should I right test for this?
@@ -123,6 +125,10 @@ export const LayoutProvider = ({ children }) => {
     );
   };
 
+  const saveLayout = () => {
+    updateLayoutApi({ layout });
+  };
+
   return (
     <LayoutContext.Provider
       value={{
@@ -147,6 +153,7 @@ export const LayoutProvider = ({ children }) => {
         setBindingActionValue,
         setBindingActionKeyModifiers,
         setSelectedBindingLayer,
+        saveLayout,
       }}
     >
       {children}
