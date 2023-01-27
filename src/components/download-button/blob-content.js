@@ -3,14 +3,14 @@ import { generateBindingCode } from "../../utilities/generate-binding-code";
 
 export const generateBlob = (layers) => {
   const defaultConfigTop = `
-    /*
-    * Copyright (c) 2020 The ZMK Contributors 
-    * SPDX-License-Identifier: MIT 
-    */ 
-    
-    #include <behaviors.dtsi> 
-    #include <dt-bindings/zmk/keys.h> 
-    #include <dt-bindings/zmk/bt.h> \n`;
+/*
+* Copyright (c) 2020 The ZMK Contributors 
+* SPDX-License-Identifier: MIT 
+*/ 
+
+#include <behaviors.dtsi> 
+#include <dt-bindings/zmk/keys.h> 
+#include <dt-bindings/zmk/bt.h> \n`;
 
   const generateConfigFile = () => {
     const defineLayers = [];
@@ -57,8 +57,9 @@ export const generateBlob = (layers) => {
   const { defineLayersToString, layerConfigsToString } = generateConfigFile();
 
   const blobContent = [
-    `${defaultConfigTop}
-    ${defineLayersToString}
+    `
+${defaultConfigTop}
+${defineLayersToString}
     
     / {
     behaviors {

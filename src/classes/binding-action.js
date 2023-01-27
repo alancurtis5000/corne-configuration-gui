@@ -1,6 +1,7 @@
 export class BindingAction {
   constructor({ bindingAction, layer }) {
     this.id = bindingAction.id;
+    this.code = bindingAction.code;
     this.key_category_id = bindingAction.key_category_id;
     this.label = bindingAction.label;
     this.description = bindingAction.description;
