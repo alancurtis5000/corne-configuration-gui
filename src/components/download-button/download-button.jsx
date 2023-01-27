@@ -4,6 +4,7 @@ import DownloadIcon from "@mui/icons-material/Download";
 import { LayoutContext } from "../../providers/layout/layout.provider";
 import { saveAs } from "file-saver";
 import { generateBindingCode } from "../../utilities/generate-binding-code";
+import { addSpacingToKeyCode } from "../../utilities/data-parsing";
 
 export const DownloadButton = () => {
   const {
@@ -21,16 +22,17 @@ export const DownloadButton = () => {
         let tapBindingCode = undefined;
 
         tapBindingCode = generateBindingCode(binding);
+        tapBindingCode = addSpacingToKeyCode(tapBindingCode);
 
         if (binding.index === 0) {
-          bindingsConfig.push(`     &none       ${tapBindingCode}`);
+          bindingsConfig.push(`     &none            ${tapBindingCode}`);
         } else if (binding.index === 9 || binding.index === 19) {
           bindingsConfig.push(
-            ` ${tapBindingCode}     &none \n          &none `
+            ` ${tapBindingCode} &none \n          &none           `
           );
         } else if (binding.index === 29) {
           bindingsConfig.push(
-            ` ${tapBindingCode}     &none \n                                    `
+            ` ${tapBindingCode} &none \n                                           `
           );
         } else {
           bindingsConfig.push(` ${tapBindingCode}`);
@@ -39,7 +41,7 @@ export const DownloadButton = () => {
       layerConfigs.push(`${layer.label}_layer {
         label = "${layer.label}";
         bindings = <
-     ${bindingsConfig.join("     ")}
+     ${bindingsConfig.join("")}
         >;
       };
         `);
