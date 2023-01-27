@@ -12,9 +12,8 @@ export const addSpacingToKeyCode = (string) => {
   const numberOfSpaces = maxLength - stringLength;
 
   let updatedString = string;
-  // "\xa0" is the character for space
   for (let i = 0; i < numberOfSpaces; i++) {
-    updatedString = updatedString + "\xa0";
+    updatedString = updatedString + ` `;
   }
   return updatedString;
 };

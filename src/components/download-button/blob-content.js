@@ -2,8 +2,7 @@ import { addSpacingToKeyCode } from "../../utilities/data-parsing";
 import { generateBindingCode } from "../../utilities/generate-binding-code";
 
 export const generateBlob = (layers) => {
-  const defaultConfigTop = `
-/*
+  const defaultConfigTop = `/*
 * Copyright (c) 2020 The ZMK Contributors 
 * SPDX-License-Identifier: MIT 
 */ 
@@ -61,23 +60,23 @@ export const generateBlob = (layers) => {
 ${defaultConfigTop}
 ${defineLayersToString}
     
-    / {
+/ {
     behaviors {
-    hm: homerow_mods {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MODS";
-        #binding-cells = <2>;
-        tapping-term-ms = <300>;
-        quick-tap-ms = <200>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
-    };
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
     };
     keymap {
     compatible = "zmk,keymap";\n
     ${layerConfigsToString}
     };
-    };
+};
     `,
   ];
   return blobContent;
