@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
 import { IconButton } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
-import { KeymapContext } from "../../providers/keymap/keymap.provider";
+import { LayoutContext } from "../../providers/layout/layout.provider";
 import { saveAs } from "file-saver";
 import { generateBindingCode } from "../../utilities/generate-binding-code";
 
-export const DownloadButton = (props) => {
-  const { layers } = useContext(KeymapContext);
+export const DownloadButton = () => {
+  const {
+    layout: { layers },
+  } = useContext(LayoutContext);
 
   const generateConfigFile = () => {
     const defineLayers = [];
@@ -58,7 +60,6 @@ export const DownloadButton = (props) => {
   #include <behaviors.dtsi> 
   #include <dt-bindings/zmk/keys.h> 
   #include <dt-bindings/zmk/bt.h> \n`;
-
   const handleDownload = () => {
     const { defineLayersToString, layerConfigsToString } = generateConfigFile();
     var blob = new Blob(
