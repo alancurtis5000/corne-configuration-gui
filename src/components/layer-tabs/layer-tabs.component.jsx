@@ -35,7 +35,7 @@ export const LayerTabs = () => {
           onChange={handleChange}
           aria-label="layer tabs"
         >
-          {layout?.layers.map((layer) => {
+          {layout?.layers?.map((layer) => {
             return (
               <Tab
                 label={layer.label}
@@ -53,7 +53,7 @@ export const LayerTabs = () => {
           />
         </Tabs>
       </Box>
-      {layout.layers.map((layer) => {
+      {layout?.layers?.map((layer) => {
         return (
           <LayerPanel key={layer.label} index={layer.index} layer={layer} />
         );

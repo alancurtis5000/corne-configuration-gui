@@ -36,11 +36,13 @@ export const Layouts = () => {
   };
   const handleCreateLayout = async () => {
     const createdAt = Date.now();
+    const modifiedAt = Date.now();
     const label = `layout_${layouts.length}`;
-    const layout = new Layout({ label, createdAt });
+    const layout = new Layout({ label, createdAt, modifiedAt });
     const body = layout;
     await createLayout(body);
     const response = await getLayouts();
+    console.log({ response });
     setLayouts(response.data);
   };
 
