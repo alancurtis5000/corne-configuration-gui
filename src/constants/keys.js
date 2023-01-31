@@ -3593,7 +3593,7 @@ export const keys = [
     deleted: false,
     modifiable: false,
     shifted: false,
-    tap: true,
+    tap: false, // defaults if neither tap or held are selected
     hold: false,
     doubleTap: false,
     tapHold: false,
