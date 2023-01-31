@@ -30,7 +30,12 @@ export const KeyButton = (props) => {
   const labelStyles = {
     display: "flex",
     flexDirection: "column",
-    opacity: tap.label === "None" ? ".5" : "1",
+  };
+
+  const noneStyles = {
+    display: "flex",
+    flexDirection: "column",
+    opacity: ".5",
   };
 
   const bold = {
@@ -68,20 +73,22 @@ export const KeyButton = (props) => {
             <div style={bold}>{label}</div>
           ) : (
             <>
-              <div style={buttonModes}>
-                <div style={small}>Tap:</div>
-                <div style={bold}>
-                  <div style={labelWithMods}>
-                    {tap.label}
-                    {tap?.modifiers?.length > 0 && (
-                      <div style={modStyles}>{"mods"}</div>
+              {tap.label && (
+                <div style={buttonModes}>
+                  <div style={small}>Tap:</div>
+                  <div style={bold}>
+                    <div style={labelWithMods}>
+                      {tap.label}
+                      {tap?.modifiers?.length > 0 && (
+                        <div style={modStyles}>{"mods"}</div>
+                      )}
+                    </div>
+                    {tap?.layer?.label && (
+                      <div style={small}>{tap.layer.label}</div>
                     )}
                   </div>
-                  {tap?.layer?.label && (
-                    <div style={small}>{tap.layer.label}</div>
-                  )}
                 </div>
-              </div>
+              )}
               {held.label && (
                 <div style={buttonModes}>
                   <div style={small}>Hold:</div>
@@ -95,6 +102,16 @@ export const KeyButton = (props) => {
                     {held?.layer?.label && (
                       <div style={small}>{held.layer.label}</div>
                     )}
+                  </div>
+                </div>
+              )}
+              {/* if neiter tap or held have values display none */}
+              {!tap.label && !held.label && (
+                <div style={buttonModes}>
+                  <div style={noneStyles}>
+                    <div style={bold}>
+                      <div>None</div>
+                    </div>
                   </div>
                 </div>
               )}

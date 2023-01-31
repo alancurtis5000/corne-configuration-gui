@@ -1,30 +1,25 @@
-const isNone = ({ tap, held }) => {
-  if (tap.code !== "none") return;
-  if (held.code === "mo") return;
-  return `&${tap.code}`;
-};
 // keypress values would only be on tap
 const isKeyPressNoMods = ({ tap, held }) => {
   if (held.label) return; // is held modifier
   if (tap.code === "to") return; // is toggle layer
-  if (tap.code.includes("BT_")) return; // is bluetooth
-  if (tap.modifiers.length > 0) return; // has mods
+  if (tap?.code?.includes("BT_")) return; // is bluetooth
+  if (tap?.modifiers?.length > 0) return; // has mods
   return `&kp ${tap.code}`;
 };
 // keypress values would only be on tap
 const isKeyPressWithMods = ({ tap, held }) => {
   if (held.label) return;
   if (tap.code === "to") return;
-  if (tap.code.includes("BT_")) return;
-  if (tap.modifiers.length < 1) return;
+  if (tap?.code?.includes("BT_")) return;
+  if (tap?.modifiers?.length < 1) return;
   return `&kp ${addModsToCode(tap.code, tap.modifiers)}`;
 };
 
 const isHoldModifierBasic = ({ tap, held }) => {
   if (!held.label) return; // needs held label
   if (tap.code === "to") return; // is toggle layer
-  if (tap.code.includes("BT_")) return; // is bluetooth
-  if (tap.modifiers.length > 0) return; // tap has mods
+  if (tap?.code?.includes("BT_")) return; // is bluetooth
+  if (tap?.modifiers?.length > 0) return; // tap has mods
   if (held.modifiers.length > 0) return; // held has mods
   if (held.code === "lt") return; // is held layer toggle keycode
   if (held.code === "mo") return; // is held layer toggle keycode
@@ -34,8 +29,8 @@ const isHoldModifierBasic = ({ tap, held }) => {
 const isHoldModifierTapMods = ({ tap, held }) => {
   if (!held.label) return; // needs held label
   if (tap.code === "to") return; // is toggle layer
-  if (tap.code.includes("BT_")) return; // is bluetooth
-  if (tap.modifiers.length < 0) return; // needs tap has mods
+  if (tap?.code?.includes("BT_")) return; // is bluetooth
+  if (tap?.modifiers?.length < 0) return; // needs tap has mods
   if (held.modifiers.length > 0) return; // held has mods
   if (held.code === "lt") return; // is held layer toggle keycode
   if (held.code === "mo") return; // is held layer toggle keycode
@@ -45,8 +40,8 @@ const isHoldModifierTapMods = ({ tap, held }) => {
 const isHoldModifierHeldMods = ({ tap, held }) => {
   if (!held.label) return; // needs held label
   if (tap.code === "to") return; // is toggle layer
-  if (tap.code.includes("BT_")) return; // is bluetooth
-  if (tap.modifiers.length > 0) return; // tap has mods
+  if (tap?.code?.includes("BT_")) return; // is bluetooth
+  if (tap?.modifiers?.length > 0) return; // tap has mods
   if (held.modifiers.length < 0) return; //  needs held has mods
   if (held.code === "lt") return; // is held layer toggle keycode
   if (held.code === "mo") return; // is held layer toggle keycode
@@ -56,8 +51,8 @@ const isHoldModifierHeldMods = ({ tap, held }) => {
 const isHoldModifierTapAndHeldMods = ({ tap, held }) => {
   if (!held.label) return; // needs held label
   if (tap.code === "to") return; // is toggle layer
-  if (tap.code.includes("BT_")) return; // is bluetooth
-  if (tap.modifiers.length < 0) return; // needs tap has mods
+  if (tap?.code?.includes("BT_")) return; // is bluetooth
+  if (tap?.modifiers?.length < 0) return; // needs tap has mods
   if (held.modifiers.length < 0) return; //  needs held has mods
   if (held.code === "lt") return; // is held layer toggle keycode
   if (held.code === "mo") return; // is held layer toggle keycode
@@ -68,7 +63,7 @@ const isHoldModifierTapAndHeldMods = ({ tap, held }) => {
 };
 
 const isBluetooth = ({ tap }) => {
-  if (tap.code.includes("BT_")) {
+  if (tap?.code?.includes("BT_")) {
     return `&bt ${tap.code}`;
   }
 };
@@ -86,7 +81,7 @@ const isLayerSwitchHoldWithTap = ({ tap, held }) => {
   // then none option would have to be able to be cleared
   if (held.code === "lt") {
     if (tap.code) {
-      if (tap.modifiers.length > 0) {
+      if (tap?.modifiers?.length > 0) {
         return `&lt ${held.layer.label} ${addModsToCode(
           tap.code,
           tap.modifiers
@@ -116,8 +111,12 @@ const addModsToCode = (code, modifiers) => {
 };
 
 export const generateBindingCode = (binding) => {
-  let code = isNone(binding);
+  let code = null;
 
+  // if neither tap or held means none is keycode
+  if (!binding.tap.label && !binding.held.label) {
+    return `&none`;
+  }
   if (!code) {
     code = isKeyPressNoMods(binding);
   }
