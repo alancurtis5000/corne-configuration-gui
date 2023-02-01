@@ -53,9 +53,15 @@ export const Layouts = () => {
     setLayouts(response.data);
   };
 
+  const pageStyles = {
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "column",
+    paddingBottom: "20px",
+  };
+
   return (
-    <div className="page">
-      <div>Layouts</div>
+    <div className="page" style={pageStyles}>
       <Box sx={boxSX}>
         <nav aria-label="secondary mailbox folders">
           <List sx={listSX}>
