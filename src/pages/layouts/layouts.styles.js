@@ -37,3 +37,17 @@ export const listSX = {
   maxHeight: 300,
   "& ul": { padding: 0 },
 };
+
+export const lastModfifiedStyles = {
+  display: "flex",
+};
+
+export const dateStyles = {
+  marginLeft: "6px",
+};
+export const itemContainerStyles = {
+  display: "flex",
+  flexDirection: "column",
+  width: "100%",
+  fontSize: "12px",
+};

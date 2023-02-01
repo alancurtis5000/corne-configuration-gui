@@ -12,7 +12,15 @@ import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useNavigate } from "react-router-dom";
 import { Layout } from "../../classes/layout";
-import { boxSX, buttonSX, deleteSX, listSX } from "./layouts.styles";
+import {
+  boxSX,
+  buttonSX,
+  dateStyles,
+  deleteSX,
+  lastModfifiedStyles,
+  listSX,
+  itemContainerStyles,
+} from "./layouts.styles";
 import { createLayout, deleteLayout, getLayouts } from "../../api/layouts.api";
 
 export const Layouts = () => {
@@ -60,6 +68,11 @@ export const Layouts = () => {
     paddingBottom: "20px",
   };
 
+  const formatDate = (modifiedAt) => {
+    const date = new Date(modifiedAt);
+    return [date.getDate(), date.getMonth(), date.getFullYear()].join("/");
+  };
+
   return (
     <div className="page" style={pageStyles}>
       <Box sx={boxSX}>
@@ -76,7 +89,16 @@ export const Layouts = () => {
             {layouts.map((layout) => (
               <ListItem key={layout.id} sx={buttonSX} disablePadding>
                 <ListItemButton onClick={() => handleLayoutSelect(layout.id)}>
-                  <ListItemText primary={layout.label} />
+                  <div style={itemContainerStyles}>
+                    <ListItemText primary={layout.label} />
+                    <div style={lastModfifiedStyles}>
+                      <div className="label">Last Modified</div>
+                      <div style={dateStyles}>
+                        {formatDate(layout.modifiedAt)}
+                      </div>
+                    </div>
+                  </div>
+
                   <IconButton
                     sx={deleteSX}
                     onClick={(event) => handleDeleteLayout(event, layout.id)}
