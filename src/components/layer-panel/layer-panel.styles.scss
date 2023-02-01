@@ -2,9 +2,10 @@
   display: flex;
   justify-content: center;
   .layer-actions {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    justify-items: center;
     align-items: center;
+    grid-template-columns: 20% 60% 20%;
     min-height: 48px;
     padding: 8px;
     .label,
@@ -14,9 +15,13 @@
       align-items: center;
     }
     .delete-button {
-      &:hover {
-        svg {
-          fill: rgb(207, 34, 34);
+      width: 100%;
+      justify-content: end;
+      button {
+        &:hover {
+          svg {
+            fill: rgb(207, 34, 34);
+          }
         }
       }
     }
