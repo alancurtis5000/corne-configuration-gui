@@ -24,7 +24,6 @@ export const Layout = () => {
 
   return (
     <div className="page">
-      <div>Layout page</div>
       <LayerTabs />
     </div>
   );

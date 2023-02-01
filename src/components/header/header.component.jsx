@@ -23,6 +23,12 @@ export const Header = () => {
     flexDirection: "column",
     paddingBottom: "20px",
   };
+
+  const backStyles = {
+    position: "absolute",
+    top: "30px",
+    left: "10px",
+  };
   const handleBack = () => {
     navigate(`/`);
     setLayout({});
@@ -38,7 +44,9 @@ export const Header = () => {
     } else {
       return (
         <>
-          <BackButton onClick={handleBack} />
+          <div style={backStyles}>
+            <BackButton onClick={handleBack} />
+          </div>
           <Typography variant="h5">Layout</Typography>
         </>
       );
